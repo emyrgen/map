@@ -1,0 +1,875 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EMYRGEN™ MAP | Surface-Integrity Platform for the AI Infrastructure Era</title>
+  <meta name="description" content="EMYRGEN™ MAP investor website: magnetic abrasive polishing for AI hardware, nuclear energy, semiconductors, optics, and high-reliability manufacturing." />
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+  <link rel="manifest" href="assets/site.webmanifest" />
+  <style>
+    /* Typography revised in v1.2: elegant medium-weight headings, no heavy black/bold titles. */
+    :root {
+      --bg: #030713;
+      --bg2: #071326;
+      --panel: rgba(9, 22, 43, 0.86);
+      --panel2: rgba(12, 33, 63, 0.78);
+      --line: rgba(113, 202, 255, 0.20);
+      --line2: rgba(255, 255, 255, 0.10);
+      --text: #f4fbff;
+      --muted: #b9c8d7;
+      --soft: #86a6ba;
+      --cyan: #55d8ff;
+      --cyan2: #8bf0ff;
+      --blue: #2f83ff;
+      --warn: #d5ecff;
+      --shadow: 0 28px 90px rgba(0, 0, 0, 0.55);
+      --radius: 30px;
+      --max: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(56, 147, 255, 0.20), transparent 28rem),
+        radial-gradient(circle at 80% 10%, rgba(84, 216, 255, 0.16), transparent 26rem),
+        linear-gradient(180deg, #02050d 0%, var(--bg) 42%, #02040a 100%);
+      color: var(--text);
+      line-height: 1.56;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    .site-shell {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      padding: 22px 0 18px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .brand-card {
+      padding: 18px;
+      border: 1px solid var(--line2);
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(85, 216, 255, .10), transparent 18rem),
+        rgba(4, 13, 27, 0.72);
+      box-shadow: 0 18px 50px rgba(0,0,0,.32);
+      backdrop-filter: blur(16px);
+    }
+
+    .brand-lockup {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .brand-icon {
+      width: 88px;
+      height: 88px;
+      border-radius: 25px;
+      flex: 0 0 auto;
+      object-fit: cover;
+      box-shadow:
+        0 0 0 1px rgba(126, 217, 255, .16),
+        0 18px 44px rgba(45, 166, 255, .18),
+        0 18px 40px rgba(0, 0, 0, .38);
+    }
+
+    .brand-copy { min-width: 0; }
+
+    .brand-title {
+      margin: 0;
+      font-size: clamp(1.18rem, 4.6vw, 2.15rem);
+      line-height: 1;
+      letter-spacing: .18em;
+      color: var(--text);
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .brand-subtitle {
+      margin: 8px 0 0;
+      color: var(--cyan2);
+      font-size: 0.88rem;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+
+    .nav-stack {
+      margin-top: 18px;
+    }
+
+    .nav-stack a {
+      display: block;
+      margin-top: 8px;
+      padding: 13px 15px;
+      border: 1px solid rgba(126, 217, 255, .18);
+      border-radius: 999px;
+      color: #d9f4ff;
+      background: rgba(255,255,255,.035);
+      font-size: .92rem;
+      letter-spacing: .02em;
+    }
+
+    .hero {
+      padding: 16px 0 72px;
+    }
+
+    .hero-panel {
+      border-radius: 38px;
+      overflow: hidden;
+      border: 1px solid rgba(102, 208, 255, .25);
+      background: linear-gradient(180deg, rgba(7,18,35,.94), rgba(4,11,22,.94));
+      box-shadow: var(--shadow);
+    }
+
+    .hero-image-wrap {
+      position: relative;
+      min-height: 420px;
+      background: #061020;
+    }
+
+    .hero-image-wrap::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(2,5,13,.05) 0%, rgba(2,5,13,.85) 100%),
+        radial-gradient(circle at 50% 40%, rgba(82, 221, 255, .12), transparent 34rem);
+    }
+
+    .hero-image-wrap img {
+      width: 100%;
+      min-height: 420px;
+      object-fit: cover;
+      opacity: .82;
+    }
+
+    .hero-content {
+      padding: clamp(28px, 5vw, 70px);
+    }
+
+    .hero-mark {
+      width: 100px;
+      height: 100px;
+      border-radius: 30px;
+      object-fit: cover;
+      margin: 0 0 24px;
+      box-shadow:
+        0 0 0 1px rgba(139, 240, 255, .18),
+        0 22px 55px rgba(49, 170, 255, .22),
+        0 20px 46px rgba(0, 0, 0, .42);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin: 0 0 18px;
+      padding: 9px 13px;
+      border: 1px solid rgba(92, 219, 255, .30);
+      border-radius: 999px;
+      color: var(--cyan2);
+      background: rgba(32, 142, 255, .10);
+      font-size: .79rem;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p { max-width: 100%; }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3rem, 8.4vw, 7rem);
+      line-height: .92;
+      letter-spacing: -.052em;
+      font-weight: 520;
+    }
+
+    h1 span, h2 span, .accent { color: var(--cyan); }
+
+    .hero-lede {
+      margin: 28px 0 0;
+      color: #d8e9f6;
+      font-size: clamp(1.28rem, 2.1vw, 1.72rem);
+      line-height: 1.48;
+      max-width: 960px;
+    }
+
+    .cta-stack {
+      margin-top: 34px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      margin-top: 12px;
+      padding: 18px 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(120, 220, 255, .30);
+      text-align: center;
+      font-weight: 520;
+      letter-spacing: .01em;
+      background: rgba(255,255,255,.04);
+      color: #f2fbff;
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, #45d8ff, #2d86ff);
+      color: #001020;
+      border-color: transparent;
+      box-shadow: 0 16px 46px rgba(61, 183, 255, .28);
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .section {
+      padding: 72px 0;
+      border-top: 1px solid rgba(255,255,255,.075);
+    }
+
+    .section:first-of-type { border-top: 0; }
+
+    .section-header {
+      margin-bottom: 32px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(2.35rem, 6vw, 5.4rem);
+      line-height: .98;
+      letter-spacing: -.044em;
+      font-weight: 520;
+    }
+
+    .section-lede {
+      margin: 22px 0 0;
+      color: #d2e5f4;
+      font-size: clamp(1.12rem, 2vw, 1.48rem);
+      line-height: 1.62;
+    }
+
+    .panel {
+      margin-top: 22px;
+      padding: clamp(22px, 4vw, 46px);
+      border-radius: var(--radius);
+      border: 1px solid var(--line2);
+      background:
+        linear-gradient(180deg, rgba(12, 31, 58, .86), rgba(6, 16, 32, .86));
+      box-shadow: 0 24px 80px rgba(0,0,0,.35);
+    }
+
+    .panel.featured {
+      border-color: rgba(87, 216, 255, .32);
+      background:
+        radial-gradient(circle at top right, rgba(72, 193, 255, .14), transparent 28rem),
+        linear-gradient(180deg, rgba(12, 34, 66, .94), rgba(5, 13, 28, .96));
+    }
+
+    .visual-card {
+      margin-top: 26px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.035);
+      box-shadow: 0 20px 70px rgba(0,0,0,.32);
+    }
+
+    .visual-card img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .caption {
+      padding: 18px 22px 22px;
+      color: var(--muted);
+      font-size: 1rem;
+      background: rgba(3, 8, 18, .64);
+    }
+
+    .kicker {
+      margin: 0 0 10px;
+      color: var(--cyan2);
+      font-size: .78rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      font-weight: 520;
+    }
+
+    .panel h3, .stat-card h3, .step h3 {
+      margin: 0;
+      color: #ffffff;
+      font-size: clamp(1.45rem, 3.5vw, 2.25rem);
+      line-height: 1.08;
+      letter-spacing: -.024em;
+      font-weight: 500;
+    }
+
+    .panel p, .stat-card p, .step p {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 1.06rem;
+      line-height: 1.68;
+    }
+
+    .stat-card {
+      margin-top: 14px;
+      padding: 22px;
+      border-radius: 24px;
+      border: 1px solid rgba(97, 210, 255, .18);
+      background: rgba(255,255,255,.045);
+    }
+
+    .big-number {
+      margin: 0 0 8px;
+      color: var(--cyan);
+      font-size: clamp(2.2rem, 7vw, 4.8rem);
+      line-height: .92;
+      letter-spacing: -.038em;
+      font-weight: 520;
+    }
+
+    .quote-band {
+      margin-top: 28px;
+      padding: clamp(24px, 4vw, 48px);
+      border-radius: 34px;
+      border: 1px solid rgba(83,216,255,.24);
+      background:
+        radial-gradient(circle at 70% 0%, rgba(85,216,255,.16), transparent 24rem),
+        rgba(5, 18, 36, .88);
+      color: #edfbff;
+      font-size: clamp(1.55rem, 3.5vw, 3rem);
+      line-height: 1.12;
+      letter-spacing: -.032em;
+      font-weight: 500;
+    }
+
+    .logic-item {
+      margin-top: 12px;
+      padding: 18px 20px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.035);
+    }
+
+    .logic-label {
+      display: block;
+      color: var(--cyan2);
+      font-weight: 520;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-size: .74rem;
+      margin-bottom: 8px;
+    }
+
+    .spec-row {
+      margin-top: 10px;
+      padding: 18px 20px;
+      border-radius: 21px;
+      background: rgba(255,255,255,.045);
+      border: 1px solid rgba(255,255,255,.10);
+    }
+
+    .spec-row b {
+      display: block;
+      margin-bottom: 6px;
+      color: #f5fcff;
+      font-size: 1.06rem;
+    }
+
+    .spec-row span {
+      display: block;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .step {
+      position: relative;
+      margin-top: 18px;
+      padding: clamp(20px, 4vw, 34px);
+      border-radius: 28px;
+      border: 1px solid rgba(89, 205, 255, .19);
+      background: rgba(255,255,255,.04);
+    }
+
+    .step-number {
+      display: inline-block;
+      margin: 0 0 14px;
+      color: var(--cyan2);
+      font-size: .86rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .form-panel {
+      margin-top: 24px;
+      padding: clamp(22px, 4vw, 44px);
+      border-radius: var(--radius);
+      border: 1px solid rgba(87, 216, 255, .26);
+      background:
+        radial-gradient(circle at top right, rgba(47, 131, 255, .18), transparent 26rem),
+        rgba(5, 15, 30, .92);
+      box-shadow: var(--shadow);
+    }
+
+    label {
+      display: block;
+      margin-top: 18px;
+      color: var(--warn);
+      font-size: .88rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    input, textarea, select {
+      display: block;
+      width: 100%;
+      margin-top: 8px;
+      padding: 16px 15px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.055);
+      color: #fff;
+      font: inherit;
+      outline: none;
+    }
+
+    textarea { min-height: 132px; resize: vertical; }
+
+    .submit-note {
+      margin-top: 18px;
+      color: var(--soft);
+      font-size: .97rem;
+    }
+
+    .footer {
+      padding: 54px 0 72px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      color: var(--soft);
+    }
+
+    .footer-lockup {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .footer-lockup .brand-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 19px;
+    }
+
+    .footer p { margin: 9px 0 0; }
+
+    .small-note {
+      color: var(--soft);
+      font-size: .94rem;
+      line-height: 1.62;
+    }
+
+    @media (max-width: 760px) {
+      .site-shell { width: min(100% - 22px, var(--max)); }
+      .hero { padding-top: 8px; padding-bottom: 48px; }
+      .hero-panel { border-radius: 28px; }
+      .hero-image-wrap, .hero-image-wrap img { min-height: 315px; }
+      .hero-content { padding: 24px; }
+      .section { padding: 52px 0; }
+      .panel, .form-panel { border-radius: 24px; }
+      .visual-card { border-radius: 24px; }
+      .brand-lockup { gap: 13px; }
+      .brand-icon { width: 70px; height: 70px; border-radius: 20px; }
+      .brand-title { letter-spacing: .13em; }
+      .brand-subtitle { font-size: .74rem; letter-spacing: .08em; }
+      .hero-mark { width: 82px; height: 82px; border-radius: 24px; }
+      .nav-stack a { border-radius: 20px; }
+      h1 { font-size: clamp(2.7rem, 15vw, 4.5rem); }
+      h2 { font-size: clamp(2.15rem, 12vw, 3.9rem); }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="site-shell">
+      <div class="brand-card">
+        <a href="#top" class="brand-lockup" aria-label="EMYRGEN MAP home">
+          <img class="brand-icon" src="assets/emyrgen-map-icon.webp" alt="EMYRGEN MAP magnetic field and polished surface icon" />
+          <div class="brand-copy">
+            <p class="brand-title">EMYRGEN MAP</p>
+            <p class="brand-subtitle">Magnetic Abrasive Polishing</p>
+          </div>
+        </a>
+        <nav class="nav-stack" aria-label="Primary navigation">
+          <a href="#ai-thesis">AI Thesis</a>
+          <a href="#technology">Technology</a>
+          <a href="#t19">T19 Beachhead</a>
+          <a href="#semiconductor">AI Hardware Pathway</a>
+          <a href="#proof">Proof</a>
+          <a href="#markets">Markets</a>
+          <a href="#roadmap">Roadmap</a>
+          <a href="#investor-access">Investor Access</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="site-shell">
+        <div class="hero-panel">
+          <div class="hero-image-wrap">
+            <img src="assets/hero-map-field.webp" alt="Magnetic abrasive polishing field visualization" />
+          </div>
+          <div class="hero-content">
+            <img class="hero-mark" src="assets/emyrgen-map-icon.webp" alt="EMYRGEN MAP magnetic surface icon" />
+            <p class="eyebrow">AI Infrastructure Starts at the Surface</p>
+            <h1>The <span>Surface-Integrity Layer</span> Behind the AI Hardware Boom</h1>
+            <p class="hero-lede">EMYRGEN™ MAP applies magnetic-abrasive polishing technology to reduce micro-defects, improve surface integrity, replace harsher finishing steps, and support the next generation of nuclear energy, semiconductor packaging, optics, and high-reliability manufacturing.</p>
+            <div class="cta-stack">
+              <a class="btn primary" href="mailto:invest@emyrgengroup.com?subject=Investor%20Brief%20Request%20-%20EMYRGEN%20MAP">Request Investor Brief</a>
+              <a class="btn" href="#proof">View Technology Proof</a>
+              <a class="btn" href="#ai-thesis">Explore AI Infrastructure Thesis</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ai-thesis">
+      <div class="site-shell">
+        <div class="section-header">
+          <p class="eyebrow">AI Infrastructure Thesis</p>
+          <h2>AI is not only a software race. <span>It is a manufacturing race.</span></h2>
+          <p class="section-lede">Behind every model is a physical stack: wafers, chips, packages, high-bandwidth memory, photonics, optics, power systems, cooling systems, nuclear and grid infrastructure, and precision components that must survive extreme reliability pressure.</p>
+        </div>
+
+        <div class="visual-card">
+          <img src="assets/ai-hardware-stack.webp" alt="AI hardware infrastructure stack" />
+          <div class="caption">MAP is positioned as a surface-integrity technology for the physical infrastructure behind AI: chips, packaging, optics, energy, and high-reliability industrial systems.</div>
+        </div>
+
+        <div class="quote-band">AI demand creates more compute. More compute creates more physical manufacturing pressure. Manufacturing reliability starts at the surface.</div>
+
+        <article class="panel featured">
+          <p class="kicker">Why investors should care</p>
+          <h3>MAP targets the hidden defect layer behind advanced hardware.</h3>
+          <p>AI investors usually see software, GPUs, data centers, and semiconductor headlines. EMYRGEN™ MAP focuses on a deeper industrial layer: surface roughness, scratches, microcracks, contamination, voids, corrosion, wear, and subsurface damage that can become yield, reliability, thermal, electrical, and optical performance constraints.</p>
+        </article>
+
+        <article class="panel">
+          <p class="kicker">Investor logic</p>
+          <div class="logic-item"><span class="logic-label">01 / AI models</span>Require more compute, more chips, and more data-center infrastructure.</div>
+          <div class="logic-item"><span class="logic-label">02 / AI hardware</span>Requires advanced wafers, packages, HBM, optics, power electronics, cooling, and high-reliability components.</div>
+          <div class="logic-item"><span class="logic-label">03 / Advanced manufacturing</span>Becomes more sensitive to microscopic surface defects as performance density increases.</div>
+          <div class="logic-item"><span class="logic-label">04 / MAP</span>Targets the surface-conditioning layer that may help reduce defect sensitivity in high-value applications.</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="technology">
+      <div class="site-shell">
+        <div class="section-header">
+          <p class="eyebrow">Technology</p>
+          <h2>Magnetic abrasive polishing turns a field into a <span>precision finishing tool.</span></h2>
+          <p class="section-lede">The supplied POLIMAG documentation describes a magnetic field that structures ferroabrasive powder into an elastic polishing brush. The brush can conform to surfaces, polish difficult geometries, and modify surface layers with low thermal impact.</p>
+        </div>
+
+        <div class="visual-card">
+          <img src="assets/map-method.webp" alt="Magnetic abrasive polishing method" />
+          <div class="caption">Magnetic-abrasive polishing uses magnetic force, ferroabrasive particles, process fluid, and controlled motion to condition surfaces without relying on a rigid cutting tool.</div>
+        </div>
+
+        <article class="panel featured">
+          <p class="kicker">Core mechanism</p>
+          <h3>An elastic abrasive brush for defect-sensitive surfaces.</h3>
+          <p>Instead of forcing a fixed abrasive tool against the workpiece, MAP forms a controlled magnetic-abrasive working zone. That working zone can remove or condition material at micro/nano scale while reducing thermal and mechanical damage risk compared with aggressive grinding or chemical finishing routes.</p>
+        </article>
+
+        <article class="panel">
+          <p class="kicker">What it can address</p>
+          <div class="spec-row"><b>Surface roughness</b><span>Targets smoother, more controlled surfaces in defect-sensitive parts.</span></div>
+          <div class="spec-row"><b>Microcracks and subsurface damage</b><span>Frames MAP as a lower-impact finishing pathway for sensitive materials.</span></div>
+          <div class="spec-row"><b>Corrosion and wear initiation points</b><span>The feasibility materials reference improved corrosion, wear, and mechanical-destruction resistance in tested samples.</span></div>
+          <div class="spec-row"><b>Hazardous finishing burden</b><span>The documents position MAP as a cleaner alternative to aggressive acid etching in relevant applications.</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="t19">
+      <div class="site-shell">
+        <div class="section-header">
+          <p class="eyebrow">Primary Beachhead</p>
+          <h2>T19 nuclear fuel cladding gives MAP a <span>serious industrial entry point.</span></h2>
+          <p class="section-lede">The strongest first product story in the supplied archive is the T19 Magnetic Abrasive Polishing system for zirconium nuclear fuel-element shell tubes.</p>
+        </div>
+
+        <div class="visual-card">
+          <img src="assets/t19-production-proof.webp" alt="T19 production system presentation visual" />
+          <div class="caption">T19 is presented as an automated magnetic-abrasive polishing system for long fuel cladding tubes.</div>
+        </div>
+
+        <article class="panel featured">
+          <p class="kicker">Why this matters for AI infrastructure</p>
+          <h3>AI growth increases pressure on energy reliability.</h3>
+          <p>Data centers and AI compute require scalable, reliable, high-density energy. Nuclear energy and advanced energy systems are increasingly relevant to the AI infrastructure conversation. T19 is therefore not a side story; it is a disciplined beachhead in a high-reliability energy market, with later surface-integrity expansion pathways into AI hardware manufacturing.</p>
+        </article>
+
+        <article class="panel">
+          <p class="kicker">T19 documented targets</p>
+          <div class="spec-row"><b>Application</b><span>Simultaneous inner and outer surface finishing of zirconium fuel-element shell tubes.</span></div>
+          <div class="spec-row"><b>Tube length</b><span>Approximately 1,000–5,000 mm.</span></div>
+          <div class="spec-row"><b>Outer diameter</b><span>Approximately 5–15 mm.</span></div>
+          <div class="spec-row"><b>Inner diameter</b><span>Approximately 4–13 mm.</span></div>
+          <div class="spec-row"><b>Processing capacity</b><span>Approximately 0.5–1.5 m/min.</span></div>
+          <div class="spec-row"><b>Power consumption</b><span>Approximately 2.5 kW.</span></div>
+          <div class="spec-row"><b>Unit price baseline</b><span>Approximately $800,000 referenced in the supplied feasibility material.</span></div>
+          <div class="spec-row"><b>Two-unit package</b><span>Approximately $1.6M referenced in the supplied feasibility material.</span></div>
+        </article>
+
+        <div class="visual-card">
+          <img src="assets/t19-model-proof.webp" alt="T19 machine model" />
+          <div class="caption">The supplied materials describe modules for polishing, powder dosing, process fluid, loading/unloading, washing, magnetic separation, hot drying, and PLC/HMI control.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="semiconductor">
+      <div class="site-shell">
+        <div class="section-header">
+          <p class="eyebrow">AI Hardware Pathway</p>
+          <h2>From fuel cladding to AI chips: <span>one surface-integrity platform.</span></h2>
+          <p class="section-lede">The same core problem appears across multiple high-value industries: microscopic surface defects can become macroscopic performance failures. In semiconductors and advanced packaging, those defects may affect bonding, yield, thermal behavior, electrical reliability, and optical loss.</p>
+        </div>
+
+        <div class="visual-card">
+          <img src="assets/si-wafer-proof.webp" alt="Silicon wafer polishing proof image" />
+          <div class="caption">The supplied semiconductor white paper positions MAM/MAP as a potential post-CMP defect-suppression and finishing pathway for advanced semiconductor manufacturing.</div>
+        </div>
+
+        <article class="panel featured">
+          <p class="kicker">Candidate semiconductor pathway</p>
+          <h3>Surface conditioning for advanced packaging, bonding, photonics, and defect control.</h3>
+          <p>MAP should not be presented as already qualified inside leading fabs unless customer data proves that. The correct investor framing is a disciplined validation pathway: customer samples, surface metrology, bonding tests, defect analysis, reliability testing, and an application-specific module for selected semiconductor or packaging problems.</p>
+        </article>
+
+        <article class="panel">
+          <p class="kicker">AI hardware surface problems</p>
+          <div class="spec-row"><b>Post-CMP defect tails</b><span>Scratches, residual damage, and non-uniformities can become yield problems as device structures shrink.</span></div>
+          <div class="spec-row"><b>Hybrid bonding surfaces</b><span>Bonding quality can be sensitive to roughness, particles, voids, dishing, and surface planarity.</span></div>
+          <div class="spec-row"><b>Photonic and optical components</b><span>Surface scatter and micro-defects can affect optical loss, laser crystal performance, and data-movement hardware.</span></div>
+          <div class="spec-row"><b>MEMS and high-reliability devices</b><span>Surface flaws can contribute to fracture, fatigue, and early-life reliability failures.</span></div>
+          <div class="spec-row"><b>Thermal and power-electronics surfaces</b><span>AI infrastructure raises thermal and electrical stress across power, packaging, and cooling systems.</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="proof">
+      <div class="site-shell">
+        <div class="section-header">
+          <p class="eyebrow">Technology Proof</p>
+          <h2>Decades of surface-finishing R&D, <span>reframed for the AI infrastructure era.</span></h2>
+          <p class="section-lede">The supplied archive includes POLIMAG technical presentations, patent documentation, semiconductor article material, equipment visuals, and application examples. The website turns that evidence into premium investor proof without overstating commercialization.</p>
+        </div>
+
+        <article class="panel featured">
+          <p class="kicker">Evidence base</p>
+          <h3>POLIMAG materials reference 34+ years of R&D, 170+ publications, and 70+ patents.</h3>
+          <p>This should be presented as a credibility signal and technology heritage, while final commercialization rights, licensing structure, and customer qualification should remain clearly subject to legal review and validation.</p>
+        </article>
+
+        <div class="visual-card">
+          <img src="assets/patent-proof.webp" alt="Patent documentation proof" />
+          <div class="caption">Patent materials in the archive relate to ferromagnetic abrasive material and methods of preparation.</div>
+        </div>
+
+        <div class="visual-card">
+          <img src="assets/article-proof.webp" alt="Semiconductor magnetic abrasive machining article" />
+          <div class="caption">Semiconductor-facing technical material supports the expansion thesis, but the website should avoid claiming fab qualification until verified.</div>
+        </div>
+
+        <div class="visual-card">
+          <img src="assets/nuclear-rods-proof.webp" alt="Nuclear fuel cladding surface finishing proof" />
+          <div class="caption">The nuclear cladding application provides the clearest first industrial story: high-reliability tube surfaces with potential corrosion and wear benefits.</div>
+        </div>
+
+        <div class="visual-card">
+          <img src="assets/optical-glass-proof.webp" alt="Optical surface polishing proof" />
+          <div class="caption">Optics, laser crystals, photonics, and smooth surface applications create a natural bridge from industrial polishing into AI data-movement infrastructure.</div>
+        </div>
+
+        <div class="visual-card">
+          <img src="assets/industrial-examples-proof.webp" alt="Industrial magnetic abrasive polishing examples" />
+          <div class="caption">The technology base includes multiple equipment examples and industrial surfaces, supporting the platform thesis.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="markets">
+      <div class="site-shell">
+        <div class="section-header">
+          <p class="eyebrow">Market Expansion</p>
+          <h2>One platform. Multiple <span>defect-sensitive markets.</span></h2>
+          <p class="section-lede">The investor story should not depend on a single machine. T19 gives the platform a focused beachhead. The broader upside is application-specific MAP systems, process recipes, consumables, licensing, and service across high-value surfaces.</p>
+        </div>
+
+        <div class="visual-card">
+          <img src="assets/map-applications.webp" alt="MAP application markets" />
+          <div class="caption">MAP should be framed as a precision-surface platform that can be validated market by market.</div>
+        </div>
+
+        <article class="panel">
+          <p class="kicker">Target markets</p>
+          <div class="stat-card"><p class="big-number">01</p><h3>Nuclear fuel cladding</h3><p>High-reliability zirconium tube finishing, corrosion and wear resistance, cleaner process pathway, and T19 equipment commercialization.</p></div>
+          <div class="stat-card"><p class="big-number">02</p><h3>AI semiconductor manufacturing</h3><p>Post-CMP finishing, advanced packaging, hybrid bonding preparation, substrate conditioning, and application-specific validation.</p></div>
+          <div class="stat-card"><p class="big-number">03</p><h3>Optics and photonics</h3><p>Laser crystals, optical windows, low-scatter surfaces, and AI data-movement hardware that depends on high-quality surfaces.</p></div>
+          <div class="stat-card"><p class="big-number">04</p><h3>Energy and power infrastructure</h3><p>Pipes, valves, exchangers, turbines, power electronics, and components where wear, corrosion, flow, and thermal reliability matter.</p></div>
+          <div class="stat-card"><p class="big-number">05</p><h3>Aerospace, medical, and precision components</h3><p>High-reliability components where fatigue, cleanliness, surface flaws, and repeatable finish quality can affect performance.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="economics">
+      <div class="site-shell">
+        <div class="section-header">
+          <p class="eyebrow">Revenue Logic</p>
+          <h2>Hardware revenue today. <span>Platform expansion tomorrow.</span></h2>
+          <p class="section-lede">The first revenue path is equipment commercialization around high-value industrial applications such as T19 nuclear fuel cladding. The longer-term upside is a platform model.</p>
+        </div>
+
+        <article class="panel featured">
+          <p class="kicker">Commercial model</p>
+          <h3>Equipment, consumables, recipes, licensing, service, and customer validation programs.</h3>
+          <p>The supplied feasibility material references an approximate $800,000 T19 unit baseline and an approximate $1.6M two-unit package. Larger economic impact depends on customer validation, production scale, reliability improvement, and final commercial agreements.</p>
+        </article>
+
+        <article class="panel">
+          <p class="kicker">Revenue layers</p>
+          <div class="spec-row"><b>Application-specific machines</b><span>T19 and future MAP systems tailored to tubes, wafers, plates, optics, and precision components.</span></div>
+          <div class="spec-row"><b>Ferroabrasive powders</b><span>Consumable materials can support recurring revenue if customer processes validate the economics.</span></div>
+          <div class="spec-row"><b>Process recipes</b><span>Industry-specific surface-conditioning recipes can become part of the commercial moat.</span></div>
+          <div class="spec-row"><b>Commissioning and training</b><span>High-value industrial equipment requires installation, qualification support, operator training, and maintenance.</span></div>
+          <div class="spec-row"><b>Licensing and joint development</b><span>Semiconductor, optics, nuclear, and advanced-manufacturing partners may require tailored commercial structures.</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="roadmap">
+      <div class="site-shell">
+        <div class="section-header">
+          <p class="eyebrow">Roadmap</p>
+          <h2>A disciplined commercialization path, <span>not a science project.</span></h2>
+          <p class="section-lede">The roadmap should present two linked tracks: the T19 industrial beachhead and the AI hardware expansion pathway.</p>
+        </div>
+
+        <article class="panel featured">
+          <p class="kicker">T19 commercialization path</p>
+          <div class="step"><span class="step-number">Months 1–6</span><h3>Powder selection and optimization</h3><p>Define powder composition, fraction, process fluid, and surface targets for the selected tube material and production objective.</p></div>
+          <div class="step"><span class="step-number">Months 1–12</span><h3>Mechanical build of two T19 units</h3><p>Construct the primary mechanical systems and prepare the equipment base for process integration.</p></div>
+          <div class="step"><span class="step-number">Months 1–18</span><h3>Electro-pneumatic systems and preliminary tests</h3><p>Integrate control, motion, fluid, powder dosing, washing, separation, and drying subsystems.</p></div>
+          <div class="step"><span class="step-number">Months 13–24</span><h3>Technology experiments and customer sample trials</h3><p>Run tube samples, measure surface improvement, and refine operating recipes.</p></div>
+          <div class="step"><span class="step-number">Months 19–24</span><h3>Customer alloy and corrosion testing</h3><p>Evaluate customer-specific materials and durability outcomes using agreed test protocols.</p></div>
+          <div class="step"><span class="step-number">Months 19–30</span><h3>Transfer, delivery, and commissioning</h3><p>Move from development testing into customer-site delivery and start-up support.</p></div>
+          <div class="step"><span class="step-number">Months 27–36</span><h3>Customer-site acceptance and training</h3><p>Complete acceptance testing, operator training, documentation, and project closeout.</p></div>
+        </article>
+
+        <article class="panel">
+          <p class="kicker">AI hardware expansion path</p>
+          <div class="step"><span class="step-number">01</span><h3>Select the highest-value surface problem</h3><p>Choose a specific semiconductor, packaging, photonics, thermal, or power-electronics surface problem where MAP can be tested credibly.</p></div>
+          <div class="step"><span class="step-number">02</span><h3>Run customer sample programs</h3><p>Use wafer, substrate, package, optic, or component samples to compare MAP outcomes against existing finishing methods.</p></div>
+          <div class="step"><span class="step-number">03</span><h3>Measure roughness, defects, bonding, and reliability</h3><p>Use surface metrology, defect inspection, bonding tests, optical tests, and reliability testing to determine where MAP creates value.</p></div>
+          <div class="step"><span class="step-number">04</span><h3>Develop an application-specific module</h3><p>Package the process into equipment, consumables, recipes, and controls suitable for the selected market.</p></div>
+          <div class="step"><span class="step-number">05</span><h3>Pursue joint development or licensing</h3><p>Engage equipment makers, advanced packaging players, optics suppliers, nuclear manufacturers, or high-reliability component producers.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="ip">
+      <div class="site-shell">
+        <div class="section-header">
+          <p class="eyebrow">IP and Rights</p>
+          <h2>Technology rights must be presented <span>carefully and professionally.</span></h2>
+          <p class="section-lede">The archive includes technology-rights material, patent documentation, technical articles, and commercialization-related drafts. The site should not overclaim finalized ownership or exclusivity unless counsel confirms it.</p>
+        </div>
+
+        <article class="panel featured">
+          <p class="kicker">Correct investor language</p>
+          <h3>Rights pathway under review.</h3>
+          <p>Use disciplined wording: technology-rights package under review, commercialization structure to be finalized by counsel, licensing pathway, and customer validation subject to final agreements.</p>
+        </article>
+
+        <article class="panel">
+          <p class="kicker">Claims discipline</p>
+          <div class="spec-row"><b>Do not claim</b><span>Semiconductor fab qualification, nuclear qualification, signed customer contracts, final exclusive ownership, or completed commercialization unless verified.</span></div>
+          <div class="spec-row"><b>Do claim carefully</b><span>Supplied materials document a serious R&D heritage, T19 product concept, patent evidence, technical results, and multiple high-value validation pathways.</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="investor-access">
+      <div class="site-shell">
+        <div class="section-header">
+          <p class="eyebrow">Investor Access</p>
+          <h2>Back the surface-integrity platform for the <span>AI infrastructure era.</span></h2>
+          <p class="section-lede">EMYRGEN™ MAP gives investors exposure to a physical layer of the AI boom: precision surfaces, advanced manufacturing, energy reliability, semiconductor packaging, optics, and defect-sensitive industrial systems.</p>
+        </div>
+
+        <div class="form-panel">
+          <p class="kicker">Request investor brief</p>
+          <h3>Contact EMYRGEN GROUP INC</h3>
+          <p>Use this section as the investor conversion module. For the static version, the primary action opens an email to the investment contact.</p>
+
+          <form action="mailto:invest@emyrgengroup.com" method="post" enctype="text/plain">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" />
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" />
+
+            <label for="investor-type">Investor type</label>
+            <select id="investor-type" name="investor-type">
+              <option>Individual accredited investor</option>
+              <option>Family office</option>
+              <option>Strategic investor</option>
+              <option>Industrial partner</option>
+              <option>Other</option>
+            </select>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="I would like to request the EMYRGEN™ MAP investor brief."></textarea>
+
+            <button class="btn primary" type="submit">Email Investor Request</button>
+            <a class="btn" href="mailto:invest@emyrgengroup.com?subject=EMYRGEN%20MAP%20Investor%20Brief%20Request">Open Email Instead</a>
+          </form>
+          <p class="submit-note">For production use, connect this module to the company’s backend form handler or investor portal workflow.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="site-shell">
+      <div class="footer-lockup">
+        <img class="brand-icon" src="assets/emyrgen-map-icon.webp" alt="EMYRGEN MAP icon" />
+        <div>
+          <p><strong>EMYRGEN GROUP INC</strong></p>
+          <p>EMYRGEN™ MAP | Magnetic Abrasive Polishing</p>
+        </div>
+      </div>
+      <p class="small-note">Private investor materials. Technology claims are subject to validation, customer testing, legal review, final commercialization agreements, and applicable regulatory requirements. This website is a presentation source package and does not constitute an offer to sell securities.</p>
+    </div>
+  </footer>
+</body>
+</html>

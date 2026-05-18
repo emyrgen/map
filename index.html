@@ -23,6 +23,9 @@
       --muted: #bfd1df;
       --soft: #8eadbf;
       --cyan: #5fdcff;
+      --amber: #ffcf64;
+      --amber-2: #ffb547;
+      --gold-soft: #ffe6a8;
       --cyan-2: #a3f4ff;
       --blue: #2b86ff;
       --max: 1120px;
@@ -40,6 +43,7 @@
       background:
         radial-gradient(circle at 12% 0%, rgba(41, 124, 255, 0.22), transparent 30rem),
         radial-gradient(circle at 88% 10%, rgba(88, 223, 255, 0.16), transparent 28rem),
+        radial-gradient(circle at 84% 34%, rgba(255, 191, 77, 0.10), transparent 20rem),
         radial-gradient(circle at 70% 48%, rgba(57, 130, 255, 0.10), transparent 34rem),
         linear-gradient(180deg, #01040b 0%, #030814 26%, #02050d 100%);
       overflow-x: hidden;
@@ -122,7 +126,7 @@
 
     .brand-subtitle {
       margin: 7px 0 0;
-      color: var(--cyan-2);
+      color: var(--gold-soft);
       font-size: .82rem;
       letter-spacing: .11em;
       text-transform: uppercase;
@@ -278,7 +282,7 @@
       border: 1px solid rgba(95, 220, 255, 0.24);
       border-radius: 999px;
       color: var(--cyan-2);
-      background: rgba(39, 141, 255, 0.08);
+      background: linear-gradient(135deg, rgba(39, 141, 255, 0.08), rgba(255, 191, 77, 0.08));
       font-size: .76rem;
       font-weight: 640;
       letter-spacing: .16em;
@@ -291,6 +295,7 @@
       border-radius: 0;
       background: none;
       margin-bottom: 12px;
+      color: var(--amber);
     }
 
     h1, h2, h3, p { max-width: 100%; }
@@ -306,6 +311,7 @@
     }
 
     h1 span, h2 span, .accent { color: var(--cyan); }
+    .warm-accent { color: var(--amber); }
 
     .hero-lede {
       margin: 30px 0 0;
@@ -317,7 +323,7 @@
 
     .cta-stack { margin-top: 36px; }
 
-    .btn {
+     .btn {
       display: block;
       width: 100%;
       margin-top: 12px;
@@ -327,8 +333,8 @@
       text-align: center;
       font-weight: 550;
       letter-spacing: .01em;
-      background: rgba(255,255,255,0.04);
-      color: #f2fbff;
+      background: linear-gradient(135deg, rgba(255, 191, 77, 0.10), rgba(255,255,255,0.04));
+      color: #fff8ea;
       transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
     }
 
@@ -346,6 +352,17 @@
       box-shadow: 0 18px 42px rgba(61, 183, 255, 0.24);
     }
 
+    .btn:not(.primary) {
+      border-color: rgba(255, 191, 77, 0.28);
+      box-shadow: 0 14px 30px rgba(255, 166, 43, 0.08);
+    }
+
+    .btn:not(.primary):hover,
+    .btn:not(.primary):focus-visible {
+      background: linear-gradient(135deg, rgba(255, 191, 77, 0.16), rgba(255,255,255,0.06));
+      border-color: rgba(255, 191, 77, 0.42);
+    }
+
     .section {
       position: relative;
       padding: 98px 0;
@@ -353,6 +370,11 @@
     }
 
     .section:first-of-type { border-top: 0; }
+
+    .section:nth-of-type(even) .panel,
+    .section:nth-of-type(even) .visual-card {
+      box-shadow: 0 26px 80px rgba(0,0,0,.32);
+    }
 
     .section::before {
       content: "";
@@ -390,13 +412,14 @@
     }
 
     .visual-card {
-      margin-top: 28px;
+      margin-top: 34px;
       overflow: hidden;
       border-radius: var(--radius);
-      border: 1px solid rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.12);
       background:
-        radial-gradient(circle at top right, rgba(75, 201, 255, 0.10), transparent 24rem),
-        rgba(255,255,255,0.035);
+        radial-gradient(circle at top right, rgba(75, 201, 255, 0.12), transparent 24rem),
+        radial-gradient(circle at bottom left, rgba(255, 191, 77, 0.09), transparent 22rem),
+        rgba(255,255,255,0.04);
       box-shadow: 0 24px 70px rgba(0,0,0,.28);
     }
 
@@ -418,21 +441,23 @@
     .visual-card + .panel { margin-top: 24px; }
 
     .panel {
-      margin-top: 28px;
+      margin-top: 30px;
       padding: clamp(26px, 4vw, 48px);
       border-radius: var(--radius);
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.10);
       background:
-        radial-gradient(circle at top right, rgba(66, 191, 255, 0.08), transparent 24rem),
-        linear-gradient(180deg, rgba(10, 27, 52, 0.88), rgba(5, 15, 31, 0.90));
+        radial-gradient(circle at top right, rgba(66, 191, 255, 0.10), transparent 24rem),
+        radial-gradient(circle at bottom left, rgba(255, 191, 77, 0.08), transparent 22rem),
+        linear-gradient(180deg, rgba(11, 28, 54, 0.90), rgba(5, 15, 31, 0.94));
       box-shadow: 0 24px 80px rgba(0,0,0,.28);
     }
 
     .panel.featured {
-      border-color: rgba(87, 216, 255, 0.24);
+      border-color: rgba(255, 191, 77, 0.24);
       background:
         radial-gradient(circle at top right, rgba(79, 201, 255, 0.14), transparent 24rem),
-        linear-gradient(180deg, rgba(12, 34, 66, 0.92), rgba(5, 14, 29, 0.95));
+        radial-gradient(circle at bottom left, rgba(255, 191, 77, 0.12), transparent 22rem),
+        linear-gradient(180deg, rgba(14, 35, 66, 0.94), rgba(7, 15, 30, 0.97));
     }
 
     .panel h3, .stat-card h3, .step h3 {
@@ -462,7 +487,7 @@
 
     .big-number {
       margin: 0 0 10px;
-      color: var(--cyan);
+      color: var(--amber);
       font-size: clamp(2.15rem, 6.5vw, 4.5rem);
       line-height: 1.04;
       letter-spacing: -0.040em;
@@ -500,7 +525,7 @@
     .machine-spec b,
     .step-number {
       display: inline-block;
-      color: var(--cyan-2);
+      color: var(--gold-soft);
       font-size: .76rem;
       font-weight: 640;
       letter-spacing: .14em;
@@ -511,7 +536,7 @@
     .spec-row b {
       display: block;
       margin-bottom: 8px;
-      color: #f5fcff;
+      color: #fff2cf;
       font-size: 1.03rem;
       font-weight: 560;
     }
@@ -524,12 +549,12 @@
       line-height: 1.76;
     }
 
-    .decision-strip {
+     .decision-strip {
       margin-top: 18px;
       padding: 18px 20px;
       border-radius: 24px;
-      border: 1px solid rgba(85, 216, 255, 0.18);
-      background: rgba(85, 216, 255, 0.06);
+      border: 1px solid rgba(255, 191, 77, 0.22);
+      background: linear-gradient(135deg, rgba(255, 191, 77, 0.10), rgba(85, 216, 255, 0.06));
       color: #ebfbff;
       line-height: 1.74;
     }
@@ -599,6 +624,74 @@
     }
 
     .footer p { margin: 9px 0 0; }
+
+    
+    .story-ribbon {
+      margin-top: 28px;
+      padding: 24px 26px;
+      border-radius: 28px;
+      border: 1px solid rgba(255, 191, 77, 0.18);
+      background:
+        radial-gradient(circle at top right, rgba(255, 191, 77, 0.14), transparent 20rem),
+        linear-gradient(180deg, rgba(14, 28, 50, 0.92), rgba(6, 15, 29, 0.94));
+      box-shadow: 0 22px 60px rgba(0,0,0,.28);
+      color: #f6fbff;
+      font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+      line-height: 1.55;
+      font-weight: 470;
+    }
+
+    .story-ribbon strong { color: var(--amber); font-weight: 560; }
+
+    .machine-story-card {
+      margin-top: 20px;
+      padding: 24px 24px 26px;
+      border-radius: 26px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background:
+        radial-gradient(circle at top right, rgba(95,220,255,0.08), transparent 18rem),
+        radial-gradient(circle at bottom left, rgba(255,191,77,0.10), transparent 16rem),
+        rgba(255,255,255,0.045);
+    }
+
+    .machine-story-card h3 { margin: 0; }
+    .machine-story-card p { margin: 14px 0 0; color: var(--muted); line-height: 1.8; }
+
+    .bullet-stack {
+      margin-top: 18px;
+      display: block;
+    }
+
+    .bullet-item {
+      margin-top: 12px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(2, 9, 20, 0.38);
+      color: var(--muted);
+      line-height: 1.72;
+    }
+
+    .bullet-item b {
+      display: block;
+      margin-bottom: 7px;
+      color: #fff0d0;
+      font-size: .97rem;
+      font-weight: 560;
+      letter-spacing: .02em;
+    }
+
+    .story-divider {
+      margin-top: 30px;
+      padding: 22px 24px;
+      border-radius: 24px;
+      border: 1px dashed rgba(255, 191, 77, 0.26);
+      background: linear-gradient(135deg, rgba(255, 191, 77, 0.06), rgba(95, 220, 255, 0.05));
+      color: #ecf7ff;
+      line-height: 1.82;
+    }
+
+    .story-divider strong { color: var(--amber); }
 
     @media (max-width: 980px) {
       .brand-card { flex-wrap: wrap; }
@@ -778,7 +871,7 @@
 
         <div class="visual-card">
           <img src="assets/si-wafer-proof.webp" alt="Silicon wafer polishing result visual" />
-          <div class="caption">The AI-chip investor story depends on wafer, optics, and defect-control credibility backed by measurable surface results.</div>
+          <div class="caption"><strong>Results context.</strong> The AI-chip investor story depends on wafer, optics, and defect-control credibility backed by measurable surface results. This image is placed here to reinforce that the proof narrative is about surface quality, reliability, and manufacturability.</div>
         </div>
 
         <article class="panel featured">
@@ -801,19 +894,53 @@
       <div class="site-shell">
         <div class="section-header">
           <p class="eyebrow">Pilot Evaluation Platform</p>
-          <h2>A20-300 proves MAP is <span>machine-based, testable, and partner-ready.</span></h2>
-          <p class="section-lede">The A20-300 installation provides a concrete machine proof point: a magnetic-abrasive polishing platform with two replaceable inductors and compact pilot-scale dimensions suitable for sample evaluation and partner testing.</p>
+          <h2>The A20-300 section now tells a <span>real hardware story</span>, not just a technical note.</h2>
+          <p class="section-lede">Investors need to understand that EMYRGEN MAP™ is not only a nanoscale-surface thesis. It also has a visible pilot-machine architecture that can support evaluation, testing, and partner conversations. This section uses the two A20-300 configurations as a guided narrative.</p>
         </div>
+
+        <div class="story-ribbon"><strong>Investor takeaway:</strong> the A20-300 makes the MAP story tangible. Instead of abstract claims alone, the website now shows two machine configurations, explains what each one represents, and connects the equipment directly to pilot validation, sample testing, and commercial readiness.</div>
 
         <div class="visual-card">
-          <img src="assets/a20-300-installation.webp" alt="A20-300 installation for magnetic-abrasive polishing" />
-          <div class="caption">A20-300 installation for magnetic-abrasive polishing. The supplied PDF shows horizontal and vertical inductor-tool configurations for workpieces up to 300 × 300 × 80 mm.</div>
+          <img src="assets/a20-300-horizontal.webp" alt="A20-300 horizontal-axis inductor tool configuration" />
+          <div class="caption"><strong>Horizontal-axis configuration.</strong> This first A20-300 view introduces the pilot platform as real hardware for precision-surface evaluation. It is shown as a dedicated product-style machine visual rather than a pasted bilingual PDF page.</div>
         </div>
 
+        <article class="machine-story-card">
+          <p class="kicker">Configuration 01</p>
+          <h3>Why the horizontal-axis view matters</h3>
+          <p>This configuration helps explain the A20-300 as a controlled, testable polishing platform. In the website narrative, it represents the first part of the pilot story: establishing a hardware system that can process advanced samples under a defined inductor-tool arrangement.</p>
+          <div class="bullet-stack">
+            <div class="bullet-item"><b>What the image is doing</b>It gives the website a premium hardware moment — something investors can immediately read as a machine platform, not just a process concept.</div>
+            <div class="bullet-item"><b>What the business story is</b>This is where partner evaluation begins: a practical configuration for working through sample programs, process development, and side-by-side validation against incumbent finishing methods.</div>
+            <div class="bullet-item"><b>What the investor should understand</b>MAP has a bridge from laboratory-scale claims to partner-facing equipment. That bridge is what makes licensing, integration, and paid validation more believable.</div>
+          </div>
+        </article>
+
+        <div class="story-divider"><strong>How the section reads:</strong> first, show a clean product-grade view of the machine. Then explain why the pilot system matters commercially. Then show the second configuration so the reader understands the platform is flexible, configurable, and designed for real evaluation workflow — not just one frozen render.</div>
+
         <article class="panel featured">
-          <p class="kicker">Why this matters</p>
-          <h3>MAP is not only a reported materials result. It also has a visible pilot-platform architecture.</h3>
-          <p>The A20-300 section positions the platform as a practical pilot evaluation system for semiconductors, optics, and precision-surface samples, bridging nanoscale result claims with near-term partner testing.</p>
+          <p class="kicker">How to read this pilot system</p>
+          <h3>Two replaceable inductor-tool configurations make the A20-300 much easier to understand.</h3>
+          <p>The A20-300 is best framed as a pilot and sample-testing platform. One machine view highlights the horizontal-axis configuration. The next view highlights the vertical-axis configuration. Between them, the website explains the validation path: configure the tool, process the sample, measure the result, and convert the outcome into partner traction.</p>
+          <div class="spec-row"><b>Pilot role</b><span>Support sample evaluation for semiconductors, optics, and other precision surfaces where MAP can be compared with incumbent polishing approaches.</span></div>
+          <div class="spec-row"><b>Commercial role</b><span>Provide a credible equipment story for investor conversations, strategic outreach, licensing, integration, and co-development programs.</span></div>
+          <div class="spec-row"><b>Claim discipline</b><span>Show real hardware credibility while keeping the language careful: pilot-ready, partner-ready, and to be validated — not overclaimed as full production deployment.</span></div>
+        </article>
+
+        <div class="visual-card">
+          <img src="assets/a20-300-vertical.webp" alt="A20-300 vertical-axis inductor tool configuration" />
+          <div class="caption"><strong>Vertical-axis configuration.</strong> The second full-width machine visual completes the A20-300 story by showing another inductor-tool orientation in a more premium, investor-readable format.</div>
+        </div>
+
+        <article class="machine-story-card">
+          <p class="kicker">Configuration 02</p>
+          <h3>Why the vertical-axis view matters</h3>
+          <p>This second machine view shows that the A20-300 is more than one static configuration. It helps the page communicate flexibility, practical engineering, and a more complete product narrative.</p>
+          <div class="bullet-stack">
+            <div class="bullet-item"><b>What the image is doing</b>It visually separates the second configuration so the visitor can absorb it as its own system state, instead of trying to decode both views inside one crowded graphic.</div>
+            <div class="bullet-item"><b>What the technical story is</b>Different inductor-tool orientations help explain how the machine can be adapted for different sample geometries, evaluation setups, or polishing strategies.</div>
+            <div class="bullet-item"><b>What the website story is</b>By turning one combined technical image into two premium machine cards, the page feels more like a 2026 investor website and less like a technical appendix pasted onto the screen.</div>
+          </div>
         </article>
 
         <article class="panel">
@@ -822,7 +949,7 @@
           <div class="machine-spec"><b>Maximum workpiece</b><span>300 × 300 × 80 mm.</span></div>
           <div class="machine-spec"><b>Installation size</b><span>720 × 700 × 430 mm.</span></div>
           <div class="machine-spec"><b>Installation weight</b><span>45 kg.</span></div>
-          <div class="decision-strip">A20-300 is presented as a practical pilot/sample-testing platform, not as a mass-production semiconductor tool unless later validated.</div>
+          <div class="decision-strip">In the website narrative, A20-300 is presented as the practical pilot platform that links MAP’s reported nanoscale results to real partner evaluation. That makes the story more credible, more premium, and easier for investors to follow.</div>
         </article>
       </div>
     </section>
@@ -862,12 +989,12 @@
         <div class="section-header">
           <p class="eyebrow">Commercial Path</p>
           <h2>Move from reported results to <span>partner validation.</span></h2>
-          <p class="section-lede">The call to action is practical: pilot evaluation, sample testing, licensing, integration, and co-development.</p>
+          <p class="section-lede">The commercialization path is presented as a practical narrative: show the process, show the machine, validate samples, then convert that proof into pilot programs, strategic partners, and licensing opportunities.</p>
         </div>
 
         <div class="visual-card">
           <img src="assets/si-wafer-proof.webp" alt="Conceptual visualization of EMYRGEN MAP pilot validation and wafer-level sample testing" />
-          <div class="caption"><strong>Validation pathway.</strong> This image is placed beside the commercialization story to show what pilot testing is about: real sample evaluation on advanced surfaces, then conversion into partner programs, equipment opportunities, and licensing discussions.</div>
+          <div class="caption"><strong>Validation pathway.</strong> This section image is used as a visual bridge between technical proof and commercialization: advanced-surface sample testing first, then partner evaluation, equipment opportunities, licensing discussions, and co-development pathways.</div>
         </div>
 
         <article class="panel featured">

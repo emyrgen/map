@@ -1,4 +1,4 @@
-# EMYRGEN MAP Investor Website v1.7
+# EMYRGEN MAP Investor Website v1.9
 
 Source-only static website package for EMYRGEN™ MAP.
 
@@ -27,7 +27,7 @@ Upload the full source folder to a GitHub repository and enable GitHub Pages thr
 No `node_modules`, no `dist`, no build artifacts.
 
 
-## v1.7 revision
+## v1.9 revision
 - Added sticky mobile header with hamburger menu and tap-to-close navigation.
 - Rebranded website-facing legacy slide visuals to EMYRGEN MAP™.
 - Rebuilt the A20-300 PDF-derived website image as English-only, removing Russian text from the public visual.
@@ -39,3 +39,9 @@ V1.6 adds a premium visual rebuild with a new photorealistic hero, upgraded proc
 
 
 V1.7 refreshes all key conceptual visuals, keeps a single hero image, removes any gallery approach, and integrates separate section images directly into the page narrative.
+
+
+V1.8 adds stronger warm accent contrast, richer card styling, and a rebuilt A20-300 section with two separate full-width machine visuals.
+
+
+V1.9 strengthens the narrative integration of the A20-300 machine visuals, turning them into a guided investor-facing hardware story with explanatory copy placed around each image.

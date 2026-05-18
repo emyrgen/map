@@ -52,18 +52,28 @@
     }
 
     .topbar {
-      padding: 22px 0 18px;
-      position: relative;
-      z-index: 10;
+      padding: 14px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: linear-gradient(180deg, rgba(2, 7, 16, .92), rgba(2, 7, 16, .70));
+      border-bottom: 1px solid rgba(112, 213, 255, .10);
+      backdrop-filter: blur(18px);
     }
 
+    [id] { scroll-margin-top: 112px; }
+
     .brand-card {
-      padding: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 14px 16px;
       border: 1px solid var(--line2);
       border-radius: 24px;
       background:
         radial-gradient(circle at 0% 0%, rgba(85, 216, 255, .10), transparent 18rem),
-        rgba(4, 13, 27, 0.72);
+        rgba(4, 13, 27, 0.78);
       box-shadow: 0 18px 50px rgba(0,0,0,.32);
       backdrop-filter: blur(16px);
     }
@@ -71,7 +81,9 @@
     .brand-lockup {
       display: flex;
       align-items: center;
-      gap: 18px;
+      gap: 16px;
+      min-width: 0;
+      flex: 0 0 auto;
     }
 
     .brand-icon {
@@ -106,20 +118,72 @@
       text-transform: uppercase;
     }
 
+    .menu-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border: 1px solid rgba(126, 217, 255, .26);
+      border-radius: 16px;
+      background: rgba(255,255,255,.045);
+      color: #e9fbff;
+      cursor: pointer;
+    }
+
+    .menu-toggle span,
+    .menu-toggle span::before,
+    .menu-toggle span::after {
+      display: block;
+      width: 21px;
+      height: 2px;
+      border-radius: 99px;
+      background: currentColor;
+      position: relative;
+      transition: transform .18s ease, opacity .18s ease;
+    }
+
+    .menu-toggle span::before,
+    .menu-toggle span::after {
+      content: "";
+      position: absolute;
+      left: 0;
+    }
+
+    .menu-toggle span::before { top: -7px; }
+    .menu-toggle span::after { top: 7px; }
+    .menu-toggle[aria-expanded="true"] span { transform: rotate(45deg); }
+    .menu-toggle[aria-expanded="true"] span::before { transform: rotate(90deg); top: 0; }
+    .menu-toggle[aria-expanded="true"] span::after { opacity: 0; }
+
     .nav-stack {
-      margin-top: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      margin-top: 0;
+      flex-wrap: wrap;
     }
 
     .nav-stack a {
-      display: block;
-      margin-top: 8px;
-      padding: 13px 15px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 13px;
       border: 1px solid rgba(126, 217, 255, .18);
       border-radius: 999px;
       color: #d9f4ff;
       background: rgba(255,255,255,.035);
-      font-size: .92rem;
+      font-size: .84rem;
       letter-spacing: .02em;
+      min-height: 42px;
+    }
+
+    .nav-stack a:hover,
+    .nav-stack a:focus-visible {
+      border-color: rgba(126, 217, 255, .42);
+      background: rgba(85,216,255,.09);
+      outline: none;
     }
 
     .hero {
@@ -481,8 +545,37 @@
       line-height: 1.62;
     }
 
+    @media (max-width: 980px) {
+      .brand-card { flex-wrap: wrap; }
+      .menu-toggle { display: inline-flex; margin-left: auto; }
+      .nav-stack {
+        display: none;
+        flex: 1 0 100%;
+        width: 100%;
+        margin-top: 12px;
+        padding: 10px;
+        border-radius: 20px;
+        border: 1px solid rgba(126, 217, 255, .15);
+        background: rgba(2, 9, 20, .92);
+        box-shadow: 0 20px 55px rgba(0,0,0,.38);
+      }
+      .nav-stack.is-open { display: block; }
+      .nav-stack a {
+        display: flex;
+        width: 100%;
+        margin: 6px 0;
+        justify-content: flex-start;
+        padding: 14px 15px;
+        border-radius: 16px;
+        font-size: .96rem;
+      }
+    }
+
     @media (max-width: 760px) {
       .site-shell { width: min(100% - 22px, var(--max)); }
+      .topbar { padding: 8px 0; }
+      [id] { scroll-margin-top: 94px; }
+      .brand-card { padding: 10px 12px; border-radius: 20px; }
       .hero { padding-top: 8px; padding-bottom: 48px; }
       .hero-panel { border-radius: 28px; }
       .hero-image-wrap, .hero-image-wrap img { min-height: 315px; }
@@ -490,18 +583,17 @@
       .section { padding: 52px 0; }
       .panel, .form-panel { border-radius: 24px; }
       .visual-card { border-radius: 24px; }
-      .brand-lockup { gap: 13px; }
-      .brand-icon { width: 70px; height: 70px; border-radius: 20px; }
-      .brand-title { letter-spacing: .13em; }
-      .brand-subtitle { font-size: .74rem; letter-spacing: .08em; }
+      .brand-lockup { gap: 11px; max-width: calc(100% - 58px); }
+      .brand-icon { width: 50px; height: 50px; border-radius: 15px; }
+      .brand-title { font-size: clamp(.86rem, 4vw, 1.15rem); letter-spacing: .11em; }
+      .brand-subtitle { font-size: .62rem; letter-spacing: .055em; margin-top: 5px; }
       .hero-mark { width: 82px; height: 82px; border-radius: 24px; }
-      .nav-stack a { border-radius: 20px; }
-      h1 { font-size: clamp(2.7rem, 15vw, 4.5rem); }
-      h2 { font-size: clamp(2.15rem, 12vw, 3.9rem); }
+      h1 { font-size: clamp(2.55rem, 14vw, 4.5rem); }
+      h2 { font-size: clamp(2.08rem, 11.5vw, 3.9rem); }
     }
   
 
-    /* v1.4: semiconductor / optics / CMP pilot emphasis */
+    /* v1.5: semiconductor / optics / CMP pilot emphasis with mobile menu */
     .result-note {
       margin-top: 14px;
       color: var(--soft);
@@ -553,7 +645,8 @@
             <p class="brand-subtitle">Magnetic Abrasive Polishing</p>
           </div>
         </a>
-        <nav class="nav-stack" aria-label="Primary navigation">
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false"><span></span></button>
+        <nav class="nav-stack" id="primary-nav" aria-label="Primary navigation">
           <a href="#ai-thesis">AI Thesis</a>
           <a href="#cmp">CMP Alternative</a>
           <a href="#results">Key Results</a>
@@ -598,7 +691,7 @@
 
         <div class="visual-card">
           <img src="assets/ai-hardware-stack.webp" alt="AI hardware infrastructure stack" />
-          <div class="caption">V1.4 moves the semiconductor and optics story to the front: MAP should be framed as a surface-integrity platform for the physical AI supply chain, not just as an industrial polishing method.</div>
+          <div class="caption">EMYRGEN™ MAP leads with the semiconductor and optics opportunity: a surface-integrity platform for the physical AI supply chain, not a generic industrial polishing method.</div>
         </div>
 
         <div class="quote-band">More AI compute means more wafers, more advanced packaging, more optics, more heat, and more reliability stress. Surface integrity becomes a hidden bottleneck.</div>
@@ -606,11 +699,11 @@
         <article class="panel featured">
           <p class="kicker">Investor logic</p>
           <h3>MAP belongs in the “picks-and-shovels” layer of AI hardware.</h3>
-          <p>The site should target investors who understand that the AI boom depends on physical manufacturing capacity. MAP is not presented as an AI software company. It is presented as a candidate enabling technology for cleaner wafer finishing, lower defect levels, higher component reliability, and greener manufacturing processes.</p>
+          <p>EMYRGEN™ MAP is built for investors who understand that the AI boom depends on physical manufacturing capacity. It is not an AI software company; it is a candidate enabling technology for cleaner wafer finishing, lower defect levels, higher component reliability, and greener manufacturing processes.</p>
         </article>
 
         <article class="panel">
-          <p class="kicker">What V1.4 should emphasize</p>
+          <p class="kicker">Commercial emphasis</p>
           <div class="logic-item"><span class="logic-label">01 / Semiconductor surfaces</span>Ultra-smooth wafer, substrate, and post-CMP surfaces for advanced-node and AI-chip manufacturing pathways.</div>
           <div class="logic-item"><span class="logic-label">02 / Optics and photonics</span>Low-roughness optical glass and precision surfaces relevant to lasers, sensors, and optical data movement.</div>
           <div class="logic-item"><span class="logic-label">03 / Chemical-free process thesis</span>Lower reliance on chemical-intensive CMP and rare-earth slurries, subject to pilot validation and customer process integration.</div>
@@ -624,7 +717,7 @@
         <div class="section-header">
           <p class="eyebrow">CMP Alternative Thesis</p>
           <h2>Replace harsh slurry chemistry with <span>controlled magnetic finishing.</span></h2>
-          <p class="section-lede">The V1.4 website should describe EMYRGEN™ MAP as a chemical-free, ultra-precision finishing pathway designed to reduce or replace selected CMP-style polishing steps where customer testing confirms performance, yield, and integration value.</p>
+          <p class="section-lede">EMYRGEN™ MAP is presented as a chemical-free, ultra-precision finishing pathway designed to reduce or replace selected CMP-style polishing steps where customer testing confirms performance, yield, and integration value.</p>
         </div>
 
         <div class="visual-card">
@@ -635,7 +728,7 @@
         <article class="panel featured">
           <p class="kicker">Core technology message</p>
           <h3>Magnetic field + nanoscale abrasive media + automatic surface scanning.</h3>
-          <p>V1.4 should make the mechanism clear in one sentence: EMYRGEN™ MAP uses nanoscale magnetic iron-diamond abrasives guided by a magnetic inductor and automatic surface scanning to deliver ultra-precision finishing for semiconductors, optical glass, and other defect-sensitive surfaces.</p>
+          <p>EMYRGEN™ MAP uses nanoscale magnetic iron-diamond abrasives guided by a magnetic inductor and automatic surface scanning to deliver ultra-precision finishing for semiconductors, optical glass, and other defect-sensitive surfaces.</p>
         </article>
 
         <article class="panel">
@@ -653,12 +746,12 @@
         <div class="section-header">
           <p class="eyebrow">Reported Technical Results</p>
           <h2>The strongest proof story is <span>semiconductor and optical surface performance.</span></h2>
-          <p class="section-lede">V1.4 should promote the specific results supplied in the project context, while labeling them as reported technical results pending independent pilot validation with commercial partners.</p>
+          <p class="section-lede">The strongest proof points are reported technical results in semiconductors and optical glass, presented with clear validation discipline for commercial partner evaluation.</p>
         </div>
 
         <div class="visual-card">
           <img src="assets/si-wafer-proof.webp" alt="Silicon wafer polishing result visual" />
-          <div class="caption">The semiconductor proof section should sit higher than the older broad market content. The AI-chip investor story depends on wafer and defect-control credibility.</div>
+          <div class="caption">The AI-chip investor story depends on wafer, optics, and defect-control credibility backed by measurable surface results.</div>
         </div>
 
         <article class="panel featured">
@@ -672,7 +765,7 @@
           <div class="spec-row"><b>Carbon reduction</b><span>Reported reduction from 19.75% to 5.05 atomic % on Si wafers, supporting the defect and residue reduction story.</span></div>
           <div class="spec-row"><b>Oxygen reduction</b><span>Reported reduction from 7.32% to 0.45 atomic % on Si wafers, supporting the cleaner wafer surface thesis.</span></div>
           <div class="spec-row"><b>Silicon lattice constant</b><span>Reference the silicon lattice constant of 0.543 nm to show that MAP results are physically meaningful and measured in a nanoscale context.</span></div>
-          <p class="result-note">Website language should avoid claiming production fab qualification. Use “reported,” “candidate,” “pilot-ready,” and “to be validated with partner samples.”</p>
+          <p class="result-note">Production fab qualification is not claimed. The correct positioning is reported, candidate, pilot-ready, and to be validated with partner samples.</p>
         </article>
       </div>
     </section>
@@ -682,7 +775,7 @@
         <div class="section-header">
           <p class="eyebrow">Pilot Evaluation Platform</p>
           <h2>A20-300 makes the website feel <span>real, testable, and partner-ready.</span></h2>
-          <p class="section-lede">The uploaded A20-300 PDF should be added as a concrete machine proof point. It shows an installation for magnetic-abrasive polishing with two replaceable inductors and compact pilot-scale dimensions.</p>
+          <p class="section-lede">The A20-300 installation provides a concrete machine proof point: a magnetic-abrasive polishing platform with two replaceable inductors and compact pilot-scale dimensions.</p>
         </div>
 
         <div class="visual-card">
@@ -691,9 +784,9 @@
         </div>
 
         <article class="panel featured">
-          <p class="kicker">Why include this in V1.4</p>
+          <p class="kicker">Why this matters</p>
           <h3>Investors need to see that MAP is not only a science claim. It has machine architecture.</h3>
-          <p>The A20-300 section should be positioned as the pilot evaluation system for semiconductors, optics, and precision-surface samples. It gives the website a practical bridge between nanoscale result claims and near-term partner testing.</p>
+          <p>The A20-300 section positions the platform as a practical pilot evaluation system for semiconductors, optics, and precision-surface samples, bridging nanoscale result claims with near-term partner testing.</p>
         </article>
 
         <article class="panel">
@@ -702,7 +795,7 @@
           <div class="machine-spec"><b>Maximum workpiece</b><span>300 × 300 × 80 mm.</span></div>
           <div class="machine-spec"><b>Installation size</b><span>720 × 700 × 430 mm.</span></div>
           <div class="machine-spec"><b>Installation weight</b><span>45 kg.</span></div>
-          <div class="decision-strip">Decision for V1.4: present A20-300 as the practical pilot/sample-testing platform, not as a mass-production semiconductor tool unless later validated.</div>
+          <div class="decision-strip">A20-300 is presented as a practical pilot/sample-testing platform, not as a mass-production semiconductor tool unless later validated.</div>
         </article>
       </div>
     </section>
@@ -712,7 +805,7 @@
         <div class="section-header">
           <p class="eyebrow">Priority Markets</p>
           <h2>Lead with semiconductors and optics. <span>Keep nuclear and industrial as expansion proof.</span></h2>
-          <p class="section-lede">V1.4 should be reorganized around the AI-chip and optics story, with T19/nuclear and industrial applications supporting the broader platform narrative.</p>
+          <p class="section-lede">The market story leads with AI chips and optics, with T19/nuclear and industrial applications supporting the broader platform narrative.</p>
         </div>
 
         <article class="panel featured">
@@ -720,7 +813,7 @@
           <div class="stat-card"><p class="big-number">01</p><h3>AI chips and custom silicon</h3><p>Advanced semiconductors, accelerators, wafers, substrates, and packaging surfaces where roughness, residues, scratches, and defect tails can harm yield and long-term reliability.</p></div>
           <div class="stat-card"><p class="big-number">02</p><h3>Optics and photonics</h3><p>Optical glass, laser crystals, low-scatter surfaces, photonics, sensing, and AI data-movement hardware.</p></div>
           <div class="stat-card"><p class="big-number">03</p><h3>Semiconductor equipment and materials partners</h3><p>Potential licensing, integration, or co-development with companies that already serve fabs, packaging houses, optics labs, and precision-surface applications.</p></div>
-          <div class="stat-card"><p class="big-number">04</p><h3>Nuclear fuel cladding and energy infrastructure</h3><p>T19 remains valuable as a high-reliability energy and industrial beachhead, but V1.4 should not make it the only lead story.</p></div>
+          <div class="stat-card"><p class="big-number">04</p><h3>Nuclear fuel cladding and energy infrastructure</h3><p>T19 remains valuable as a high-reliability energy and industrial beachhead, supporting the broader surface-integrity platform story.</p></div>
           <div class="stat-card"><p class="big-number">05</p><h3>Aerospace, medical, oil & gas, and precision industry</h3><p>Additional markets where corrosion, wear, flow, fatigue, thermal reliability, and surface cleanliness affect component performance.</p></div>
         </article>
 
@@ -737,7 +830,7 @@
         <div class="section-header">
           <p class="eyebrow">Commercial Path</p>
           <h2>Move from reported results to <span>partner validation.</span></h2>
-          <p class="section-lede">V1.4 should make the call to action more practical: pilot evaluation, sample testing, licensing, integration, and co-development.</p>
+          <p class="section-lede">The call to action is practical: pilot evaluation, sample testing, licensing, integration, and co-development.</p>
         </div>
 
         <article class="panel featured">
@@ -762,7 +855,7 @@
         <div class="section-header">
           <p class="eyebrow">IP and Claim Discipline</p>
           <h2>Patent-backed, chemical-free, and pilot-ready — <span>without overclaiming.</span></h2>
-          <p class="section-lede">The website should use strong investor language but keep claims safe. It can say patent-backed and chemical-free based on supplied context, while noting customer qualification and commercial integration still require partner validation.</p>
+          <p class="section-lede">The project uses strong investor language with claim discipline: patent-backed, chemical-free, pilot-ready, and subject to customer qualification and commercial integration validation.</p>
         </div>
 
         <article class="panel featured">
@@ -786,7 +879,7 @@
         <div class="section-header">
           <p class="eyebrow">Investor and Partner Access</p>
           <h2>Back the surface-control platform for the <span>AI manufacturing era.</span></h2>
-          <p class="section-lede">The V1.4 conversion section should speak to both investors and strategic partners: pilot evaluation, sample testing, licensing, integration, and co-development.</p>
+          <p class="section-lede">The conversion section speaks to both investors and strategic partners: pilot evaluation, sample testing, licensing, integration, and co-development.</p>
         </div>
 
         <div class="form-panel">
@@ -835,5 +928,27 @@
       <p class="small-note">Private investor and partner materials. Technology claims are subject to validation, customer testing, legal review, final commercialization agreements, and applicable regulatory requirements. This website is a presentation source package and does not constitute an offer to sell securities.</p>
     </div>
   </footer>
+
+  <script>
+    const menuButton = document.querySelector('.menu-toggle');
+    const primaryNav = document.querySelector('#primary-nav');
+
+    if (menuButton && primaryNav) {
+      menuButton.addEventListener('click', () => {
+        const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+        menuButton.setAttribute('aria-expanded', String(!isOpen));
+        menuButton.setAttribute('aria-label', isOpen ? 'Open menu' : 'Close menu');
+        primaryNav.classList.toggle('is-open', !isOpen);
+      });
+
+      primaryNav.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          menuButton.setAttribute('aria-expanded', 'false');
+          menuButton.setAttribute('aria-label', 'Open menu');
+          primaryNav.classList.remove('is-open');
+        });
+      });
+    }
+  </script>
 </body>
 </html>

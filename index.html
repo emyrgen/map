@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EMYRGEN™ MAP | Surface-Integrity Platform for the AI Infrastructure Era</title>
-  <meta name="description" content="EMYRGEN™ MAP investor website: magnetic abrasive polishing for AI hardware, nuclear energy, semiconductors, optics, and high-reliability manufacturing." />
+  <title>EMYRGEN™ MAP | Chemical-Free Ultra-Precision Polishing for AI Hardware</title>
+  <meta name="description" content="EMYRGEN™ MAP investor website: patent-backed magnetic abrasive polishing for semiconductor wafers, optics, AI hardware, and high-reliability industrial surfaces." />
   <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
   <link rel="manifest" href="assets/site.webmanifest" />
@@ -499,14 +499,55 @@
       h1 { font-size: clamp(2.7rem, 15vw, 4.5rem); }
       h2 { font-size: clamp(2.15rem, 12vw, 3.9rem); }
     }
-  </style>
+  
+
+    /* v1.4: semiconductor / optics / CMP pilot emphasis */
+    .result-note {
+      margin-top: 14px;
+      color: var(--soft);
+      font-size: .94rem;
+      line-height: 1.58;
+    }
+
+    .decision-strip {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-radius: 22px;
+      border: 1px solid rgba(85, 216, 255, .18);
+      background: rgba(85, 216, 255, .065);
+      color: #e9fbff;
+    }
+
+    .machine-spec {
+      margin-top: 12px;
+      padding: 16px 18px;
+      border-radius: 20px;
+      background: rgba(255,255,255,.045);
+      border: 1px solid rgba(255,255,255,.10);
+    }
+
+    .machine-spec b {
+      display: block;
+      color: var(--cyan2);
+      font-size: .82rem;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      font-weight: 560;
+      margin-bottom: 6px;
+    }
+
+    .machine-spec span {
+      color: #eefaff;
+      font-size: 1.08rem;
+    }
+</style>
 </head>
 <body>
   <header class="topbar">
     <div class="site-shell">
       <div class="brand-card">
         <a href="#top" class="brand-lockup" aria-label="EMYRGEN MAP home">
-          <img class="brand-icon" src="assets/emyrgen-map-icon.webp" alt="EMYRGEN MAP magnetic field and polished surface icon" />
+          <img class="brand-icon" src="assets/emyrgen-map-icon.webp" alt="EMYRGEN MAP polished surface and magnetic field icon" />
           <div class="brand-copy">
             <p class="brand-title">EMYRGEN MAP</p>
             <p class="brand-subtitle">Magnetic Abrasive Polishing</p>
@@ -514,12 +555,11 @@
         </a>
         <nav class="nav-stack" aria-label="Primary navigation">
           <a href="#ai-thesis">AI Thesis</a>
-          <a href="#technology">Technology</a>
-          <a href="#t19">T19 Beachhead</a>
-          <a href="#semiconductor">AI Hardware Pathway</a>
-          <a href="#proof">Proof</a>
+          <a href="#cmp">CMP Alternative</a>
+          <a href="#results">Key Results</a>
+          <a href="#pilot">A20-300 Pilot System</a>
           <a href="#markets">Markets</a>
-          <a href="#roadmap">Roadmap</a>
+          <a href="#commercial">Commercial Path</a>
           <a href="#investor-access">Investor Access</a>
         </nav>
       </div>
@@ -531,17 +571,17 @@
       <div class="site-shell">
         <div class="hero-panel">
           <div class="hero-image-wrap">
-            <img src="assets/hero-map-field.webp" alt="Magnetic abrasive polishing field visualization" />
+            <img src="assets/hero-map-field.webp" alt="Magnetic field over a polished precision surface" />
           </div>
           <div class="hero-content">
-            <img class="hero-mark" src="assets/emyrgen-map-icon.webp" alt="EMYRGEN MAP magnetic surface icon" />
-            <p class="eyebrow">AI Infrastructure Starts at the Surface</p>
-            <h1>The <span>Surface-Integrity Layer</span> Behind the AI Hardware Boom</h1>
-            <p class="hero-lede">EMYRGEN™ MAP applies magnetic-abrasive polishing technology to reduce micro-defects, improve surface integrity, replace harsher finishing steps, and support the next generation of nuclear energy, semiconductor packaging, optics, and high-reliability manufacturing.</p>
+            <img class="hero-mark" src="assets/emyrgen-map-icon.webp" alt="EMYRGEN MAP icon" />
+            <p class="eyebrow">AI Hardware Starts at the Surface</p>
+            <h1>Chemical-Free <span>Ultra-Precision Polishing</span> for AI Chips and Optics</h1>
+            <p class="hero-lede">EMYRGEN™ MAP is positioned as a patent-backed magnetic abrasive polishing platform using nanoscale magnetic iron-diamond abrasives, magnetic inductor guidance, and automatic surface scanning to deliver ultra-smooth, low-defect surfaces for semiconductors, optics, and high-reliability manufacturing.</p>
             <div class="cta-stack">
-              <a class="btn primary" href="mailto:invest@emyrgengroup.com?subject=Investor%20Brief%20Request%20-%20EMYRGEN%20MAP">Request Investor Brief</a>
-              <a class="btn" href="#proof">View Technology Proof</a>
-              <a class="btn" href="#ai-thesis">Explore AI Infrastructure Thesis</a>
+              <a class="btn primary" href="mailto:invest@emyrgengroup.com?subject=Pilot%20Evaluation%20-%20EMYRGEN%20MAP">Request Pilot Evaluation</a>
+              <a class="btn" href="#results">View Reported Results</a>
+              <a class="btn" href="#pilot">See A20-300 Pilot System</a>
             </div>
           </div>
         </div>
@@ -552,246 +592,167 @@
       <div class="site-shell">
         <div class="section-header">
           <p class="eyebrow">AI Infrastructure Thesis</p>
-          <h2>AI is not only a software race. <span>It is a manufacturing race.</span></h2>
-          <p class="section-lede">Behind every model is a physical stack: wafers, chips, packages, high-bandwidth memory, photonics, optics, power systems, cooling systems, nuclear and grid infrastructure, and precision components that must survive extreme reliability pressure.</p>
+          <h2>AI is no longer only a software race. <span>It is a surface-control race.</span></h2>
+          <p class="section-lede">AI accelerators, custom silicon, advanced packaging, optics, photonics, power electronics, and cooling systems are all becoming more sensitive to microscopic defects. When compute density rises, the physical surface becomes a performance and reliability constraint.</p>
         </div>
 
         <div class="visual-card">
           <img src="assets/ai-hardware-stack.webp" alt="AI hardware infrastructure stack" />
-          <div class="caption">MAP is positioned as a surface-integrity technology for the physical infrastructure behind AI: chips, packaging, optics, energy, and high-reliability industrial systems.</div>
+          <div class="caption">V1.4 moves the semiconductor and optics story to the front: MAP should be framed as a surface-integrity platform for the physical AI supply chain, not just as an industrial polishing method.</div>
         </div>
 
-        <div class="quote-band">AI demand creates more compute. More compute creates more physical manufacturing pressure. Manufacturing reliability starts at the surface.</div>
+        <div class="quote-band">More AI compute means more wafers, more advanced packaging, more optics, more heat, and more reliability stress. Surface integrity becomes a hidden bottleneck.</div>
 
         <article class="panel featured">
-          <p class="kicker">Why investors should care</p>
-          <h3>MAP targets the hidden defect layer behind advanced hardware.</h3>
-          <p>AI investors usually see software, GPUs, data centers, and semiconductor headlines. EMYRGEN™ MAP focuses on a deeper industrial layer: surface roughness, scratches, microcracks, contamination, voids, corrosion, wear, and subsurface damage that can become yield, reliability, thermal, electrical, and optical performance constraints.</p>
-        </article>
-
-        <article class="panel">
           <p class="kicker">Investor logic</p>
-          <div class="logic-item"><span class="logic-label">01 / AI models</span>Require more compute, more chips, and more data-center infrastructure.</div>
-          <div class="logic-item"><span class="logic-label">02 / AI hardware</span>Requires advanced wafers, packages, HBM, optics, power electronics, cooling, and high-reliability components.</div>
-          <div class="logic-item"><span class="logic-label">03 / Advanced manufacturing</span>Becomes more sensitive to microscopic surface defects as performance density increases.</div>
-          <div class="logic-item"><span class="logic-label">04 / MAP</span>Targets the surface-conditioning layer that may help reduce defect sensitivity in high-value applications.</div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="technology">
-      <div class="site-shell">
-        <div class="section-header">
-          <p class="eyebrow">Technology</p>
-          <h2>Magnetic abrasive polishing turns a field into a <span>precision finishing tool.</span></h2>
-          <p class="section-lede">The supplied POLIMAG documentation describes a magnetic field that structures ferroabrasive powder into an elastic polishing brush. The brush can conform to surfaces, polish difficult geometries, and modify surface layers with low thermal impact.</p>
-        </div>
-
-        <div class="visual-card">
-          <img src="assets/map-method.webp" alt="Magnetic abrasive polishing method" />
-          <div class="caption">Magnetic-abrasive polishing uses magnetic force, ferroabrasive particles, process fluid, and controlled motion to condition surfaces without relying on a rigid cutting tool.</div>
-        </div>
-
-        <article class="panel featured">
-          <p class="kicker">Core mechanism</p>
-          <h3>An elastic abrasive brush for defect-sensitive surfaces.</h3>
-          <p>Instead of forcing a fixed abrasive tool against the workpiece, MAP forms a controlled magnetic-abrasive working zone. That working zone can remove or condition material at micro/nano scale while reducing thermal and mechanical damage risk compared with aggressive grinding or chemical finishing routes.</p>
+          <h3>MAP belongs in the “picks-and-shovels” layer of AI hardware.</h3>
+          <p>The site should target investors who understand that the AI boom depends on physical manufacturing capacity. MAP is not presented as an AI software company. It is presented as a candidate enabling technology for cleaner wafer finishing, lower defect levels, higher component reliability, and greener manufacturing processes.</p>
         </article>
 
         <article class="panel">
-          <p class="kicker">What it can address</p>
-          <div class="spec-row"><b>Surface roughness</b><span>Targets smoother, more controlled surfaces in defect-sensitive parts.</span></div>
-          <div class="spec-row"><b>Microcracks and subsurface damage</b><span>Frames MAP as a lower-impact finishing pathway for sensitive materials.</span></div>
-          <div class="spec-row"><b>Corrosion and wear initiation points</b><span>The feasibility materials reference improved corrosion, wear, and mechanical-destruction resistance in tested samples.</span></div>
-          <div class="spec-row"><b>Hazardous finishing burden</b><span>The documents position MAP as a cleaner alternative to aggressive acid etching in relevant applications.</span></div>
+          <p class="kicker">What V1.4 should emphasize</p>
+          <div class="logic-item"><span class="logic-label">01 / Semiconductor surfaces</span>Ultra-smooth wafer, substrate, and post-CMP surfaces for advanced-node and AI-chip manufacturing pathways.</div>
+          <div class="logic-item"><span class="logic-label">02 / Optics and photonics</span>Low-roughness optical glass and precision surfaces relevant to lasers, sensors, and optical data movement.</div>
+          <div class="logic-item"><span class="logic-label">03 / Chemical-free process thesis</span>Lower reliance on chemical-intensive CMP and rare-earth slurries, subject to pilot validation and customer process integration.</div>
+          <div class="logic-item"><span class="logic-label">04 / Pilot-ready equipment</span>A20-300 provides a concrete machine visual and test-platform story for pilot evaluation.</div>
         </article>
       </div>
     </section>
 
-    <section class="section" id="t19">
+    <section class="section" id="cmp">
       <div class="site-shell">
         <div class="section-header">
-          <p class="eyebrow">Primary Beachhead</p>
-          <h2>T19 nuclear fuel cladding gives MAP a <span>serious industrial entry point.</span></h2>
-          <p class="section-lede">The strongest first product story in the supplied archive is the T19 Magnetic Abrasive Polishing system for zirconium nuclear fuel-element shell tubes.</p>
+          <p class="eyebrow">CMP Alternative Thesis</p>
+          <h2>Replace harsh slurry chemistry with <span>controlled magnetic finishing.</span></h2>
+          <p class="section-lede">The V1.4 website should describe EMYRGEN™ MAP as a chemical-free, ultra-precision finishing pathway designed to reduce or replace selected CMP-style polishing steps where customer testing confirms performance, yield, and integration value.</p>
         </div>
 
         <div class="visual-card">
-          <img src="assets/t19-production-proof.webp" alt="T19 production system presentation visual" />
-          <div class="caption">T19 is presented as an automated magnetic-abrasive polishing system for long fuel cladding tubes.</div>
+          <img src="assets/map-method.webp" alt="Magnetic abrasive polishing process visualization" />
+          <div class="caption">MAP uses a magnetic field, an inductor tool, nanoscale magnetic iron-diamond abrasive media, and controlled scanning to condition the surface without a conventional rigid tool or chemical-heavy slurry process.</div>
         </div>
 
         <article class="panel featured">
-          <p class="kicker">Why this matters for AI infrastructure</p>
-          <h3>AI growth increases pressure on energy reliability.</h3>
-          <p>Data centers and AI compute require scalable, reliable, high-density energy. Nuclear energy and advanced energy systems are increasingly relevant to the AI infrastructure conversation. T19 is therefore not a side story; it is a disciplined beachhead in a high-reliability energy market, with later surface-integrity expansion pathways into AI hardware manufacturing.</p>
+          <p class="kicker">Core technology message</p>
+          <h3>Magnetic field + nanoscale abrasive media + automatic surface scanning.</h3>
+          <p>V1.4 should make the mechanism clear in one sentence: EMYRGEN™ MAP uses nanoscale magnetic iron-diamond abrasives guided by a magnetic inductor and automatic surface scanning to deliver ultra-precision finishing for semiconductors, optical glass, and other defect-sensitive surfaces.</p>
         </article>
 
         <article class="panel">
-          <p class="kicker">T19 documented targets</p>
-          <div class="spec-row"><b>Application</b><span>Simultaneous inner and outer surface finishing of zirconium fuel-element shell tubes.</span></div>
-          <div class="spec-row"><b>Tube length</b><span>Approximately 1,000–5,000 mm.</span></div>
-          <div class="spec-row"><b>Outer diameter</b><span>Approximately 5–15 mm.</span></div>
-          <div class="spec-row"><b>Inner diameter</b><span>Approximately 4–13 mm.</span></div>
-          <div class="spec-row"><b>Processing capacity</b><span>Approximately 0.5–1.5 m/min.</span></div>
-          <div class="spec-row"><b>Power consumption</b><span>Approximately 2.5 kW.</span></div>
-          <div class="spec-row"><b>Unit price baseline</b><span>Approximately $800,000 referenced in the supplied feasibility material.</span></div>
-          <div class="spec-row"><b>Two-unit package</b><span>Approximately $1.6M referenced in the supplied feasibility material.</span></div>
+          <p class="kicker">Why this matters</p>
+          <div class="spec-row"><b>Less chemical burden</b><span>Position MAP as a cleaner pathway that may reduce chemical slurry dependence, disposal burden, residue, and environmental load.</span></div>
+          <div class="spec-row"><b>Lower defect and residue risk</b><span>Connect impurity reduction and surface smoothing directly to wafer yield, long-term chip reliability, and AI accelerator lifespan.</span></div>
+          <div class="spec-row"><b>Precision without overclaiming</b><span>Use “designed to replace or reduce selected CMP steps” rather than claiming full fab-scale replacement before customer validation.</span></div>
+          <div class="spec-row"><b>Partner-ready framing</b><span>Invite pilot testing, licensing, integration, and co-development with chip, optics, equipment, and materials partners.</span></div>
         </article>
-
-        <div class="visual-card">
-          <img src="assets/t19-model-proof.webp" alt="T19 machine model" />
-          <div class="caption">The supplied materials describe modules for polishing, powder dosing, process fluid, loading/unloading, washing, magnetic separation, hot drying, and PLC/HMI control.</div>
-        </div>
       </div>
     </section>
 
-    <section class="section" id="semiconductor">
+    <section class="section" id="results">
       <div class="site-shell">
         <div class="section-header">
-          <p class="eyebrow">AI Hardware Pathway</p>
-          <h2>From fuel cladding to AI chips: <span>one surface-integrity platform.</span></h2>
-          <p class="section-lede">The same core problem appears across multiple high-value industries: microscopic surface defects can become macroscopic performance failures. In semiconductors and advanced packaging, those defects may affect bonding, yield, thermal behavior, electrical reliability, and optical loss.</p>
+          <p class="eyebrow">Reported Technical Results</p>
+          <h2>The strongest proof story is <span>semiconductor and optical surface performance.</span></h2>
+          <p class="section-lede">V1.4 should promote the specific results supplied in the project context, while labeling them as reported technical results pending independent pilot validation with commercial partners.</p>
         </div>
 
         <div class="visual-card">
-          <img src="assets/si-wafer-proof.webp" alt="Silicon wafer polishing proof image" />
-          <div class="caption">The supplied semiconductor white paper positions MAM/MAP as a potential post-CMP defect-suppression and finishing pathway for advanced semiconductor manufacturing.</div>
+          <img src="assets/si-wafer-proof.webp" alt="Silicon wafer polishing result visual" />
+          <div class="caption">The semiconductor proof section should sit higher than the older broad market content. The AI-chip investor story depends on wafer and defect-control credibility.</div>
         </div>
 
         <article class="panel featured">
-          <p class="kicker">Candidate semiconductor pathway</p>
-          <h3>Surface conditioning for advanced packaging, bonding, photonics, and defect control.</h3>
-          <p>MAP should not be presented as already qualified inside leading fabs unless customer data proves that. The correct investor framing is a disciplined validation pathway: customer samples, surface metrology, bonding tests, defect analysis, reliability testing, and an application-specific module for selected semiconductor or packaging problems.</p>
+          <p class="kicker">Key surface results</p>
+          <div class="stat-card"><p class="big-number">Ra 0.245 nm</p><h3>Silicon wafer surface roughness</h3><p>Reported surface roughness on Si wafers. Present as a high-value technical result and direct entry point for semiconductor sample evaluation.</p></div>
+          <div class="stat-card"><p class="big-number">Ra 0.14 nm</p><h3>Optical glass surface roughness</h3><p>Reported result on optical glass associated with Karl Zeiss Jena. Use this to connect MAP to optics, photonics, lasers, and AI data-movement hardware.</p></div>
         </article>
 
         <article class="panel">
-          <p class="kicker">AI hardware surface problems</p>
-          <div class="spec-row"><b>Post-CMP defect tails</b><span>Scratches, residual damage, and non-uniformities can become yield problems as device structures shrink.</span></div>
-          <div class="spec-row"><b>Hybrid bonding surfaces</b><span>Bonding quality can be sensitive to roughness, particles, voids, dishing, and surface planarity.</span></div>
-          <div class="spec-row"><b>Photonic and optical components</b><span>Surface scatter and micro-defects can affect optical loss, laser crystal performance, and data-movement hardware.</span></div>
-          <div class="spec-row"><b>MEMS and high-reliability devices</b><span>Surface flaws can contribute to fracture, fatigue, and early-life reliability failures.</span></div>
-          <div class="spec-row"><b>Thermal and power-electronics surfaces</b><span>AI infrastructure raises thermal and electrical stress across power, packaging, and cooling systems.</span></div>
+          <p class="kicker">Impurity reduction and lattice integrity</p>
+          <div class="spec-row"><b>Carbon reduction</b><span>Reported reduction from 19.75% to 5.05 atomic % on Si wafers, supporting the defect and residue reduction story.</span></div>
+          <div class="spec-row"><b>Oxygen reduction</b><span>Reported reduction from 7.32% to 0.45 atomic % on Si wafers, supporting the cleaner wafer surface thesis.</span></div>
+          <div class="spec-row"><b>Silicon lattice constant</b><span>Reference the silicon lattice constant of 0.543 nm to show that MAP results are physically meaningful and measured in a nanoscale context.</span></div>
+          <p class="result-note">Website language should avoid claiming production fab qualification. Use “reported,” “candidate,” “pilot-ready,” and “to be validated with partner samples.”</p>
         </article>
       </div>
     </section>
 
-    <section class="section" id="proof">
+    <section class="section" id="pilot">
       <div class="site-shell">
         <div class="section-header">
-          <p class="eyebrow">Technology Proof</p>
-          <h2>Decades of surface-finishing R&D, <span>reframed for the AI infrastructure era.</span></h2>
-          <p class="section-lede">The supplied archive includes POLIMAG technical presentations, patent documentation, semiconductor article material, equipment visuals, and application examples. The website turns that evidence into premium investor proof without overstating commercialization.</p>
+          <p class="eyebrow">Pilot Evaluation Platform</p>
+          <h2>A20-300 makes the website feel <span>real, testable, and partner-ready.</span></h2>
+          <p class="section-lede">The uploaded A20-300 PDF should be added as a concrete machine proof point. It shows an installation for magnetic-abrasive polishing with two replaceable inductors and compact pilot-scale dimensions.</p>
+        </div>
+
+        <div class="visual-card">
+          <img src="assets/a20-300-installation.webp" alt="A20-300 installation for magnetic-abrasive polishing" />
+          <div class="caption">A20-300 installation for magnetic-abrasive polishing. The supplied PDF shows horizontal and vertical inductor-tool configurations for workpieces up to 300 × 300 × 80 mm.</div>
         </div>
 
         <article class="panel featured">
-          <p class="kicker">Evidence base</p>
-          <h3>POLIMAG materials reference 34+ years of R&D, 170+ publications, and 70+ patents.</h3>
-          <p>This should be presented as a credibility signal and technology heritage, while final commercialization rights, licensing structure, and customer qualification should remain clearly subject to legal review and validation.</p>
+          <p class="kicker">Why include this in V1.4</p>
+          <h3>Investors need to see that MAP is not only a science claim. It has machine architecture.</h3>
+          <p>The A20-300 section should be positioned as the pilot evaluation system for semiconductors, optics, and precision-surface samples. It gives the website a practical bridge between nanoscale result claims and near-term partner testing.</p>
         </article>
 
-        <div class="visual-card">
-          <img src="assets/patent-proof.webp" alt="Patent documentation proof" />
-          <div class="caption">Patent materials in the archive relate to ferromagnetic abrasive material and methods of preparation.</div>
-        </div>
-
-        <div class="visual-card">
-          <img src="assets/article-proof.webp" alt="Semiconductor magnetic abrasive machining article" />
-          <div class="caption">Semiconductor-facing technical material supports the expansion thesis, but the website should avoid claiming fab qualification until verified.</div>
-        </div>
-
-        <div class="visual-card">
-          <img src="assets/nuclear-rods-proof.webp" alt="Nuclear fuel cladding surface finishing proof" />
-          <div class="caption">The nuclear cladding application provides the clearest first industrial story: high-reliability tube surfaces with potential corrosion and wear benefits.</div>
-        </div>
-
-        <div class="visual-card">
-          <img src="assets/optical-glass-proof.webp" alt="Optical surface polishing proof" />
-          <div class="caption">Optics, laser crystals, photonics, and smooth surface applications create a natural bridge from industrial polishing into AI data-movement infrastructure.</div>
-        </div>
-
-        <div class="visual-card">
-          <img src="assets/industrial-examples-proof.webp" alt="Industrial magnetic abrasive polishing examples" />
-          <div class="caption">The technology base includes multiple equipment examples and industrial surfaces, supporting the platform thesis.</div>
-        </div>
+        <article class="panel">
+          <p class="kicker">A20-300 machine specs from supplied PDF</p>
+          <div class="machine-spec"><b>Tooling concept</b><span>Two replaceable inductors with horizontal and vertical axes of rotation.</span></div>
+          <div class="machine-spec"><b>Maximum workpiece</b><span>300 × 300 × 80 mm.</span></div>
+          <div class="machine-spec"><b>Installation size</b><span>720 × 700 × 430 mm.</span></div>
+          <div class="machine-spec"><b>Installation weight</b><span>45 kg.</span></div>
+          <div class="decision-strip">Decision for V1.4: present A20-300 as the practical pilot/sample-testing platform, not as a mass-production semiconductor tool unless later validated.</div>
+        </article>
       </div>
     </section>
 
     <section class="section" id="markets">
       <div class="site-shell">
         <div class="section-header">
-          <p class="eyebrow">Market Expansion</p>
-          <h2>One platform. Multiple <span>defect-sensitive markets.</span></h2>
-          <p class="section-lede">The investor story should not depend on a single machine. T19 gives the platform a focused beachhead. The broader upside is application-specific MAP systems, process recipes, consumables, licensing, and service across high-value surfaces.</p>
+          <p class="eyebrow">Priority Markets</p>
+          <h2>Lead with semiconductors and optics. <span>Keep nuclear and industrial as expansion proof.</span></h2>
+          <p class="section-lede">V1.4 should be reorganized around the AI-chip and optics story, with T19/nuclear and industrial applications supporting the broader platform narrative.</p>
         </div>
 
-        <div class="visual-card">
-          <img src="assets/map-applications.webp" alt="MAP application markets" />
-          <div class="caption">MAP should be framed as a precision-surface platform that can be validated market by market.</div>
-        </div>
+        <article class="panel featured">
+          <p class="kicker">Market order for the page</p>
+          <div class="stat-card"><p class="big-number">01</p><h3>AI chips and custom silicon</h3><p>Advanced semiconductors, accelerators, wafers, substrates, and packaging surfaces where roughness, residues, scratches, and defect tails can harm yield and long-term reliability.</p></div>
+          <div class="stat-card"><p class="big-number">02</p><h3>Optics and photonics</h3><p>Optical glass, laser crystals, low-scatter surfaces, photonics, sensing, and AI data-movement hardware.</p></div>
+          <div class="stat-card"><p class="big-number">03</p><h3>Semiconductor equipment and materials partners</h3><p>Potential licensing, integration, or co-development with companies that already serve fabs, packaging houses, optics labs, and precision-surface applications.</p></div>
+          <div class="stat-card"><p class="big-number">04</p><h3>Nuclear fuel cladding and energy infrastructure</h3><p>T19 remains valuable as a high-reliability energy and industrial beachhead, but V1.4 should not make it the only lead story.</p></div>
+          <div class="stat-card"><p class="big-number">05</p><h3>Aerospace, medical, oil & gas, and precision industry</h3><p>Additional markets where corrosion, wear, flow, fatigue, thermal reliability, and surface cleanliness affect component performance.</p></div>
+        </article>
 
         <article class="panel">
-          <p class="kicker">Target markets</p>
-          <div class="stat-card"><p class="big-number">01</p><h3>Nuclear fuel cladding</h3><p>High-reliability zirconium tube finishing, corrosion and wear resistance, cleaner process pathway, and T19 equipment commercialization.</p></div>
-          <div class="stat-card"><p class="big-number">02</p><h3>AI semiconductor manufacturing</h3><p>Post-CMP finishing, advanced packaging, hybrid bonding preparation, substrate conditioning, and application-specific validation.</p></div>
-          <div class="stat-card"><p class="big-number">03</p><h3>Optics and photonics</h3><p>Laser crystals, optical windows, low-scatter surfaces, and AI data-movement hardware that depends on high-quality surfaces.</p></div>
-          <div class="stat-card"><p class="big-number">04</p><h3>Energy and power infrastructure</h3><p>Pipes, valves, exchangers, turbines, power electronics, and components where wear, corrosion, flow, and thermal reliability matter.</p></div>
-          <div class="stat-card"><p class="big-number">05</p><h3>Aerospace, medical, and precision components</h3><p>High-reliability components where fatigue, cleanliness, surface flaws, and repeatable finish quality can affect performance.</p></div>
+          <p class="kicker">Strategic partner language</p>
+          <h3>Do not imply relationships with major chip companies unless confirmed.</h3>
+          <p>The site can say MAP is relevant to leaders in AI chips, custom silicon, foundries, advanced packaging, optics, and equipment supply chains. Avoid using company names such as NVIDIA, Microsoft, TSMC, or Intel in public-page copy unless there is a specific authorized relationship or outreach strategy.</p>
         </article>
       </div>
     </section>
 
-    <section class="section" id="economics">
+    <section class="section" id="commercial">
       <div class="site-shell">
         <div class="section-header">
-          <p class="eyebrow">Revenue Logic</p>
-          <h2>Hardware revenue today. <span>Platform expansion tomorrow.</span></h2>
-          <p class="section-lede">The first revenue path is equipment commercialization around high-value industrial applications such as T19 nuclear fuel cladding. The longer-term upside is a platform model.</p>
+          <p class="eyebrow">Commercial Path</p>
+          <h2>Move from reported results to <span>partner validation.</span></h2>
+          <p class="section-lede">V1.4 should make the call to action more practical: pilot evaluation, sample testing, licensing, integration, and co-development.</p>
         </div>
 
         <article class="panel featured">
-          <p class="kicker">Commercial model</p>
-          <h3>Equipment, consumables, recipes, licensing, service, and customer validation programs.</h3>
-          <p>The supplied feasibility material references an approximate $800,000 T19 unit baseline and an approximate $1.6M two-unit package. Larger economic impact depends on customer validation, production scale, reliability improvement, and final commercial agreements.</p>
+          <p class="kicker">What to offer partners</p>
+          <h3>Testing, licensing, integration, and co-development.</h3>
+          <p>The commercial story should invite companies and investors to evaluate MAP through real sample programs: Si wafers, optical glass, sapphire, SiC, ceramic, metal, packaging surfaces, thermal-management components, or other defect-sensitive substrates.</p>
         </article>
 
         <article class="panel">
-          <p class="kicker">Revenue layers</p>
-          <div class="spec-row"><b>Application-specific machines</b><span>T19 and future MAP systems tailored to tubes, wafers, plates, optics, and precision components.</span></div>
-          <div class="spec-row"><b>Ferroabrasive powders</b><span>Consumable materials can support recurring revenue if customer processes validate the economics.</span></div>
-          <div class="spec-row"><b>Process recipes</b><span>Industry-specific surface-conditioning recipes can become part of the commercial moat.</span></div>
-          <div class="spec-row"><b>Commissioning and training</b><span>High-value industrial equipment requires installation, qualification support, operator training, and maintenance.</span></div>
-          <div class="spec-row"><b>Licensing and joint development</b><span>Semiconductor, optics, nuclear, and advanced-manufacturing partners may require tailored commercial structures.</span></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="roadmap">
-      <div class="site-shell">
-        <div class="section-header">
-          <p class="eyebrow">Roadmap</p>
-          <h2>A disciplined commercialization path, <span>not a science project.</span></h2>
-          <p class="section-lede">The roadmap should present two linked tracks: the T19 industrial beachhead and the AI hardware expansion pathway.</p>
-        </div>
-
-        <article class="panel featured">
-          <p class="kicker">T19 commercialization path</p>
-          <div class="step"><span class="step-number">Months 1–6</span><h3>Powder selection and optimization</h3><p>Define powder composition, fraction, process fluid, and surface targets for the selected tube material and production objective.</p></div>
-          <div class="step"><span class="step-number">Months 1–12</span><h3>Mechanical build of two T19 units</h3><p>Construct the primary mechanical systems and prepare the equipment base for process integration.</p></div>
-          <div class="step"><span class="step-number">Months 1–18</span><h3>Electro-pneumatic systems and preliminary tests</h3><p>Integrate control, motion, fluid, powder dosing, washing, separation, and drying subsystems.</p></div>
-          <div class="step"><span class="step-number">Months 13–24</span><h3>Technology experiments and customer sample trials</h3><p>Run tube samples, measure surface improvement, and refine operating recipes.</p></div>
-          <div class="step"><span class="step-number">Months 19–24</span><h3>Customer alloy and corrosion testing</h3><p>Evaluate customer-specific materials and durability outcomes using agreed test protocols.</p></div>
-          <div class="step"><span class="step-number">Months 19–30</span><h3>Transfer, delivery, and commissioning</h3><p>Move from development testing into customer-site delivery and start-up support.</p></div>
-          <div class="step"><span class="step-number">Months 27–36</span><h3>Customer-site acceptance and training</h3><p>Complete acceptance testing, operator training, documentation, and project closeout.</p></div>
-        </article>
-
-        <article class="panel">
-          <p class="kicker">AI hardware expansion path</p>
-          <div class="step"><span class="step-number">01</span><h3>Select the highest-value surface problem</h3><p>Choose a specific semiconductor, packaging, photonics, thermal, or power-electronics surface problem where MAP can be tested credibly.</p></div>
-          <div class="step"><span class="step-number">02</span><h3>Run customer sample programs</h3><p>Use wafer, substrate, package, optic, or component samples to compare MAP outcomes against existing finishing methods.</p></div>
-          <div class="step"><span class="step-number">03</span><h3>Measure roughness, defects, bonding, and reliability</h3><p>Use surface metrology, defect inspection, bonding tests, optical tests, and reliability testing to determine where MAP creates value.</p></div>
-          <div class="step"><span class="step-number">04</span><h3>Develop an application-specific module</h3><p>Package the process into equipment, consumables, recipes, and controls suitable for the selected market.</p></div>
-          <div class="step"><span class="step-number">05</span><h3>Pursue joint development or licensing</h3><p>Engage equipment makers, advanced packaging players, optics suppliers, nuclear manufacturers, or high-reliability component producers.</p></div>
+          <p class="kicker">Validation roadmap</p>
+          <div class="step"><span class="step-number">01</span><h3>Confirm target surface problem</h3><p>Select wafer, optical glass, SiC, sapphire, packaging, thermal, or precision-metal surfaces where MAP can be compared against incumbent finishing methods.</p></div>
+          <div class="step"><span class="step-number">02</span><h3>Run A20-300 pilot samples</h3><p>Use the A20-300 machine architecture or related pilot setup to process customer samples and document surface roughness, residue, impurity, and defect outcomes.</p></div>
+          <div class="step"><span class="step-number">03</span><h3>Measure reliability impact</h3><p>Test thermal resistance, fatigue, bonding, optical scatter, residue, contamination, and surface-damage metrics using agreed protocols.</p></div>
+          <div class="step"><span class="step-number">04</span><h3>Package the commercial model</h3><p>Convert validated results into equipment sales, process recipes, consumables, licensing, maintenance, training, and joint-development agreements.</p></div>
+          <div class="step"><span class="step-number">05</span><h3>Keep quantum optimization as future R&D</h3><p>Do not lead with quantum claims. Mention only as a future optimization pathway for process tuning if it becomes technically supportable.</p></div>
         </article>
       </div>
     </section>
@@ -799,21 +760,23 @@
     <section class="section" id="ip">
       <div class="site-shell">
         <div class="section-header">
-          <p class="eyebrow">IP and Rights</p>
-          <h2>Technology rights must be presented <span>carefully and professionally.</span></h2>
-          <p class="section-lede">The archive includes technology-rights material, patent documentation, technical articles, and commercialization-related drafts. The site should not overclaim finalized ownership or exclusivity unless counsel confirms it.</p>
+          <p class="eyebrow">IP and Claim Discipline</p>
+          <h2>Patent-backed, chemical-free, and pilot-ready — <span>without overclaiming.</span></h2>
+          <p class="section-lede">The website should use strong investor language but keep claims safe. It can say patent-backed and chemical-free based on supplied context, while noting customer qualification and commercial integration still require partner validation.</p>
         </div>
 
         <article class="panel featured">
-          <p class="kicker">Correct investor language</p>
-          <h3>Rights pathway under review.</h3>
-          <p>Use disciplined wording: technology-rights package under review, commercialization structure to be finalized by counsel, licensing pathway, and customer validation subject to final agreements.</p>
+          <p class="kicker">Use these phrases</p>
+          <div class="spec-row"><b>Patent-backed MAP platform</b><span>Stronger than generic “polishing technology,” but safer than making unverified legal exclusivity claims.</span></div>
+          <div class="spec-row"><b>Chemical-free finishing pathway</b><span>Directly ties the technology to sustainability and cleaner semiconductor manufacturing.</span></div>
+          <div class="spec-row"><b>Candidate CMP replacement or reduction pathway</b><span>Investor-facing and bold, but still leaves room for validation.</span></div>
+          <div class="spec-row"><b>Pilot-ready for partner sample evaluation</b><span>The best call-to-action for investors, semiconductor partners, optics partners, and licensing discussions.</span></div>
         </article>
 
         <article class="panel">
-          <p class="kicker">Claims discipline</p>
-          <div class="spec-row"><b>Do not claim</b><span>Semiconductor fab qualification, nuclear qualification, signed customer contracts, final exclusive ownership, or completed commercialization unless verified.</span></div>
-          <div class="spec-row"><b>Do claim carefully</b><span>Supplied materials document a serious R&D heritage, T19 product concept, patent evidence, technical results, and multiple high-value validation pathways.</span></div>
+          <p class="kicker">Avoid these overclaims</p>
+          <div class="spec-row"><b>Do not claim</b><span>Fab qualification, NVIDIA/Microsoft/foundry partnerships, completed CMP replacement, mass-production readiness, or final exclusive rights unless verified in legal and customer documentation.</span></div>
+          <div class="spec-row"><b>Do claim carefully</b><span>Reported nanoscale surface results, impurity reduction, chemical-free positioning, pilot equipment availability, partner-evaluation readiness, and potential semiconductor/optics integration pathway.</span></div>
         </article>
       </div>
     </section>
@@ -821,15 +784,15 @@
     <section class="section" id="investor-access">
       <div class="site-shell">
         <div class="section-header">
-          <p class="eyebrow">Investor Access</p>
-          <h2>Back the surface-integrity platform for the <span>AI infrastructure era.</span></h2>
-          <p class="section-lede">EMYRGEN™ MAP gives investors exposure to a physical layer of the AI boom: precision surfaces, advanced manufacturing, energy reliability, semiconductor packaging, optics, and defect-sensitive industrial systems.</p>
+          <p class="eyebrow">Investor and Partner Access</p>
+          <h2>Back the surface-control platform for the <span>AI manufacturing era.</span></h2>
+          <p class="section-lede">The V1.4 conversion section should speak to both investors and strategic partners: pilot evaluation, sample testing, licensing, integration, and co-development.</p>
         </div>
 
         <div class="form-panel">
-          <p class="kicker">Request investor brief</p>
+          <p class="kicker">Request pilot or investor brief</p>
           <h3>Contact EMYRGEN GROUP INC</h3>
-          <p>Use this section as the investor conversion module. For the static version, the primary action opens an email to the investment contact.</p>
+          <p>Use this section as the investor and partner conversion module. For the static version, the primary action opens an email to the investment contact.</p>
 
           <form action="mailto:invest@emyrgengroup.com" method="post" enctype="text/plain">
             <label for="name">Name</label>
@@ -838,20 +801,21 @@
             <label for="email">Email</label>
             <input id="email" name="email" type="email" placeholder="you@example.com" />
 
-            <label for="investor-type">Investor type</label>
-            <select id="investor-type" name="investor-type">
-              <option>Individual accredited investor</option>
-              <option>Family office</option>
-              <option>Strategic investor</option>
-              <option>Industrial partner</option>
+            <label for="interest-type">Interest type</label>
+            <select id="interest-type" name="interest-type">
+              <option>Pilot evaluation</option>
+              <option>Investor brief</option>
+              <option>Licensing discussion</option>
+              <option>Semiconductor / optics partnership</option>
+              <option>Strategic industrial partnership</option>
               <option>Other</option>
             </select>
 
             <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="I would like to request the EMYRGEN™ MAP investor brief."></textarea>
+            <textarea id="message" name="message" placeholder="I would like to request the EMYRGEN™ MAP pilot/investor brief."></textarea>
 
-            <button class="btn primary" type="submit">Email Investor Request</button>
-            <a class="btn" href="mailto:invest@emyrgengroup.com?subject=EMYRGEN%20MAP%20Investor%20Brief%20Request">Open Email Instead</a>
+            <button class="btn primary" type="submit">Email MAP Request</button>
+            <a class="btn" href="mailto:invest@emyrgengroup.com?subject=EMYRGEN%20MAP%20Pilot%20or%20Investor%20Brief%20Request">Open Email Instead</a>
           </form>
           <p class="submit-note">For production use, connect this module to the company’s backend form handler or investor portal workflow.</p>
         </div>
@@ -868,7 +832,7 @@
           <p>EMYRGEN™ MAP | Magnetic Abrasive Polishing</p>
         </div>
       </div>
-      <p class="small-note">Private investor materials. Technology claims are subject to validation, customer testing, legal review, final commercialization agreements, and applicable regulatory requirements. This website is a presentation source package and does not constitute an offer to sell securities.</p>
+      <p class="small-note">Private investor and partner materials. Technology claims are subject to validation, customer testing, legal review, final commercialization agreements, and applicable regulatory requirements. This website is a presentation source package and does not constitute an offer to sell securities.</p>
     </div>
   </footer>
 </body>

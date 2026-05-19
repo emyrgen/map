@@ -91,52 +91,54 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
-      padding: 14px 16px;
-      border-radius: 26px;
-      border: 1px solid rgba(255,255,255,0.08);
+      gap: 24px;
+      padding: 18px 22px;
+      border-radius: 28px;
+      border: 1px solid rgba(104,212,255,0.18);
       background:
-        radial-gradient(circle at top right, rgba(74, 210, 255, 0.12), transparent 18rem),
-        linear-gradient(180deg, rgba(6, 17, 34, 0.84), rgba(4, 11, 23, 0.84));
-      box-shadow: 0 16px 45px rgba(0,0,0,.28);
+        radial-gradient(circle at top right, rgba(74, 210, 255, 0.16), transparent 20rem),
+        linear-gradient(180deg, rgba(6, 17, 34, 0.90), rgba(4, 11, 23, 0.88));
+      box-shadow: 0 18px 54px rgba(0,0,0,.34);
     }
 
     .brand-lockup {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 18px;
       min-width: 0;
       flex: 0 0 auto;
     }
 
     .brand-icon {
-      width: 74px;
-      height: 74px;
-      border-radius: 22px;
+      width: 86px;
+      height: 86px;
+      border-radius: 24px;
       flex: 0 0 auto;
       object-fit: cover;
       box-shadow:
-        0 0 0 1px rgba(132, 226, 255, 0.16),
-        0 16px 40px rgba(50, 168, 255, 0.14),
-        0 14px 32px rgba(0,0,0,.28);
+        0 0 0 1px rgba(132, 226, 255, 0.20),
+        0 18px 48px rgba(50, 168, 255, 0.20),
+        0 16px 38px rgba(0,0,0,.34);
     }
 
     .brand-copy { min-width: 0; }
     .brand-title {
       margin: 0;
-      font-size: clamp(1.1rem, 3vw, 1.7rem);
-      line-height: 1.12;
-      letter-spacing: .18em;
+      font-size: clamp(2.05rem, 4.4vw, 3.35rem);
+      line-height: .92;
+      letter-spacing: .105em;
       text-transform: uppercase;
-      font-weight: 700;
+      font-weight: 800;
+      color: #ffffff;
+      text-shadow: 0 0 28px rgba(95, 220, 255, 0.18);
     }
 
     .brand-subtitle {
       font-family: var(--font-tech);
-      margin: 7px 0 0;
-      color: var(--gold-soft);
-      font-size: .82rem;
-      letter-spacing: .11em;
+      margin: 9px 0 0;
+      color: var(--cyan-2);
+      font-size: clamp(.78rem, 1.1vw, .98rem);
+      letter-spacing: .14em;
       text-transform: uppercase;
     }
 
@@ -191,14 +193,15 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 42px;
-      padding: 11px 14px;
+      min-height: 40px;
+      padding: 10px 12px;
       border-radius: 999px;
       border: 1px solid rgba(104, 212, 255, 0.16);
       background: rgba(255,255,255,0.035);
       color: #dff6ff;
-      font-size: .83rem;
-      letter-spacing: .02em;
+      font-size: .78rem;
+      letter-spacing: .015em;
+      white-space: nowrap;
       transition: transform .18s ease, background .18s ease, border-color .18s ease;
     }
 
@@ -735,11 +738,11 @@
       .site-shell { width: min(100% - 22px, var(--max)); }
       .topbar { padding: 8px 0; }
       [id] { scroll-margin-top: 94px; }
-      .brand-card { padding: 10px 12px; border-radius: 20px; }
-      .brand-lockup { gap: 11px; max-width: calc(100% - 58px); }
-      .brand-icon { width: 50px; height: 50px; border-radius: 15px; }
-      .brand-title { font-size: clamp(.86rem, 4vw, 1.15rem); letter-spacing: .11em; }
-      .brand-subtitle { font-size: .62rem; letter-spacing: .055em; margin-top: 5px; }
+      .brand-card { padding: 12px 14px; border-radius: 22px; }
+      .brand-lockup { gap: 13px; max-width: calc(100% - 58px); }
+      .brand-icon { width: 58px; height: 58px; border-radius: 17px; }
+      .brand-title { font-size: clamp(1.25rem, 6.8vw, 1.75rem); letter-spacing: .075em; }
+      .brand-subtitle { font-size: .66rem; letter-spacing: .065em; margin-top: 6px; }
       .hero { padding-top: 10px; padding-bottom: 58px; }
       .hero-panel { border-radius: 30px; }
       .hero-image-wrap,
@@ -1089,9 +1092,8 @@
             <textarea id="message" name="message" placeholder="I would like to request the EMYRGEN™ MAP commercial brief."></textarea>
 
             <button class="btn primary" type="submit">Request Commercial Brief</button>
-            <a class="btn" href="mailto:invest@emyrgengroup.com?subject=EMYRGEN%20MAP%20Commercial%20Brief%20Request">Open Email Instead</a>
           </form>
-          <p class="submit-note">Use this form or email link to start a direct conversation with EMYRGEN GROUP INC.</p>
+          <p class="submit-note">This request opens an email addressed to EMYRGEN GROUP INC so the conversation starts directly.</p>
         </div>
       </div>
     </section>

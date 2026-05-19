@@ -1,4 +1,4 @@
-# EMYRGEN MAP Website v1.17
+# EMYRGEN MAP Website v1.18
 
 Source-only static website package for EMYRGEN™ MAP.
 
@@ -28,3 +28,5 @@ No `node_modules`, no `dist`, no build artifacts.
 - Adds regenerated premium website visuals derived from unused legacy source materials: A20-300 installation, optics close-up, optical-glass proof, and industrial cylindrical-component applications.
 
 - Revises the public copy to a stronger sell-ready, commercially positioned tone with the regenerated visuals already implemented in the live page structure.
+
+- Enlarges the EMYRGEN MAP header brand lockup and removes the redundant bottom email fallback button.

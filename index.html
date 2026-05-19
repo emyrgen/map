@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>EMYRGEN MAP v1.33</title>
+<title>EMYRGEN MAP v1.34</title>
 <meta content="EMYRGEN MAP is a magnetic-abrasive finishing platform for cleaner, smoother, lower-defect precision surfaces across AI chips, optics, photonics, waveguides, packaging, and high-reliability industrial components." name="description"/>
 <link href="assets/favicon.png" rel="icon"/>
 <link href="assets/apple-touch-icon.png" rel="apple-touch-icon"/>
@@ -707,6 +707,64 @@ html {
     font-weight: 760;
   }
 }
+
+
+/* v1.34 AI stack mobile restructure */
+.mobile-ai-detail-stack {
+  display: none;
+}
+
+.mobile-pill-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 0 18px 18px;
+}
+
+.mobile-pill-grid span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(101, 232, 255, 0.14);
+  background: rgba(255,255,255,0.035);
+  color: #ffffff !important;
+  font-size: .92rem;
+  line-height: 1.3;
+  font-weight: 720;
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .mobile-ai-detail-stack {
+    display: grid !important;
+    gap: 22px;
+    margin-top: 22px;
+  }
+
+  .mobile-ai-detail-card {
+    overflow: hidden;
+    border-radius: 26px;
+    border: 1px solid rgba(101, 232, 255, 0.18);
+    background:
+      radial-gradient(circle at top right, rgba(101, 232, 255, 0.10), transparent 16rem),
+      linear-gradient(180deg, rgba(7, 16, 30, 0.94), rgba(3, 9, 19, 0.98));
+    box-shadow: 0 22px 54px rgba(0,0,0,.34);
+  }
+
+  .mobile-ai-detail-card > img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid rgba(101, 232, 255, 0.14);
+  }
+
+  .mobile-ai-detail-card .mobile-proof-takeaway {
+    padding-bottom: 22px;
+  }
+}
 </style>
 </head>
 <body>
@@ -758,8 +816,76 @@ html {
 <h2>The Hidden Problem in AI Hardware: <span>Surface Roughness, Residue, and Defects</span></h2>
 <p class="section-lede">EMYRGEN™ MAP uses nanoscale magnetic iron-diamond abrasives, guided by a magnetic inductor and automatic surface scanning, to deliver ultra-precision finishing for semiconductors and optics without chemical-intensive CMP.</p>
 </div>
-<div class="visual-card desktop-only"><img alt="AI infrastructure stack from models to magnetic-abrasive finishing" src="assets/ai-stack-desktop.webp"/><div class="caption"><strong>The website’s central story.</strong> EMYRGEN MAP sits under the AI hardware stack as a surface-finishing platform for the roughness, scratches, voids, residue, and defects that become more expensive as hardware becomes more advanced.</div></div>
-<div class="mobile-stack-grid mobile-only"><div class="visual-card"><img alt="AI models compute demand" src="assets/ai-stack-mobile-ai.webp"/></div><div class="visual-card"><img alt="Advanced chips node and HBM pressure" src="assets/ai-stack-mobile-chips.webp"/></div><div class="visual-card"><img alt="Advanced packaging and interposers" src="assets/ai-stack-mobile-packaging.webp"/></div><div class="visual-card"><img alt="Surface roughness scratches and voids" src="assets/ai-stack-mobile-surfaces.webp"/></div><div class="visual-card"><img alt="MAP magnetic abrasive finishing" src="assets/ai-stack-mobile-map.webp"/></div></div>
+<div class="visual-card desktop-only"><img alt="AI infrastructure stack from models to magnetic-abrasive finishing" src="assets/ai-stack-desktop.webp"/><div class="caption"><strong>The website’s central story.</strong> EMYRGEN MAP sits under the AI hardware stack as a surface-finishing platform for the roughness, scratches, voids, residue, and defects that become more expensive as hardware becomes more advanced.</div></div><div class="mobile-ai-detail-stack mobile-only">
+<article class="mobile-ai-detail-card">
+<p class="mobile-proof-label">01 / AI Models</p>
+<img alt="AI models and compute demand" src="assets/ai-stack-mobile-ai.webp"/>
+<div class="mobile-proof-data">
+<div><b>Core pressure</b><span>Compute demand</span></div>
+<div><b>System effect</b><span>More model scale, more infrastructure load</span></div>
+<div><b>Downstream result</b><span>Pressure moves from models to chips and manufacturing</span></div>
+</div>
+<p class="mobile-proof-takeaway">AI demand begins at the model layer, but it quickly forces changes all the way down into physical hardware.</p>
+</article>
+<article class="mobile-ai-detail-card">
+<p class="mobile-proof-label">02 / Advanced Chips</p>
+<img alt="Advanced chips, node scaling, and HBM pressure" src="assets/ai-stack-mobile-chips.webp"/>
+<div class="mobile-proof-data">
+<div><b>Node pressure</b><span>3 nm-class scaling</span></div>
+<div><b>Memory pressure</b><span>HBM bandwidth up to 1.6×</span></div>
+<div><b>Manufacturing effect</b><span>Tighter tolerances and more expensive defects</span></div>
+</div>
+<p class="mobile-proof-takeaway">As AI chips become denser and more demanding, surface quality issues become harder to ignore and more expensive to fix later.</p>
+</article>
+<article class="mobile-ai-detail-card">
+<p class="mobile-proof-label">03 / Packaging</p>
+<img alt="Packaging layers including die, interposer, substrate, and PCB" src="assets/ai-stack-mobile-packaging.webp"/>
+<div class="mobile-proof-data">
+<div><b>Layers</b><span>Die → Interposer → Substrate → PCB</span></div>
+<div><b>Goal</b><span>High density and high reliability</span></div>
+<div><b>Commercial value</b><span>Better efficiency with less power loss</span></div>
+</div>
+<div class="mobile-pill-grid">
+<span>High density</span>
+<span>High reliability</span>
+<span>Enhanced efficiency</span>
+</div>
+<p class="mobile-proof-takeaway">Packaging quality depends on interfaces. Cleaner and more consistent surfaces help support advanced bonding and better package performance.</p>
+</article>
+<article class="mobile-ai-detail-card">
+<p class="mobile-proof-label">04 / Surfaces</p>
+<img alt="Surface roughness, scratches, and voids" src="assets/ai-stack-mobile-surfaces.webp"/>
+<div class="mobile-proof-data">
+<div><b>Defect types</b><span>Roughness, scratches, voids</span></div>
+<div><b>Inspection need</b><span>Micro-level detail and defect detection</span></div>
+<div><b>Business need</b><span>Surface analytics and quality assurance</span></div>
+</div>
+<div class="mobile-pill-grid">
+<span>Micro-level detail</span>
+<span>Defect detection</span>
+<span>Surface analytics</span>
+<span>Quality assurance</span>
+</div>
+<p class="mobile-proof-takeaway">This is where the problem becomes visible. Surface condition directly affects reliability, bonding quality, and performance consistency.</p>
+</article>
+<article class="mobile-ai-detail-card">
+<p class="mobile-proof-label">05 / MAP</p>
+<img alt="MAP magnetic-abrasive finishing technology" src="assets/ai-stack-mobile-map.webp"/>
+<div class="mobile-proof-data">
+<div><b>Method</b><span>Controlled magnetic field plus abrasives</span></div>
+<div><b>Precision</b><span>Nanometer-level surface control</span></div>
+<div><b>Outcome</b><span>Lower roughness and higher performance</span></div>
+</div>
+<div class="mobile-pill-grid">
+<span>Nanometer precision</span>
+<span>Controlled magnetic field</span>
+<span>Abrasive intelligence</span>
+<span>Superior surface quality</span>
+</div>
+<p class="mobile-proof-takeaway">MAP is the surface-finishing layer in the AI manufacturing stack. It is positioned to improve the surfaces that advanced chips, packaging, optics, and photonics depend on.</p>
+</article>
+</div>
+
 <article class="panel featured">
 <p class="kicker">Plain-language explanation</p>
 <h3>MAP is not another AI software product. It is manufacturing infrastructure for the surfaces beneath AI hardware.</h3>

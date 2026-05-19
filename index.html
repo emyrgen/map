@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>EMYRGEN MAP v1.35</title>
+<title>EMYRGEN MAP v1.38</title>
 <meta content="EMYRGEN MAP is a magnetic-abrasive finishing platform for cleaner, smoother, lower-defect precision surfaces across AI chips, optics, photonics, waveguides, packaging, and high-reliability industrial components." name="description"/>
 <link href="assets/favicon.png" rel="icon"/>
 <link href="assets/apple-touch-icon.png" rel="apple-touch-icon"/>
@@ -801,6 +801,32 @@ html {
     border-top: 1px solid rgba(101, 232, 255, 0.10);
   }
 }
+
+
+/* v1.36 remove duplicate AI-card titles by using title-free visual crops */
+@media (max-width: 760px) {
+  .mobile-ai-title {
+    padding-top: 2px !important;
+  }
+
+  .mobile-ai-detail-card > img {
+    margin-top: 0 !important;
+    border-top: 1px solid rgba(101, 232, 255, 0.10);
+  }
+}
+
+/* v1.38 headline weight refinement */
+h1,
+h2 {
+  font-weight: 600 !important;
+}
+
+@media (max-width: 760px) {
+  .mobile-ai-title {
+    font-weight: 600 !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -857,7 +883,7 @@ html {
 <p class="mobile-proof-label">01 / AI Stack</p>
 <h3 class="mobile-ai-title">AI Models</h3>
 <p class="mobile-ai-subtitle">Compute demand</p>
-<img alt="AI models and compute demand" src="assets/ai-stack-mobile-ai-crop.webp"/>
+<img alt="AI models and compute demand" src="assets/ai-stack-mobile-ai-visual.webp"/>
 <div class="mobile-proof-data">
 <div><b>Core pressure</b><span>Compute demand</span></div>
 <div><b>System effect</b><span>More model scale, more infrastructure load</span></div>
@@ -869,7 +895,7 @@ html {
 <p class="mobile-proof-label">02 / AI Stack</p>
 <h3 class="mobile-ai-title">Advanced Chips</h3>
 <p class="mobile-ai-subtitle">Node + HBM pressure</p>
-<img alt="Advanced chips, node scaling, and HBM pressure" src="assets/ai-stack-mobile-chips-crop.webp"/>
+<img alt="Advanced chips, node scaling, and HBM pressure" src="assets/ai-stack-mobile-chips-visual.webp"/>
 <div class="mobile-proof-data">
 <div><b>Node pressure</b><span>3 nm-class scaling</span></div>
 <div><b>Memory pressure</b><span>HBM bandwidth up to 1.6×</span></div>
@@ -881,7 +907,7 @@ html {
 <p class="mobile-proof-label">03 / AI Stack</p>
 <h3 class="mobile-ai-title">Packaging</h3>
 <p class="mobile-ai-subtitle">Hybrid bonding / interposers</p>
-<img alt="Packaging layers including die, interposer, substrate, and PCB" src="assets/ai-stack-mobile-packaging-crop.webp"/>
+<img alt="Packaging layers including die, interposer, substrate, and PCB" src="assets/ai-stack-mobile-packaging-visual.webp"/>
 <div class="mobile-proof-data">
 <div><b>Layers</b><span>Die → Interposer → Substrate → PCB</span></div>
 <div><b>Goal</b><span>High density and high reliability</span></div>
@@ -898,7 +924,7 @@ html {
 <p class="mobile-proof-label">04 / AI Stack</p>
 <h3 class="mobile-ai-title">Surfaces</h3>
 <p class="mobile-ai-subtitle">Roughness / scratches / voids</p>
-<img alt="Surface roughness, scratches, and voids" src="assets/ai-stack-mobile-surfaces-crop.webp"/>
+<img alt="Surface roughness, scratches, and voids" src="assets/ai-stack-mobile-surfaces-visual.webp"/>
 <div class="mobile-proof-data">
 <div><b>Defect types</b><span>Roughness, scratches, voids</span></div>
 <div><b>Inspection need</b><span>Micro-level detail and defect detection</span></div>
@@ -916,7 +942,7 @@ html {
 <p class="mobile-proof-label">05 / AI Stack</p>
 <h3 class="mobile-ai-title">MAP</h3>
 <p class="mobile-ai-subtitle">Magnetic-abrasive finishing</p>
-<img alt="MAP magnetic-abrasive finishing technology" src="assets/ai-stack-mobile-map-crop.webp"/>
+<img alt="MAP magnetic-abrasive finishing technology" src="assets/ai-stack-mobile-map-visual.webp"/>
 <div class="mobile-proof-data">
 <div><b>Method</b><span>Controlled magnetic field plus abrasives</span></div>
 <div><b>Precision</b><span>Nanometer-level surface control</span></div>
@@ -932,9 +958,9 @@ html {
 </article>
 </div>
 <article class="panel featured">
-<p class="kicker">Plain-language explanation</p>
-<h3>MAP is not another AI software product. It is manufacturing infrastructure for the surfaces beneath AI hardware.</h3>
-<p>Visitors should understand the sales case immediately: if chips, optics, and packaging are becoming more sensitive, then cleaner and smoother surface finishing becomes a higher-value part of the manufacturing chain.</p>
+<p class="kicker">AI Hardware Surface-Control Layer</p>
+<h3>AI Hardware Needs a New Surface-Control Layer</h3>
+<p>As AI chips, advanced packaging, optics, and photonics move to tighter tolerances, microscopic roughness, residue, scratches, and defects become manufacturing limits. EMYRGEN™ MAP addresses that hidden layer with chemical-free magnetic-abrasive polishing for cleaner, smoother, lower-defect precision surfaces.</p>
 </article>
 </div>
 </section>
@@ -942,8 +968,8 @@ html {
 <div class="site-shell">
 <div class="section-header">
 <p class="eyebrow">The Platform</p>
-<h2>What EMYRGEN MAP does, in one sentence: <span>it improves precision surfaces.</span></h2>
-<p class="section-lede">The platform uses magnetic fields and abrasive media to finish surfaces without the same dependence on harsh slurry-heavy polishing. The commercial value is cleaner surfaces, lower residue burden, better roughness control, and a path into multiple high-value hardware markets.</p>
+<h2>Surface Control for the <span>AI Hardware Stack.</span></h2>
+<p class="section-lede">EMYRGEN™ MAP improves precision surfaces across semiconductors, optics, photonics, waveguides, and advanced packaging. The commercial value is cleaner surfaces, lower residue burden, better roughness control, and a scalable entry point into multiple high-value hardware markets.</p>
 </div>
 <div class="card-grid">
 <div class="stat-card"><p class="big-number">01</p><h3>Cleaner finishing</h3><p>MAP is positioned as a cleaner finishing path for surface preparation, polishing, cleansing before welding, and pre-coating surface conditioning.</p></div>
@@ -951,7 +977,7 @@ html {
 <div class="stat-card"><p class="big-number">03</p><h3>Machine platform</h3><p>A20-300 and the broader machine lineage make the pitch tangible: this is not only a method, it is a hardware-led platform.</p></div>
 <div class="stat-card"><p class="big-number">04</p><h3>Commercial pathways</h3><p>Revenue paths include equipment systems, sample programs, process recipes, consumable media, licensing, integration, training, and support.</p></div>
 </div>
-<div class="quote-band">The sales page works only when visitors understand both sides: MAP is a surface-quality technology, and surface quality is a commercial bottleneck across advanced hardware.</div>
+<div class="quote-band">Cleaner, smoother, lower-defect surfaces become more valuable as chip, optics, and packaging tolerances tighten across the AI hardware stack.</div>
 </div>
 </section>
 <section class="section" id="how-it-works">
@@ -1049,8 +1075,8 @@ html {
 <div class="site-shell">
 <div class="section-header">
 <p class="eyebrow">Machine Platforms</p>
-<h2>The platform is easier to believe when visitors see <span>real equipment logic.</span></h2>
-<p class="section-lede">MAP should not look like a loose research idea. It needs to look like a machine-led commercial platform with equipment, sample programs, process windows, integration paths, and revenue logic.</p>
+<h2>Machine Platforms Built for <span>real process adoption.</span></h2>
+<p class="section-lede">EMYRGEN™ MAP is presented as a machine-led commercial platform with equipment systems, sample programs, process windows, integration paths, and revenue logic across multiple precision-hardware markets.</p>
 </div>
 <div class="image-grid">
 <div class="visual-card"><img alt="A20-300 commercial MAP platform" src="assets/a20-300-pilot-premium.webp"/><div class="caption"><strong>A20-300 commercial platform.</strong> The current machine story for sample programs, partner demonstrations, process development, and equipment discussions.</div></div>

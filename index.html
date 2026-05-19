@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>EMYRGEN MAP v1.41</title>
+<title>EMYRGEN MAP v1.42</title>
 <meta content="EMYRGEN MAP is a magnetic-abrasive finishing platform for cleaner, smoother, lower-defect precision surfaces across AI chips, optics, photonics, waveguides, packaging, and high-reliability industrial components." name="description"/>
 <link href="assets/favicon.png" rel="icon"/>
 <link href="assets/apple-touch-icon.png" rel="apple-touch-icon"/>
@@ -975,6 +975,276 @@ h3 {
 
   .mobile-proof-data span {
     line-height: 1.38 !important;
+  }
+}
+
+
+/* v1.42 premium card refinement across the website */
+.panel,
+.machine-card,
+.stat-card,
+.mini-card,
+.brand-card,
+.form-panel,
+.hero-proof-card,
+.mobile-proof-card,
+.mobile-foundation-card,
+.mobile-ai-detail-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(120, 220, 255, 0.18) !important;
+  background:
+    radial-gradient(circle at top right, rgba(102, 232, 255, 0.14), transparent 18rem),
+    radial-gradient(circle at bottom left, rgba(255, 212, 90, 0.06), transparent 18rem),
+    linear-gradient(180deg, rgba(8, 16, 30, 0.96), rgba(4, 9, 18, 0.98)) !important;
+  box-shadow:
+    0 26px 90px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255,255,255,0.035) !important;
+}
+
+.panel::before,
+.machine-card::before,
+.stat-card::before,
+.mini-card::before,
+.brand-card::before,
+.form-panel::before,
+.hero-proof-card::before,
+.mobile-proof-card::before,
+.mobile-foundation-card::before,
+.mobile-ai-detail-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255,214,108,0.28), rgba(102,232,255,0.16), rgba(255,255,255,0.02));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: .9;
+}
+
+.panel.featured,
+.featured {
+  border-color: rgba(255, 214, 108, 0.22) !important;
+  background:
+    radial-gradient(circle at top right, rgba(255, 214, 108, 0.07), transparent 16rem),
+    radial-gradient(circle at 20% 10%, rgba(102, 232, 255, 0.12), transparent 20rem),
+    linear-gradient(180deg, rgba(9, 17, 31, 0.97), rgba(4, 9, 18, 0.99)) !important;
+  box-shadow:
+    0 26px 95px rgba(0, 0, 0, 0.36),
+    0 0 0 1px rgba(255,214,108,0.05) inset !important;
+}
+
+.panel h3,
+.machine-card h3,
+.stat-card h3,
+.brand-card h3,
+.form-panel h3,
+.hero-proof-card h3 {
+  color: #f8fbff !important;
+  margin-bottom: 16px !important;
+}
+
+.kicker,
+.eyebrow,
+.mobile-proof-label {
+  color: #ffd86f !important;
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px !important;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 214, 108, 0.18);
+  background: linear-gradient(180deg, rgba(255, 214, 108, 0.06), rgba(255,255,255,0.01));
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px !important;
+  padding: 7px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(102, 232, 255, 0.14);
+  background: linear-gradient(180deg, rgba(102,232,255,0.05), rgba(255,255,255,0.01));
+}
+
+.spec-row,
+.logic-item,
+.step,
+.hero-proof-card,
+.mobile-proof-data div,
+.before-after-box,
+.foundation-pillars div,
+.mobile-pill-grid span {
+  border: 1px solid rgba(120, 220, 255, 0.14) !important;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.018)) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.03),
+    0 10px 24px rgba(0,0,0,0.14);
+}
+
+.spec-row,
+.logic-item,
+.step {
+  margin-top: 14px !important;
+  padding: 18px 18px 16px !important;
+  border-radius: 22px !important;
+  color: #dbe8f4 !important;
+}
+
+.spec-row b,
+.logic-label,
+.step-number {
+  color: #ffe7a0 !important;
+  font-size: .92rem !important;
+  line-height: 1.35 !important;
+  letter-spacing: 0.01em !important;
+  font-weight: 650 !important;
+  text-transform: none !important;
+}
+
+.spec-row span,
+.logic-item span,
+.step span,
+.step {
+  color: #edf6ff !important;
+  font-size: 1.02rem !important;
+  line-height: 1.72 !important;
+  letter-spacing: 0 !important;
+}
+
+.stat-card p:not(.big-number),
+.mini-card p,
+.panel p,
+.form-panel p,
+.mobile-proof-takeaway,
+.visual-card .caption {
+  color: #dce8f4 !important;
+  line-height: 1.72 !important;
+}
+
+.visual-card .caption {
+  background:
+    linear-gradient(180deg, rgba(7,12,22,.86), rgba(5,9,18,.94)) !important;
+}
+
+.quote-band {
+  border: 1px solid rgba(255,214,108,.16) !important;
+  background:
+    radial-gradient(circle at top right, rgba(255,214,108,.08), transparent 18rem),
+    radial-gradient(circle at 15% 20%, rgba(102,232,255,.09), transparent 20rem),
+    linear-gradient(180deg, rgba(7,14,27,.92), rgba(4,9,18,.98)) !important;
+  box-shadow: 0 22px 72px rgba(0,0,0,.28) !important;
+}
+
+.mobile-proof-data,
+.before-after-grid,
+.foundation-pillars {
+  gap: 12px !important;
+}
+
+.mobile-proof-data div,
+.before-after-box,
+.foundation-pillars div {
+  padding: 15px 16px !important;
+  border-radius: 18px !important;
+}
+
+.mobile-pill-grid {
+  gap: 12px !important;
+  padding-top: 2px !important;
+}
+
+.mobile-pill-grid span {
+  min-height: 54px !important;
+  border-radius: 16px !important;
+  color: #f2f7fb !important;
+}
+
+.big-number {
+  text-shadow: 0 0 18px rgba(255, 214, 108, 0.10);
+}
+
+.contact-note,
+.form-panel small,
+small {
+  letter-spacing: 0 !important;
+}
+
+@media (max-width: 760px) {
+  .panel,
+  .machine-card,
+  .stat-card,
+  .mini-card,
+  .brand-card,
+  .form-panel,
+  .hero-proof-card,
+  .mobile-proof-card,
+  .mobile-foundation-card,
+  .mobile-ai-detail-card {
+    border-radius: 28px !important;
+    box-shadow:
+      0 20px 56px rgba(0, 0, 0, 0.34),
+      inset 0 1px 0 rgba(255,255,255,0.03) !important;
+  }
+
+  .panel,
+  .machine-card,
+  .stat-card,
+  .brand-card,
+  .form-panel {
+    padding: 24px !important;
+  }
+
+  .spec-row,
+  .logic-item,
+  .step {
+    padding: 16px 16px 15px !important;
+    border-radius: 20px !important;
+  }
+
+  .spec-row span,
+  .logic-item span,
+  .step span,
+  .step {
+    font-size: 1rem !important;
+    line-height: 1.66 !important;
+  }
+
+  .kicker,
+  .eyebrow {
+    margin-bottom: 16px !important;
+  }
+
+  .panel h3,
+  .machine-card h3,
+  .stat-card h3,
+  .brand-card h3,
+  .form-panel h3,
+  .hero-proof-card h3 {
+    margin-bottom: 14px !important;
+  }
+
+  .mobile-proof-data div,
+  .before-after-box,
+  .foundation-pillars div {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+
+  .mobile-proof-data span,
+  .before-after-box span,
+  .foundation-pillars span {
+    text-align: left !important;
+    width: 100%;
   }
 }
 

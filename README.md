@@ -1,13 +1,13 @@
-# EMYRGEN MAP Investor Website v1.14
+# EMYRGEN MAP Website v1.15
 
 Source-only static website package for EMYRGEN™ MAP.
 
 ## v1.14 revision
 
-- Rewrites the public page as an investor sales website rather than internal owner-facing guidance.
+- Rewrites the public page as an sales website rather than internal owner-facing guidance.
 - Adds an Investment Case section immediately after the hero.
-- Replaces instructional phrases such as “use this section,” “use these phrases,” “avoid these overclaims,” and “do not lead” with investor-facing copy.
-- Refocuses CTAs on requesting the EMYRGEN MAP™ investor brief.
+- Replaces instructional phrases such as “use this section,” “use these phrases,” “avoid these overclaims,” and “do not lead” with buyer-facing copy.
+- Refocuses CTAs on requesting the EMYRGEN MAP™ brief.
 - Preserves the high-contrast hero image, A20-300 pilot visuals, one-column layout, mobile navigation, and premium visual system.
 - Keeps GitHub Pages workflow included.
 

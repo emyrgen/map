@@ -1,4 +1,4 @@
-name: Deploy EMYRGEN MAP Investor Website
+name: Deploy EMYRGEN MAP Website
 
 on:
   push:

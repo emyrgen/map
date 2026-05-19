@@ -10,24 +10,26 @@ Version focus:
 - Desktop AI-stack visual plus mobile-friendly card sequence.
 - GitHub Pages workflow preserved.
 
-- v1.34 applies Fixes #1–#4: brighter high-contrast text, compact right-side mobile hamburger, platform-essence hero image, and the AI hardware surface-problem title/subtitle under the hero.
+- v1.35 applies Fixes #1–#4: brighter high-contrast text, compact right-side mobile hamburger, platform-essence hero image, and the AI hardware surface-problem title/subtitle under the hero.
 
-- v1.34 corrects public brand consistency: EMYRGEN™ MAP is used as the website/platform name, while magnetic-abrasive polishing remains the technology description.
+- v1.35 corrects public brand consistency: EMYRGEN™ MAP is used as the website/platform name, while magnetic-abrasive polishing remains the technology description.
 
-- v1.34 fixes mobile menu dropdown behavior: it now opens full-width directly under the header and uses larger, easier-to-tap menu text.
+- v1.35 fixes mobile menu dropdown behavior: it now opens full-width directly under the header and uses larger, easier-to-tap menu text.
 
-- v1.34 fixes the mobile hamburger interaction by adding a robust click/touch menu script and keeping the full-width mobile menu styling from v1.26.
+- v1.35 fixes the mobile hamburger interaction by adding a robust click/touch menu script and keeping the full-width mobile menu styling from v1.26.
 
-- v1.34 refines the mobile menu: smaller menu-item font size, reduced row height, tighter padding, and decreased spacing between menu items.
+- v1.35 refines the mobile menu: smaller menu-item font size, reduced row height, tighter padding, and decreased spacing between menu items.
 
-- v1.34 fixes mobile anchor navigation so tapped menu items scroll to sections with the section label fully visible below the sticky header.
+- v1.35 fixes mobile anchor navigation so tapped menu items scroll to sections with the section label fully visible below the sticky header.
 
-- v1.34 reduces excessive vertical gaps between sections while preserving mobile anchor visibility below the sticky header.
+- v1.35 reduces excessive vertical gaps between sections while preserving mobile anchor visibility below the sticky header.
 
-- v1.34 removes the visible static-website/email explanatory note from the contact/request section.
+- v1.35 removes the visible static-website/email explanatory note from the contact/request section.
 
-- v1.34 changes the commercial request form and email links to submit to eligreen@emyrgengroup.com.
+- v1.35 changes the commercial request form and email links to submit to eligreen@emyrgengroup.com.
 
-- v1.34 keeps the large proof/foundation infographics for desktop but replaces them on mobile with readable stacked cards, cropped visuals, real HTML data rows, and clearer proof descriptions.
+- v1.35 keeps the large proof/foundation infographics for desktop but replaces them on mobile with readable stacked cards, cropped visuals, real HTML data rows, and clearer proof descriptions.
 
-- v1.34 restructures the AI stack posters on mobile into readable stacked cards with larger data rows for AI Models, Advanced Chips, Packaging, Surfaces, and MAP.
+- v1.35 restructures the AI stack posters on mobile into readable stacked cards with larger data rows for AI Models, Advanced Chips, Packaging, Surfaces, and MAP.
+
+- v1.35 unifies the AI stack mobile-card titles by moving them into real HTML, giving all five cards the same title size and subtitle style, and cropping the poster images so their baked-in titles do not conflict.

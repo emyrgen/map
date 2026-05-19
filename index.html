@@ -1,1137 +1,879 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EMYRGEN™ MAP | Chemical-Free Surface Control for AI Hardware</title>
-  <meta name="description" content="EMYRGEN™ MAP delivers patent-backed, chemical-free magnetic abrasive polishing for AI chips, optics, semiconductors, and high-reliability precision surfaces." />
-  <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
-  <link rel="manifest" href="assets/site.webmanifest" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>EMYRGEN MAP v1.30</title>
+<meta content="EMYRGEN MAP is a magnetic-abrasive finishing platform for cleaner, smoother, lower-defect precision surfaces across AI chips, optics, photonics, waveguides, packaging, and high-reliability industrial components." name="description"/>
+<link href="assets/favicon.png" rel="icon"/>
+<link href="assets/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="assets/site.webmanifest" rel="manifest"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&amp;family=IBM+Plex+Mono:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
     :root {
-      --bg: #030713;
-      --bg-deep: #02050d;
-      --panel: rgba(7, 19, 38, 0.88);
-      --panel-2: rgba(10, 27, 52, 0.86);
-      --glass: rgba(9, 23, 43, 0.72);
-      --line: rgba(104, 212, 255, 0.20);
-      --line-strong: rgba(104, 212, 255, 0.34);
-      --line-soft: rgba(255,255,255,0.10);
-      --text: #f4fbff;
-      --muted: #bfd1df;
-      --soft: #8eadbf;
+      --bg: #030813;
+      --bg2: #06111f;
+      --panel: rgba(8, 18, 33, .86);
+      --panel2: rgba(10, 27, 49, .82);
+      --line: rgba(95, 220, 255, .16);
+      --line2: rgba(95, 220, 255, .32);
+      --text: #f6fbff;
+      --muted: #c9d8e6;
+      --soft: #91a7bd;
       --cyan: #5fdcff;
-      --amber: #ffcf64;
-      --amber-2: #ffb547;
-      --gold-soft: #ffe6a8;
-      --cyan-2: #a3f4ff;
-      --blue: #2b86ff;
-      --max: 1120px;
-      --radius: 32px;
-      --shadow: 0 32px 100px rgba(0, 0, 0, 0.50);
+      --cyan2: #91f4ff;
+      --teal: #34e2d0;
+      --blue: #2d8cff;
+      --yellow: #ffd45e;
+      --yellow2: #ffbf3e;
+      --radius: 30px;
+      --max: 1160px;
+      --shadow: 0 32px 100px rgba(0,0,0,.48);
       --font-display: "Space Grotesk", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      --font-tech: "IBM Plex Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      --font-tech: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
     }
-
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: var(--font-display);
       color: var(--text);
-      line-height: 1.65;
       background:
-        radial-gradient(circle at 12% 0%, rgba(41, 124, 255, 0.24), transparent 30rem),
-        radial-gradient(circle at 88% 10%, rgba(88, 223, 255, 0.18), transparent 28rem),
-        radial-gradient(circle at 84% 34%, rgba(124, 87, 255, 0.11), transparent 22rem),
-        radial-gradient(circle at 70% 48%, rgba(57, 130, 255, 0.12), transparent 34rem),
-        linear-gradient(180deg, #01040b 0%, #030713 26%, #02050d 100%);
+        radial-gradient(circle at 14% -8%, rgba(45,140,255,.20), transparent 34rem),
+        radial-gradient(circle at 86% 10%, rgba(52,226,208,.14), transparent 28rem),
+        radial-gradient(circle at 50% 40%, rgba(95,220,255,.08), transparent 44rem),
+        linear-gradient(180deg, #030712 0%, #061120 45%, #030712 100%);
       overflow-x: hidden;
     }
-
     body::before {
       content: "";
       position: fixed;
       inset: 0;
       pointer-events: none;
-      background:
-        linear-gradient(90deg, rgba(95,220,255,0.035) 1px, transparent 1px),
-        linear-gradient(180deg, rgba(95,220,255,0.028) 1px, transparent 1px),
-        radial-gradient(circle at 50% 120%, rgba(36, 117, 255, 0.12), transparent 32rem);
-      background-size: 58px 58px, 58px 58px, auto;
-      mix-blend-mode: screen;
-      opacity: .32;
+      background-image:
+        linear-gradient(rgba(95,220,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(95,220,255,.035) 1px, transparent 1px);
+      background-size: 82px 82px;
+      mask-image: linear-gradient(180deg, transparent, black 12%, black 70%, transparent);
+      z-index: -1;
     }
-
     a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; height: auto; display: block; }
-    [id] { scroll-margin-top: 110px; }
+    img { max-width: 100%; display: block; }
+    .site-shell { width: min(var(--max), calc(100% - 36px)); margin: 0 auto; }
 
-    .site-shell {
-      width: min(var(--max), calc(100% - 36px));
-      margin: 0 auto;
-    }
+    .topbar { position: sticky; top: 0; z-index: 20; padding: 14px 0; background: linear-gradient(180deg, rgba(3,8,18,.92), rgba(3,8,18,.72)); border-bottom: 1px solid rgba(95,220,255,.08); backdrop-filter: blur(14px); }
+    .brand-card { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 16px 18px; border: 1px solid var(--line); border-radius: 28px; background: radial-gradient(circle at top right, rgba(95,220,255,.11), transparent 20rem), linear-gradient(180deg, rgba(8,21,44,.82), rgba(3,10,22,.86)); box-shadow: 0 18px 54px rgba(0,0,0,.32); }
+    .brand-lockup { display: flex; align-items: center; gap: 16px; min-width: 0; }
+    .brand-icon { width: clamp(52px, 5vw, 72px); height: clamp(52px, 5vw, 72px); border-radius: 18px; box-shadow: 0 0 28px rgba(95,220,255,.24); }
+    .brand-title { margin: 0; font-size: clamp(1.9rem, 4vw, 3.4rem); line-height: .92; letter-spacing: .09em; text-transform: uppercase; font-weight: 800; }
+    .brand-subtitle { margin: 8px 0 0; color: var(--cyan2); font-family: var(--font-tech); font-size: clamp(.72rem, 1vw, .95rem); letter-spacing: .14em; text-transform: uppercase; }
+    .nav-stack { display: flex; align-items: center; justify-content: flex-end; gap: 7px; flex-wrap: wrap; }
+    .nav-stack a { font-family: var(--font-tech); font-size: .74rem; letter-spacing: .02em; color: #d9e8f6; min-height: 38px; display: inline-flex; align-items: center; padding: 9px 11px; border: 1px solid rgba(95,220,255,.14); border-radius: 999px; background: rgba(255,255,255,.025); transition: .18s ease; }
+    .nav-stack a:hover { transform: translateY(-1px); border-color: rgba(95,220,255,.36); background: rgba(95,220,255,.07); }
+    .menu-toggle { display: none; width: 48px; height: 48px; border: 1px solid rgba(95,220,255,.22); border-radius: 15px; background: rgba(255,255,255,.04); color: var(--text); }
+    .menu-toggle span, .menu-toggle span::before, .menu-toggle span::after { content: ""; display: block; width: 22px; height: 2px; background: currentColor; border-radius: 2px; margin: 0 auto; }
+    .menu-toggle span::before { transform: translateY(-7px); }
+    .menu-toggle span::after { transform: translateY(5px); }
 
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      padding: 14px 0;
-      background: linear-gradient(180deg, rgba(2, 6, 15, 0.92), rgba(2, 6, 15, 0.74));
-      border-bottom: 1px solid rgba(95, 216, 255, 0.10);
-      backdrop-filter: blur(18px);
-    }
-
-    .brand-card {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      padding: 18px 22px;
-      border-radius: 28px;
-      border: 1px solid rgba(104,212,255,0.18);
-      background:
-        radial-gradient(circle at top right, rgba(74, 210, 255, 0.16), transparent 20rem),
-        linear-gradient(180deg, rgba(6, 17, 34, 0.90), rgba(4, 11, 23, 0.88));
-      box-shadow: 0 18px 54px rgba(0,0,0,.34);
-    }
-
-    .brand-lockup {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      min-width: 0;
-      flex: 0 0 auto;
-    }
-
-    .brand-icon {
-      width: 86px;
-      height: 86px;
-      border-radius: 24px;
-      flex: 0 0 auto;
-      object-fit: cover;
-      box-shadow:
-        0 0 0 1px rgba(132, 226, 255, 0.20),
-        0 18px 48px rgba(50, 168, 255, 0.20),
-        0 16px 38px rgba(0,0,0,.34);
-    }
-
-    .brand-copy { min-width: 0; }
-    .brand-title {
-      margin: 0;
-      font-size: clamp(2.05rem, 4.4vw, 3.35rem);
-      line-height: .92;
-      letter-spacing: .105em;
-      text-transform: uppercase;
-      font-weight: 800;
-      color: #ffffff;
-      text-shadow: 0 0 28px rgba(95, 220, 255, 0.18);
-    }
-
-    .brand-subtitle {
-      font-family: var(--font-tech);
-      margin: 9px 0 0;
-      color: var(--cyan-2);
-      font-size: clamp(.78rem, 1.1vw, .98rem);
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-
-    .menu-toggle {
-      display: none;
-      align-items: center;
-      justify-content: center;
-      width: 48px;
-      height: 48px;
-      border: 1px solid rgba(104, 212, 255, 0.28);
-      border-radius: 15px;
-      background: rgba(255,255,255,0.05);
-      color: #ecfbff;
-      cursor: pointer;
-    }
-
-    .menu-toggle span,
-    .menu-toggle span::before,
-    .menu-toggle span::after {
-      display: block;
-      width: 20px;
-      height: 2px;
-      border-radius: 99px;
-      background: currentColor;
-      position: relative;
-      transition: transform .18s ease, opacity .18s ease;
-    }
-
-    .menu-toggle span::before,
-    .menu-toggle span::after {
-      content: "";
-      position: absolute;
-      left: 0;
-    }
-
-    .menu-toggle span::before { top: -7px; }
-    .menu-toggle span::after { top: 7px; }
-    .menu-toggle[aria-expanded="true"] span { transform: rotate(45deg); }
-    .menu-toggle[aria-expanded="true"] span::before { top: 0; transform: rotate(90deg); }
-    .menu-toggle[aria-expanded="true"] span::after { opacity: 0; }
-
-    .nav-stack {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .nav-stack a {
-      font-family: var(--font-tech);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 40px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(104, 212, 255, 0.16);
-      background: rgba(255,255,255,0.035);
-      color: #dff6ff;
-      font-size: .78rem;
-      letter-spacing: .015em;
-      white-space: nowrap;
-      transition: transform .18s ease, background .18s ease, border-color .18s ease;
-    }
-
-    .nav-stack a:hover,
-    .nav-stack a:focus-visible {
-      transform: translateY(-1px);
-      border-color: rgba(104, 212, 255, 0.40);
-      background: rgba(95, 220, 255, 0.09);
-      outline: none;
-    }
-
-    .hero {
-      padding: 18px 0 86px;
-    }
-
-    .hero-panel {
-      position: relative;
-      border-radius: 42px;
-      overflow: hidden;
-      border: 1px solid rgba(95, 220, 255, 0.22);
-      background: linear-gradient(180deg, rgba(4, 13, 27, .98), rgba(2, 7, 16, .98));
-      box-shadow: 0 36px 110px rgba(0, 0, 0, 0.52), 0 0 0 1px rgba(95,220,255,0.04) inset;
-    }
-
-    .hero-image-wrap {
-      position: relative;
-      min-height: 620px;
-      background: #061120;
-    }
-
-    .hero-image-wrap::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(90deg, rgba(2,7,16,0.28) 0%, rgba(2,7,16,0.02) 22%, rgba(2,7,16,0.02) 74%, rgba(2,7,16,0.22) 100%),
-        linear-gradient(180deg, rgba(2,7,16,0.10) 0%, rgba(2,7,16,0.00) 54%, rgba(2,7,16,0.30) 100%);
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    .hero-image-wrap::after {
-      content: "";
-      position: absolute;
-      inset: auto 0 0 0;
-      height: 16%;
-      background: linear-gradient(180deg, rgba(2,7,16,0) 0%, rgba(2,7,16,0.42) 100%);
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    .hero-image-wrap img {
-      width: 100%;
-      min-height: 620px;
-      object-fit: cover;
-      object-position: center 30%;
-      opacity: 1;
-      filter: saturate(1.08) contrast(1.16) brightness(1.04);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 5;
-      margin: -150px 28px 28px;
-      padding: clamp(28px, 4vw, 54px);
-      border-radius: 34px;
-      border: 1px solid rgba(95, 220, 255, 0.22);
-      background:
-        radial-gradient(circle at top right, rgba(88, 223, 255, 0.12), transparent 18rem),
-        radial-gradient(circle at left center, rgba(43, 134, 255, 0.14), transparent 20rem),
-        linear-gradient(180deg, rgba(5, 15, 31, 0.70), rgba(3, 9, 20, 0.88));
-      box-shadow: 0 28px 80px rgba(0,0,0,.42), 0 0 0 1px rgba(255,255,255,0.035) inset;
-      backdrop-filter: blur(10px);
-    }
-
-    .eyebrow, .kicker {
-      font-family: var(--font-tech);
-      display: inline-block;
-      margin: 0 0 18px;
-      padding: 9px 13px;
-      border: 1px solid rgba(95, 220, 255, 0.24);
-      border-radius: 999px;
-      color: var(--cyan-2);
-      background: linear-gradient(135deg, rgba(39, 141, 255, 0.08), rgba(255, 191, 77, 0.08));
-      font-size: .76rem;
-      font-weight: 640;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-    }
-
-    .kicker {
-      padding: 0;
-      border: 0;
-      border-radius: 0;
-      background: none;
-      margin-bottom: 12px;
-      color: var(--amber);
-    }
-
+    .hero { padding: 18px 0 86px; }
+    .hero-panel { overflow: hidden; border: 1px solid rgba(95,220,255,.18); border-radius: 42px; background: linear-gradient(180deg, rgba(5,12,24,.98), rgba(3,8,18,.98)); box-shadow: var(--shadow), 0 0 0 1px rgba(95,220,255,.04) inset; }
+    .hero-image-wrap { position: relative; min-height: 520px; background: #061120; }
+    .hero-image-wrap::after { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 74% 18%, rgba(95,220,255,.14), transparent 34%), linear-gradient(180deg, transparent 45%, rgba(3,8,18,.42)); pointer-events: none; }
+    .hero-image-wrap img { width: 100%; min-height: 520px; object-fit: cover; object-position: center 30%; }
+    .hero-content { padding: clamp(28px, 5vw, 68px); margin-top: -18px; }
+    .eyebrow, .kicker { display: inline-block; margin: 0 0 18px; padding: 9px 13px; border-radius: 999px; border: 1px solid rgba(255,212,94,.20); background: linear-gradient(135deg, rgba(255,212,94,.08), rgba(255,212,94,.02)); color: var(--yellow); font-family: var(--font-tech); font-size: .76rem; font-weight: 650; letter-spacing: .14em; text-transform: uppercase; }
+    .kicker { padding: 0; border: 0; border-radius: 0; background: none; margin-bottom: 12px; color: var(--yellow); }
     h1, h2, h3, p { max-width: 100%; }
-
-    h1 {
-      margin: 0;
-      font-family: var(--font-display);
-      font-size: clamp(3.05rem, 8vw, 6.3rem);
-      line-height: .98;
-      letter-spacing: -0.060em;
-      font-weight: 700;
-      max-width: 12ch;
-      text-wrap: balance;
-    }
-
+    h1 { margin: 0; font-size: clamp(3.05rem, 8vw, 6.3rem); line-height: .98; letter-spacing: -.06em; max-width: 13ch; font-weight: 800; text-wrap: balance; }
     h1 span, h2 span, .accent { color: var(--cyan); }
-    .warm-accent { color: var(--amber); }
+    .hero-lede { margin: 30px 0 0; max-width: 940px; color: #d2e0ed; font-size: clamp(1.14rem, 2vw, 1.45rem); line-height: 1.78; }
+    .cta-stack { margin-top: 34px; display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 16px 21px; border-radius: 999px; border: 1px solid rgba(95,220,255,.24); color: #eaf6ff; font-family: var(--font-tech); font-size: .86rem; font-weight: 700; letter-spacing: .02em; background: rgba(255,255,255,.035); box-shadow: 0 14px 30px rgba(95,220,255,.08); transition: .18s ease; }
+    .btn:hover { transform: translateY(-2px); border-color: rgba(95,220,255,.42); }
+    .btn.primary { background: linear-gradient(135deg, #ffe07a, #ffc84d); color: #181000; border-color: transparent; box-shadow: 0 18px 42px rgba(255,200,77,.24); }
+    .hero-proof-grid { margin-top: 26px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; max-width: 980px; }
+    .hero-proof-card { padding: 18px 16px; border-radius: 24px; border: 1px solid rgba(95,220,255,.16); background: radial-gradient(circle at top right, rgba(95,220,255,.08), transparent 16rem), linear-gradient(180deg, rgba(8,16,30,.90), rgba(5,10,18,.92)); }
+    .hero-proof-number { margin: 0; color: var(--yellow); font-family: var(--font-tech); font-size: clamp(1.8rem, 4vw, 2.5rem); line-height: 1; font-weight: 800; letter-spacing: -.05em; }
+    .hero-proof-label { margin: 8px 0 0; color: #e2eef8; font-size: .96rem; line-height: 1.45; }
 
-    .hero-lede {
-      margin: 30px 0 0;
-      max-width: 900px;
-      color: #d7e8f5;
-      font-size: clamp(1.16rem, 2vw, 1.44rem);
-      line-height: 1.78;
-    }
+    .section { position: relative; padding: 96px 0; border-top: 1px solid rgba(255,255,255,.06); }
+    .section::before { content: ""; position: absolute; top: 0; left: 50%; width: min(1120px, calc(100% - 36px)); height: 1px; transform: translateX(-50%); background: linear-gradient(90deg, transparent, rgba(95,220,255,.14), transparent); }
+    .section-header { max-width: 980px; margin-bottom: 38px; }
+    h2 { margin: 0; font-size: clamp(2.55rem, 5.8vw, 4.9rem); line-height: 1.02; letter-spacing: -.056em; font-weight: 800; text-wrap: balance; }
+    .section-lede { margin: 24px 0 0; color: #ccddeb; font-size: clamp(1.08rem, 1.9vw, 1.34rem); line-height: 1.84; max-width: 940px; }
+    .visual-card { position: relative; overflow: hidden; margin-top: 30px; border-radius: var(--radius); border: 1px solid rgba(255,255,255,.10); background: radial-gradient(circle at top right, rgba(95,220,255,.10), transparent 24rem), rgba(255,255,255,.03); box-shadow: 0 24px 70px rgba(0,0,0,.30); }
+    .visual-card img { width: 100%; object-fit: cover; }
+    .visual-card .caption { padding: 19px 24px 23px; background: rgba(6,10,18,.80); border-top: 1px solid rgba(95,220,255,.10); color: #d7e5f0; line-height: 1.7; font-size: 1rem; }
+    .caption strong { color: #f9fdff; }
+    .mobile-only { display: none; }
+    .mobile-stack-grid { display: none; }
+    .panel, .machine-card { margin-top: 28px; padding: clamp(26px, 4vw, 48px); border-radius: var(--radius); border: 1px solid rgba(255,255,255,.08); background: radial-gradient(circle at top right, rgba(95,220,255,.09), transparent 24rem), radial-gradient(circle at bottom left, rgba(47,137,255,.05), transparent 22rem), linear-gradient(180deg, rgba(7,16,29,.92), rgba(4,9,18,.95)); box-shadow: 0 24px 80px rgba(0,0,0,.26); }
+    .featured { border-color: rgba(95,220,255,.18); background: radial-gradient(circle at top right, rgba(95,220,255,.12), transparent 24rem), linear-gradient(180deg, rgba(9,18,32,.96), rgba(4,10,19,.98)); }
+    h3 { margin: 0; font-size: clamp(1.42rem, 3.25vw, 2.08rem); line-height: 1.18; letter-spacing: -.038em; font-weight: 700; text-wrap: balance; }
+    .panel p, .machine-card p { margin: 16px 0 0; color: var(--muted); font-size: 1.04rem; line-height: 1.78; }
+    .card-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 24px; }
+    .stat-card, .spec-row, .step, .mini-card { padding: 20px 22px; border-radius: 22px; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.038); }
+    .stat-card { min-height: 190px; }
+    .big-number { margin: 0 0 10px; color: var(--yellow); font-family: var(--font-tech); font-size: clamp(2rem, 5.4vw, 3.75rem); line-height: 1; font-weight: 800; letter-spacing: -.055em; }
+    .stat-card p:not(.big-number), .mini-card p { margin: 12px 0 0; color: var(--muted); line-height: 1.7; }
+    .quote-band { margin-top: 30px; padding: clamp(28px, 4vw, 52px); border-radius: 36px; border: 1px solid rgba(95,220,255,.18); background: radial-gradient(circle at 70% 0%, rgba(95,220,255,.10), transparent 22rem), linear-gradient(180deg, rgba(9,16,30,.88), rgba(4,9,18,.92)); color: #f4fbff; font-size: clamp(1.45rem, 3.1vw, 2.45rem); line-height: 1.26; letter-spacing: -.044em; font-weight: 700; text-wrap: balance; }
+    .logic-item, .spec-row, .step { margin-top: 14px; color: var(--muted); line-height: 1.74; }
+    .logic-label, .spec-row b, .step-number { display: inline-block; margin-bottom: 8px; color: var(--cyan2); font-family: var(--font-tech); font-size: .78rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+    .spec-row b { display: block; color: #fff4ce; font-family: var(--font-display); letter-spacing: 0; font-size: 1.03rem; text-transform: none; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: start; }
+    .image-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .decision-strip { margin-top: 24px; padding: 20px 22px; border-radius: 24px; border: 1px solid rgba(95,220,255,.16); background: linear-gradient(135deg, rgba(95,220,255,.10), rgba(47,137,255,.04)); color: #eef8ff; line-height: 1.7; }
+    .brief-list { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; margin-top: 22px; }
+    .form-panel { margin-top: 28px; padding: clamp(24px, 4vw, 46px); border-radius: var(--radius); border: 1px solid rgba(95,220,255,.18); background: radial-gradient(circle at top right, rgba(95,220,255,.10), transparent 25rem), linear-gradient(180deg, rgba(8,16,31,.92), rgba(3,10,22,.95)); box-shadow: var(--shadow); }
+    label { display: block; margin-top: 20px; color: #eef8ff; font-family: var(--font-tech); font-size: .84rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
+    input, textarea, select { width: 100%; margin-top: 8px; padding: 15px 15px; border-radius: 18px; border: 1px solid rgba(255,255,255,.10); color: #fff; background: rgba(255,255,255,.05); font: inherit; }
+    textarea { min-height: 130px; resize: vertical; }
+    input:focus, textarea:focus, select:focus { outline: none; border-color: rgba(95,220,255,.36); box-shadow: 0 0 0 4px rgba(95,220,255,.10); }
+    .submit-note, .small-note { margin-top: 18px; color: var(--soft); font-size: .93rem; line-height: 1.65; }
+    .footer { padding: 44px 0 60px; color: var(--soft); border-top: 1px solid rgba(255,255,255,.06); }
 
-    .cta-stack { margin-top: 36px; }
+    @media (max-width: 980px) { .brand-card { align-items: flex-start; } .nav-stack { display: none; width: 100%; margin-top: 16px; justify-content: flex-start; } .nav-stack.is-open { display: flex; } .menu-toggle { display: inline-flex; align-items: center; justify-content: center; } .brand-card { flex-wrap: wrap; } .hero-proof-grid, .card-grid, .two-col, .image-grid, .brief-list { grid-template-columns: 1fr; } }
+    @media (max-width: 760px) { .site-shell { width: min(100% - 28px, var(--max)); } .topbar { padding: 10px 0; } .brand-title { font-size: 1.52rem; letter-spacing: .055em; } .brand-subtitle { font-size: .66rem; } .brand-icon { width: 46px; height: 46px; border-radius: 14px; } .hero { padding-bottom: 54px; } .hero-panel { border-radius: 28px; } .hero-image-wrap, .hero-image-wrap img { min-height: 380px; } .hero-content { padding: 28px 22px 34px; } h1 { font-size: clamp(2.45rem, 15vw, 4rem); } h2 { font-size: clamp(2.15rem, 11vw, 3.25rem); } .section { padding: 68px 0; } .btn { width: 100%; } .desktop-only { display: none !important; } .mobile-only { display: block !important; } .mobile-stack-grid { display: grid !important; grid-template-columns: 1fr; gap: 16px; margin-top: 24px; } .mobile-stack-grid .visual-card { margin-top: 0; } .mobile-stack-grid .visual-card img { aspect-ratio: 4 / 5; object-fit: cover; } .mobile-stack-grid .caption { display: none; } }
+  
 
-     .btn {
-      font-family: var(--font-tech);
-      display: block;
-      width: 100%;
-      margin-top: 12px;
-      padding: 18px 22px;
-      border-radius: 999px;
-      border: 1px solid rgba(120, 220, 255, 0.28);
-      text-align: center;
-      font-weight: 600;
-      letter-spacing: .035em;
-      background: linear-gradient(135deg, rgba(95, 220, 255, 0.10), rgba(255,255,255,0.04));
-      color: #effcff;
-      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
-    }
+/* v1.24 fixes: readability, compact mobile header, hero image, AI problem section */
+:root {
+  --text: #ffffff;
+  --muted: #f2f8ff;
+  --soft: #e7f3ff;
+  --cyan: #65e8ff;
+  --cyan-2: #a4fbff;
+  --amber: #ffd96a;
+  --gold-soft: #fff0b8;
+}
 
-    .btn:hover,
-    .btn:focus-visible {
-      transform: translateY(-1px);
-      box-shadow: 0 14px 30px rgba(0,0,0,.18);
-      outline: none;
-    }
+body,
+p,
+li,
+span,
+label,
+input,
+textarea,
+select,
+.caption,
+.section-lede,
+.hero-lede,
+.panel p,
+.stat-card p,
+.step p,
+.spec-row span,
+.machine-spec span,
+.result-note,
+.submit-note,
+.small-note {
+  color: #f7fbff !important;
+}
 
-    .btn.primary {
-      background: linear-gradient(135deg, #49dcff, #2d85ff);
-      color: #001020;
-      border-color: transparent;
-      box-shadow: 0 18px 42px rgba(61, 183, 255, 0.24);
-    }
+h1, h2, h3,
+.brand-title,
+.nav-stack a,
+.logic-label,
+.machine-spec b,
+.step-number {
+  color: #ffffff !important;
+}
 
-    .btn:not(.primary) {
-      border-color: rgba(95, 220, 255, 0.30);
-      box-shadow: 0 14px 30px rgba(95, 220, 255, 0.09);
-    }
+h1 span,
+h2 span,
+.accent {
+  color: var(--cyan) !important;
+  text-shadow: 0 0 22px rgba(101, 232, 255, 0.16);
+}
 
-    .btn:not(.primary):hover,
-    .btn:not(.primary):focus-visible {
-      background: linear-gradient(135deg, rgba(95, 220, 255, 0.16), rgba(255,255,255,0.06));
-      border-color: rgba(95, 220, 255, 0.46);
-    }
+.eyebrow,
+.kicker,
+.big-number,
+.hero-proof-number,
+.story-ribbon strong {
+  color: var(--amber) !important;
+}
 
-    .section {
-      position: relative;
-      padding: 98px 0;
-      border-top: 1px solid rgba(255,255,255,0.065);
-    }
+.caption {
+  background: rgba(1, 6, 14, 0.92) !important;
+  border-top: 1px solid rgba(101, 232, 255, 0.22) !important;
+}
 
-    .section:first-of-type { border-top: 0; }
+.caption strong {
+  color: #ffffff !important;
+}
 
-    .section:nth-of-type(even) .panel,
-    .section:nth-of-type(even) .visual-card {
-      box-shadow: 0 26px 80px rgba(0,0,0,.32);
-    }
+.visual-card::after {
+  background: linear-gradient(180deg, rgba(101,232,255,0.04), rgba(101,232,255,0.01) 40%, rgba(0,0,0,0.08) 100%) !important;
+}
 
-    .section::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 50%;
-      width: min(1120px, calc(100% - 36px));
-      height: 1px;
-      transform: translateX(-50%);
-      background: linear-gradient(90deg, transparent, rgba(96, 219, 255, 0.16), transparent);
-    }
+.hero-image-wrap img {
+  object-position: center center !important;
+  filter: saturate(1.08) contrast(1.05) brightness(1.02) !important;
+}
 
-    .section:first-of-type::before { display: none; }
+.hero-image-wrap::before {
+  background:
+    radial-gradient(circle at 70% 20%, rgba(101, 232, 255, 0.12), transparent 34%),
+    linear-gradient(90deg, rgba(0,0,0,0.38) 0%, rgba(0,0,0,0.08) 28%, rgba(0,0,0,0.08) 72%, rgba(0,0,0,0.34) 100%),
+    linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.00) 52%, rgba(0,0,0,0.30) 100%) !important;
+}
 
-    .section-header {
-      margin-bottom: 42px;
-      max-width: 980px;
-    }
+@media (max-width: 760px) {
+  .topbar {
+    padding: 8px 0 !important;
+  }
 
-    h2 {
-      margin: 0;
-      font-family: var(--font-display);
-      font-size: clamp(2.55rem, 5.8vw, 4.9rem);
-      line-height: 1.02;
-      letter-spacing: -0.056em;
-      font-weight: 700;
-      text-wrap: balance;
-    }
+  .brand-card {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+    gap: 10px !important;
+    padding: 10px 12px !important;
+    border-radius: 20px !important;
+  }
 
-    .section-lede {
-      margin: 26px 0 0;
-      color: #d4e5f2;
-      font-size: clamp(1.1rem, 1.95vw, 1.36rem);
-      line-height: 1.86;
-      max-width: 940px;
-    }
+  .brand-lockup {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+    overflow: hidden !important;
+  }
 
-    .visual-card {
-      margin-top: 34px;
-      overflow: hidden;
-      border-radius: var(--radius);
-      border: 1px solid rgba(255,255,255,0.12);
-      background:
-        radial-gradient(circle at top right, rgba(75, 201, 255, 0.12), transparent 24rem),
-        radial-gradient(circle at bottom left, rgba(255, 191, 77, 0.09), transparent 22rem),
-        rgba(255,255,255,0.04);
-      box-shadow: 0 24px 70px rgba(0,0,0,.28);
-    }
+  .brand-icon {
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+    border-radius: 13px !important;
+  }
 
-    .visual-card img {
-      width: 100%;
-      object-fit: cover;
-    }
+  .brand-copy {
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
 
-    .caption {
-      padding: 20px 24px 24px;
-      color: var(--muted);
-      font-size: 1rem;
-      line-height: 1.72;
-      background: rgba(3, 9, 20, 0.78);
-    }
+  .brand-title {
+    font-size: clamp(1.35rem, 7vw, 1.9rem) !important;
+    line-height: .95 !important;
+    letter-spacing: .055em !important;
+    white-space: nowrap !important;
+  }
 
-    .caption strong { color: #f2fbff; font-weight: 560; }
+  .brand-subtitle {
+    margin-top: 3px !important;
+    font-size: .58rem !important;
+    line-height: 1.1 !important;
+    letter-spacing: .115em !important;
+    white-space: nowrap !important;
+  }
 
-    .visual-card + .panel { margin-top: 24px; }
+  .menu-toggle {
+    display: inline-flex !important;
+    position: relative !important;
+    flex: 0 0 46px !important;
+    width: 46px !important;
+    height: 46px !important;
+    margin-left: auto !important;
+    align-self: center !important;
+  }
 
-    .panel {
-      margin-top: 30px;
-      padding: clamp(26px, 4vw, 48px);
-      border-radius: var(--radius);
-      border: 1px solid rgba(255,255,255,0.10);
-      background:
-        radial-gradient(circle at top right, rgba(66, 191, 255, 0.10), transparent 24rem),
-        radial-gradient(circle at bottom left, rgba(255, 191, 77, 0.08), transparent 22rem),
-        linear-gradient(180deg, rgba(11, 28, 54, 0.90), rgba(5, 15, 31, 0.94));
-      box-shadow: 0 24px 80px rgba(0,0,0,.28);
-    }
+  .nav-stack {
+    width: 100% !important;
+  }
 
-    .panel.featured {
-      border-color: rgba(255, 191, 77, 0.24);
-      background:
-        radial-gradient(circle at top right, rgba(79, 201, 255, 0.14), transparent 24rem),
-        radial-gradient(circle at bottom left, rgba(255, 191, 77, 0.12), transparent 22rem),
-        linear-gradient(180deg, rgba(14, 35, 66, 0.94), rgba(7, 15, 30, 0.97));
-    }
+  .hero {
+    padding-top: 10px !important;
+  }
 
-    .panel h3, .stat-card h3, .step h3 {
-      margin: 0;
-      color: #ffffff;
-      font-family: var(--font-display);
-      font-size: clamp(1.42rem, 3.25vw, 2.08rem);
-      line-height: 1.18;
-      letter-spacing: -0.038em;
-      font-weight: 650;
-      text-wrap: balance;
-    }
+  .hero-panel {
+    border-radius: 28px !important;
+  }
 
-    .panel p, .stat-card p, .step p {
-      margin: 16px 0 0;
-      color: var(--muted);
-      font-size: 1.04rem;
-      line-height: 1.82;
-    }
+  .hero-image-wrap,
+  .hero-image-wrap img {
+    min-height: 430px !important;
+  }
 
-    .stat-card {
-      margin-top: 18px;
-      padding: 24px;
-      border-radius: 25px;
-      border: 1px solid rgba(97, 210, 255, 0.14);
-      background: rgba(255,255,255,0.045);
-    }
+  h1 {
+    font-size: clamp(2.55rem, 12vw, 4.1rem) !important;
+  }
 
-    .big-number {
-      margin: 0 0 10px;
-      color: var(--cyan-2);
-      font-family: var(--font-tech);
-      font-size: clamp(2.15rem, 6.5vw, 4.5rem);
-      line-height: 1.02;
-      letter-spacing: -0.060em;
-      font-weight: 600;
-      text-shadow: 0 0 26px rgba(95,220,255,0.16);
-    }
+  .section-lede,
+  .hero-lede,
+  .panel p,
+  .stat-card p,
+  .step p {
+    font-size: 1.08rem !important;
+    line-height: 1.72 !important;
+  }
+}
 
-    .quote-band {
-      margin-top: 34px;
-      padding: clamp(28px, 4vw, 52px);
-      border-radius: 36px;
-      border: 1px solid rgba(83,216,255,0.24);
-      background:
-        radial-gradient(circle at 70% 0%, rgba(85,216,255,.14), transparent 22rem),
-        linear-gradient(180deg, rgba(5, 17, 34, 0.88), rgba(4, 13, 27, 0.92));
-      color: #f2fdff;
-      font-family: var(--font-display);
-      font-size: clamp(1.55rem, 3.4vw, 2.7rem);
-      line-height: 1.22;
-      letter-spacing: -0.044em;
-      font-weight: 650;
-      text-wrap: balance;
-    }
+/* v1.26 mobile menu fix: full-width dropdown, larger readable menu items */
+@media (max-width: 760px) {
+  .brand-card {
+    position: relative !important;
+    overflow: visible !important;
+  }
 
-    .logic-item,
-    .spec-row,
-    .machine-spec,
-    .step {
-      margin-top: 14px;
-      padding: 20px 22px;
-      border-radius: 22px;
-      border: 1px solid rgba(255,255,255,0.09);
-      background: rgba(255,255,255,0.042);
-    }
+  .nav-stack {
+    position: absolute !important;
+    top: calc(100% + 10px) !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    z-index: 1001 !important;
 
-    .logic-label,
-    .machine-spec b,
-    .step-number {
-      font-family: var(--font-tech);
-      display: inline-block;
-      color: var(--gold-soft);
-      font-size: .76rem;
-      font-weight: 640;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
+    display: none !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
 
-    .spec-row b {
-      display: block;
-      margin-bottom: 8px;
-      color: #fff2cf;
-      font-size: 1.03rem;
-      font-weight: 560;
-    }
+    padding: 18px !important;
+    border-radius: 24px !important;
+    border: 1px solid rgba(101, 232, 255, 0.28) !important;
+    background:
+      radial-gradient(circle at top right, rgba(101, 232, 255, 0.14), transparent 18rem),
+      linear-gradient(180deg, rgba(5, 16, 32, 0.98), rgba(2, 8, 18, 0.98)) !important;
+    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.58) !important;
+    backdrop-filter: blur(18px) !important;
+  }
 
-    .spec-row span,
-    .machine-spec span {
-      display: block;
-      color: var(--muted);
-      font-size: 1.02rem;
-      line-height: 1.76;
-    }
+  .nav-stack.open,
+  .brand-card.nav-open .nav-stack,
+  body.nav-open .nav-stack,
+  .topbar.nav-open .nav-stack {
+    display: grid !important;
+  }
 
-     .decision-strip {
-      margin-top: 18px;
-      padding: 18px 20px;
-      border-radius: 24px;
-      border: 1px solid rgba(255, 191, 77, 0.22);
-      background: linear-gradient(135deg, rgba(255, 191, 77, 0.10), rgba(85, 216, 255, 0.06));
-      color: #ebfbff;
-      line-height: 1.74;
-    }
+  .nav-stack a {
+    width: 100% !important;
+    min-height: 58px !important;
+    justify-content: flex-start !important;
+    padding: 18px 20px !important;
+    border-radius: 18px !important;
 
-    .result-note,
-    .submit-note,
-    .small-note {
-      margin-top: 18px;
-      color: var(--soft);
-      font-size: .95rem;
-      line-height: 1.74;
-    }
+    font-size: 1.08rem !important;
+    line-height: 1.22 !important;
+    letter-spacing: .055em !important;
+    font-weight: 760 !important;
+    text-transform: uppercase !important;
 
-    .form-panel {
-      margin-top: 30px;
-      padding: clamp(24px, 4vw, 46px);
-      border-radius: var(--radius);
-      border: 1px solid rgba(87, 216, 255, 0.20);
-      background:
-        radial-gradient(circle at top right, rgba(47, 131, 255, 0.16), transparent 25rem),
-        linear-gradient(180deg, rgba(6, 17, 34, 0.90), rgba(4, 12, 24, 0.94));
-      box-shadow: var(--shadow);
-    }
+    color: #ffffff !important;
+    background: rgba(255,255,255,0.045) !important;
+    border: 1px solid rgba(101, 232, 255, 0.20) !important;
+  }
 
-    label {
-      font-family: var(--font-tech);
-      display: block;
-      margin-top: 20px;
-      color: #ddf8ff;
-      font-size: .84rem;
-      font-weight: 620;
-      letter-spacing: .09em;
-      text-transform: uppercase;
-    }
+  .nav-stack a:hover,
+  .nav-stack a:focus-visible {
+    background: rgba(101, 232, 255, 0.12) !important;
+    border-color: rgba(101, 232, 255, 0.42) !important;
+  }
 
-    input, textarea, select {
-      display: block;
-      width: 100%;
-      margin-top: 9px;
-      padding: 16px 15px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(255,255,255,0.055);
-      color: #fff;
-      font: inherit;
-      outline: none;
-    }
+  .menu-toggle {
+    z-index: 1002 !important;
+  }
 
-    textarea { min-height: 132px; resize: vertical; }
+  .topbar {
+    overflow: visible !important;
+  }
+}
 
-    .footer {
-      padding: 62px 0 78px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      color: var(--soft);
-    }
+  
+/* v1.27 mobile menu click/open fix */
+@media (max-width: 760px) {
+  .menu-toggle {
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+    z-index: 2005 !important;
+  }
 
-    .footer-lockup {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 20px;
-    }
+  .nav-stack {
+    pointer-events: auto !important;
+  }
 
-    .footer-lockup .brand-icon {
-      width: 62px;
-      height: 62px;
-      border-radius: 19px;
-    }
+  .nav-stack.open {
+    display: grid !important;
+  }
 
-    .footer p { margin: 9px 0 0; }
+  .brand-card.nav-open .nav-stack,
+  body.nav-open .nav-stack {
+    display: grid !important;
+  }
+}
 
-    
-    .story-ribbon {
-      margin-top: 28px;
-      padding: 24px 26px;
-      border-radius: 28px;
-      border: 1px solid rgba(255, 191, 77, 0.18);
-      background:
-        radial-gradient(circle at top right, rgba(255, 191, 77, 0.14), transparent 20rem),
-        linear-gradient(180deg, rgba(14, 28, 50, 0.92), rgba(6, 15, 29, 0.94));
-      box-shadow: 0 22px 60px rgba(0,0,0,.28);
-      color: #f6fbff;
-      font-size: clamp(1.2rem, 2.2vw, 1.55rem);
-      line-height: 1.55;
-      font-weight: 470;
-    }
+  
+/* v1.28 mobile menu refinement: smaller menu items and tighter spacing */
+@media (max-width: 760px) {
+  .nav-stack {
+    gap: 7px !important;
+    padding: 14px !important;
+    border-radius: 20px !important;
+  }
 
-    .story-ribbon strong { color: var(--amber); font-weight: 560; }
+  .nav-stack a {
+    min-height: 46px !important;
+    padding: 12px 15px !important;
+    border-radius: 14px !important;
 
-    .machine-story-card {
-      margin-top: 20px;
-      padding: 24px 24px 26px;
-      border-radius: 26px;
-      border: 1px solid rgba(255,255,255,0.10);
-      background:
-        radial-gradient(circle at top right, rgba(95,220,255,0.08), transparent 18rem),
-        radial-gradient(circle at bottom left, rgba(255,191,77,0.10), transparent 16rem),
-        rgba(255,255,255,0.045);
-    }
+    font-size: 0.92rem !important;
+    line-height: 1.16 !important;
+    letter-spacing: .035em !important;
+    font-weight: 720 !important;
+  }
+}
 
-    .machine-story-card h3 { margin: 0; }
-    .machine-story-card p { margin: 14px 0 0; color: var(--muted); line-height: 1.8; }
+  
+/* v1.29 anchor visibility fix: section labels remain readable after mobile menu navigation */
+html {
+  scroll-padding-top: 128px !important;
+}
 
-    .bullet-stack {
-      margin-top: 18px;
-      display: block;
-    }
+[id] {
+  scroll-margin-top: 128px !important;
+}
 
-    .bullet-item {
-      margin-top: 12px;
-      padding: 16px 18px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(2, 9, 20, 0.38);
-      color: var(--muted);
-      line-height: 1.72;
-    }
+@media (max-width: 760px) {
+  html {
+    scroll-padding-top: 112px !important;
+  }
 
-    .bullet-item b {
-      display: block;
-      margin-bottom: 7px;
-      color: #fff0d0;
-      font-size: .97rem;
-      font-weight: 560;
-      letter-spacing: .02em;
-    }
+  [id] {
+    scroll-margin-top: 112px !important;
+  }
 
-    .story-divider {
-      margin-top: 30px;
-      padding: 22px 24px;
-      border-radius: 24px;
-      border: 1px dashed rgba(255, 191, 77, 0.26);
-      background: linear-gradient(135deg, rgba(255, 191, 77, 0.06), rgba(95, 220, 255, 0.05));
-      color: #ecf7ff;
-      line-height: 1.82;
-    }
+  .section {
+    padding-top: 82px !important;
+  }
+}
 
-    .story-divider strong { color: var(--amber); }
+  
+/* v1.30 section gap fix: keep anchor visibility without oversized visual spacing */
+.section {
+  padding-top: clamp(58px, 7vw, 82px) !important;
+  padding-bottom: clamp(58px, 7vw, 82px) !important;
+}
 
-    @media (max-width: 980px) {
-      .brand-card { flex-wrap: wrap; }
-      .menu-toggle { display: inline-flex; margin-left: auto; }
-      .nav-stack {
-        display: none;
-        flex: 1 0 100%;
-        width: 100%;
-        margin-top: 12px;
-        padding: 10px;
-        border-radius: 20px;
-        border: 1px solid rgba(104, 212, 255, 0.14);
-        background: rgba(3, 10, 21, 0.96);
-        box-shadow: 0 20px 55px rgba(0,0,0,0.36);
-      }
-      .nav-stack.is-open { display: block; }
-      .nav-stack a {
-        display: flex;
-        width: 100%;
-        justify-content: flex-start;
-        margin: 6px 0;
-        padding: 14px 15px;
-        border-radius: 16px;
-        font-size: .96rem;
-      }
-      .hero-image-wrap,
-      .hero-image-wrap img { min-height: 520px; }
-      .hero-content { margin-top: -130px; }
-    }
+.section-header {
+  margin-bottom: 28px !important;
+}
 
-    @media (max-width: 760px) {
-      .site-shell { width: min(100% - 22px, var(--max)); }
-      .topbar { padding: 8px 0; }
-      [id] { scroll-margin-top: 94px; }
-      .brand-card { padding: 12px 14px; border-radius: 22px; }
-      .brand-lockup { gap: 13px; max-width: calc(100% - 58px); }
-      .brand-icon { width: 58px; height: 58px; border-radius: 17px; }
-      .brand-title { font-size: clamp(1.25rem, 6.8vw, 1.75rem); letter-spacing: .075em; }
-      .brand-subtitle { font-size: .66rem; letter-spacing: .065em; margin-top: 6px; }
-      .hero { padding-top: 10px; padding-bottom: 58px; }
-      .hero-panel { border-radius: 30px; }
-      .hero-image-wrap,
-      .hero-image-wrap img { min-height: 360px; }
-      .hero-content {
-        margin: -72px 16px 16px;
-        padding: 24px;
-        border-radius: 26px;
-      }
-      h1 { font-size: clamp(2.45rem, 13vw, 4rem); }
-      h2 { font-size: clamp(2.08rem, 10vw, 3.25rem); }
-    }
+.visual-card {
+  margin-top: 24px !important;
+}
 
-</style>
+.panel,
+.machine-story-card,
+.form-panel {
+  margin-top: 24px !important;
+}
+
+.quote-band,
+.story-ribbon {
+  margin-top: 24px !important;
+}
+
+@media (max-width: 760px) {
+  html {
+    scroll-padding-top: 112px !important;
+  }
+
+  [id] {
+    scroll-margin-top: 112px !important;
+  }
+
+  .section {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+
+  .section-header {
+    margin-bottom: 22px !important;
+  }
+
+  .section-lede {
+    margin-top: 18px !important;
+  }
+
+  .visual-card {
+    margin-top: 20px !important;
+  }
+
+  .panel,
+  .machine-story-card,
+  .form-panel {
+    margin-top: 20px !important;
+  }
+
+  .quote-band,
+  .story-ribbon {
+    margin-top: 20px !important;
+  }
+
+  .hero {
+    padding-bottom: 48px !important;
+  }
+}
+
+  </style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="site-shell">
-      <div class="brand-card">
-        <a href="#top" class="brand-lockup" aria-label="EMYRGEN MAP home">
-          <img class="brand-icon" src="assets/emyrgen-map-icon.webp" alt="EMYRGEN MAP polished surface and magnetic field icon" />
-          <div class="brand-copy">
-            <p class="brand-title">EMYRGEN MAP</p>
-            <p class="brand-subtitle">Magnetic Abrasive Polishing</p>
-          </div>
-        </a>
-        <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false"><span></span></button>
-        <nav class="nav-stack" id="primary-nav" aria-label="Primary navigation">
-          <a href="#investment-case">Platform</a>
-          <a href="#ai-thesis">AI Infrastructure</a>
-          <a href="#cmp">CMP Alternative</a>
-          <a href="#results">Proof Points</a>
-          <a href="#pilot">A20-300 Platform</a>
-          <a href="#markets">Markets</a>
-          <a href="#commercial">Commercial Path</a>
-          <a href="#brief-access">Request Brief</a>
-        </nav>
-      </div>
-    </div>
-  </header>
-
-  <main id="top">
-    <section class="hero">
-      <div class="site-shell">
-        <div class="hero-panel">
-          <div class="hero-image-wrap">
-            <img src="assets/hero-map-field.webp" alt="Magnetic field over a polished precision surface" />
-          </div>
-          <div class="hero-content">
-            <p class="eyebrow">AI Hardware Surface Control • Commercial Platform</p>
-            <h1>Chemical-Free <span>Ultra-Precision Polishing</span> for AI Chips and Optics</h1>
-            <p class="hero-lede">EMYRGEN™ MAP delivers a patent-backed magnetic abrasive polishing platform for one of the most important layers of the AI hardware supply chain: cleaner, smoother, lower-defect precision surfaces for semiconductors, optics, photonics, and high-reliability components.</p>
-            <div class="cta-stack">
-              <a class="btn primary" href="mailto:invest@emyrgengroup.com?subject=EMYRGEN%20MAP%20Commercial%20Brief%20Request">Request Commercial Brief</a>
-              <a class="btn" href="#investment-case">Review Platform</a>
-              <a class="btn" href="#pilot">See A20-300 Platform</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="investment-case">
-      <div class="site-shell">
-        <div class="section-header">
-          <p class="eyebrow">Platform Overview</p>
-          <h2>A surface-control platform for the <span>AI manufacturing era.</span></h2>
-          <p class="section-lede">AI hardware is becoming more powerful, more expensive, and more sensitive to microscopic defects. EMYRGEN™ MAP turns surface finishing into a cleaner, patent-backed commercial platform for semiconductors, optics, and high-reliability industrial applications.</p>
-        </div>
-
-        <article class="panel featured">
-          <p class="kicker">Why this matters</p>
-          <div class="stat-card"><p class="big-number">01</p><h3>AI hardware needs cleaner surfaces</h3><p>Advanced chips, packaging, optics, photonics, and thermal components depend on surface quality. Roughness, residue, scratches, and contamination can affect yield, reliability, power efficiency, and component life.</p></div>
-          <div class="stat-card"><p class="big-number">02</p><h3>Chemical-free polishing platform</h3><p>MAP replaces slurry-heavy surface finishing with a cleaner magnetic-abrasive process built for precision manufacturing, lower residue, and stronger process control.</p></div>
-          <div class="stat-card"><p class="big-number">03</p><h3>Demonstrated nanoscale results</h3><p>Silicon-wafer and optical-glass results provide clear technical proof and make the commercial story tangible.</p></div>
-          <div class="stat-card"><p class="big-number">04</p><h3>A20-300 platform supports revenue</h3><p>The A20-300 platform supports customer programs, strategic partner engagement, licensing discussions, and equipment-based revenue pathways.</p></div>
-        </article>
-
-        <div class="quote-band">MAP is not another AI software story. It is physical infrastructure for the manufacturing layer beneath AI chips, optics, and advanced hardware.</div>
-      </div>
-    </section>
-
-    <section class="section" id="ai-thesis">
-      <div class="site-shell">
-        <div class="section-header">
-          <p class="eyebrow">AI Infrastructure</p>
-          <h2>AI is no longer only a software race. <span>It is a surface-control race.</span></h2>
-          <p class="section-lede">Every increase in compute density pushes more pressure onto the physical layer: wafers, substrates, advanced packaging, optics, photonics, power electronics, and cooling surfaces. The companies that solve these manufacturing bottlenecks can matter as much as the software running on top.</p>
-        </div>
-
-        <div class="visual-card">
-          <img src="assets/ai-hardware-stack.webp" alt="AI hardware infrastructure stack" />
-          <div class="caption">EMYRGEN™ MAP is aimed at the physical AI supply chain: the high-value surfaces that must be cleaner, smoother, and more reliable as chips and optical systems become more demanding.</div>
-        </div>
-
-        <article class="panel featured">
-          <p class="kicker">Platform position</p>
-          <h3>MAP belongs in the “picks-and-shovels” layer of AI hardware.</h3>
-          <p>The platform is designed for the manufacturing side of AI growth: cleaner wafer finishing, lower defect risk, improved component reliability, and greener precision-surface processing. This gives EMYRGEN MAP™ a clear position within AI infrastructure beyond data centers and software models.</p>
-        </article>
-
-        <article class="panel">
-          <p class="kicker">Four reasons the market cares</p>
-          <div class="logic-item"><span class="logic-label">01 / Semiconductor surfaces</span>Ultra-smooth wafer, substrate, packaging, and post-polishing surfaces are increasingly important as chip structures become smaller and more complex.</div>
-          <div class="logic-item"><span class="logic-label">02 / Optics and photonics</span>Low-roughness optical glass and precision surfaces matter for lasers, sensors, inspection systems, photonics, and optical data movement.</div>
-          <div class="logic-item"><span class="logic-label">03 / Cleaner process pressure</span>Manufacturers need lower chemical burden, lower waste, lower residue, and tighter process control in the surfaces that drive yield and reliability.</div>
-          <div class="logic-item"><span class="logic-label">04 / Commercial equipment</span>A20-300 puts the platform to work: process samples, measure surfaces, compare against incumbent methods, and support customer-specific deployment programs.</div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="cmp">
-      <div class="site-shell">
-        <div class="section-header">
-          <p class="eyebrow">CMP Replacement</p>
-          <h2>Replace harsh slurry chemistry with <span>controlled magnetic finishing.</span></h2>
-          <p class="section-lede">Chemical mechanical polishing is deeply established in advanced manufacturing, but it also brings slurry chemistry, residue, waste, cost, and process complexity. EMYRGEN™ MAP delivers a cleaner magnetic-abrasive finishing path for precision surfaces.</p>
-        </div>
-
-        <div class="visual-card">
-          <img src="assets/map-process-closeup-premium.webp" alt="Close-up of magnetic-abrasive polishing on an optical glass or wafer surface" />
-          <div class="caption">Close-up view of magnetic-abrasive finishing: a controlled polishing head, precision surface, and field-shaped process zone that defines the MAP process advantage.</div>
-        </div>
-
-        <article class="panel featured">
-          <p class="kicker">Technology platform</p>
-          <h3>Magnetic field + nanoscale abrasive media + automatic surface scanning.</h3>
-          <p>EMYRGEN™ MAP uses nanoscale magnetic iron-diamond abrasives guided by a magnetic inductor and automatic surface scanning to deliver ultra-precision finishing for semiconductors, optical glass, and other defect-sensitive surfaces.</p>
-        </article>
-
-        <article class="panel">
-          <p class="kicker">Value drivers</p>
-          <div class="spec-row"><b>Lower chemical burden</b><span>MAP delivers reduced slurry dependence, lower residue, lower disposal burden, and a cleaner environmental profile.</span></div>
-          <div class="spec-row"><b>Lower defect and residue risk</b><span>Impurity reduction and surface smoothing support residue-sensitive, reliability-sensitive applications.</span></div>
-          <div class="spec-row"><b>Revenue model</b><span>Revenue comes from equipment systems, process recipes, consumable media, licensing, training, maintenance, and co-development.</span></div>
-          <div class="spec-row"><b>Deployment model</b><span>EMYRGEN MAP engages semiconductor, optics, equipment, materials, and precision-manufacturing partners through structured sample programs and commercial deployment tracks.</span></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="results">
-      <div class="site-shell">
-        <div class="section-header">
-          <p class="eyebrow">Demonstrated Performance</p>
-          <h2>Measured results deliver <span>real proof points.</span></h2>
-          <p class="section-lede">The strongest proof points are surface-quality results in silicon wafers and optical glass. They make the platform tangible and show exactly why MAP fits advanced semiconductors, optics, and photonics.</p>
-        </div>
-
-        <div class="visual-card">
-          <img src="assets/optical-glass-results-premium.webp" alt="Before-and-after optical glass result comparison" />
-          <div class="caption"><strong>Measured performance.</strong> Optical-glass before-and-after proof makes the surface-quality improvement visible, tangible, and commercially compelling.</div>
-        </div>
-
-        <article class="panel featured">
-          <p class="kicker">Headline proof points</p>
-          <div class="stat-card"><p class="big-number">Ra 0.245 nm</p><h3>Silicon wafer surface roughness</h3><p>Silicon-wafer roughness at the nanoscale level supports semiconductor programs and advanced-surface applications.</p></div>
-          <div class="stat-card"><p class="big-number">Ra 0.14 nm</p><h3>Optical glass surface roughness</h3><p>Optical-glass roughness performance connects MAP directly to optics, photonics, lasers, sensing, and AI data-movement hardware.</p></div>
-        </article>
-
-        <article class="panel">
-          <p class="kicker">Clean surface proof</p>
-          <div class="spec-row"><b>Carbon reduction</b><span>Reduction from 19.75% to 5.05 atomic % on Si wafers supports the cleaner-surface advantage.</span></div>
-          <div class="spec-row"><b>Oxygen reduction</b><span>Reduction from 7.32% to 0.45 atomic % on Si wafers supports the impurity-reduction advantage.</span></div>
-          <div class="spec-row"><b>Nanoscale context</b><span>The silicon lattice constant of 0.543 nm shows why nanoscale roughness matters in precision surfaces.</span></div>
-          <p class="result-note">These results show the precision, cleanliness, and surface-control performance that define EMYRGEN MAP.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="pilot">
-      <div class="site-shell">
-        <div class="section-header">
-          <p class="eyebrow">A20-300 Commercial Platform</p>
-          <h2>A20-300 puts MAP into a <span>working commercial platform.</span></h2>
-          <p class="section-lede">A20-300 gives EMYRGEN MAP™ a working machine platform for sample processing, process development, customer engagement, and application-specific commercial programs.</p>
-        </div>
-
-        <div class="story-ribbon"><strong>Why it matters:</strong> A20-300 connects demonstrated surface performance to customer programs, strategic engagement, equipment revenue, and licensing revenue.</div>
-
-        <div class="visual-card">
-          <img src="assets/a20-300-pilot-premium.webp" alt="Premium view of the A20-300 commercial platform" />
-          <div class="caption"><strong>A20-300 commercial platform.</strong> A striking view of the machine platform that puts MAP into customer-facing operation.</div>
-        </div>
-
-        <article class="machine-story-card">
-          <p class="kicker">Configuration 01</p>
-          <h3>Horizontal-axis inductor setup for controlled commercial surface processing.</h3>
-          <p>This configuration positions A20-300 as a controlled commercial platform for processing precision samples under a defined magnetic-inductor arrangement. It supports customer programs where MAP performance is measured against current finishing approaches.</p>
-          <div class="bullet-stack">
-            <div class="bullet-item"><b>Commercial relevance</b>Physical equipment makes the platform real, visible, and ready for customer engagement.</div>
-            <div class="bullet-item"><b>Commercial use</b>Supports sample processing, process tuning, application programs, and integration discussions with semiconductor, optics, equipment, and advanced-manufacturing partners.</div>
-            <div class="bullet-item"><b>Performance focus</b>Measures roughness, residue, impurity reduction, surface damage, optical scatter, thermal behavior, and other production-critical performance metrics.</div>
-          </div>
-        </article>
-
-        <article class="panel featured">
-          <p class="kicker">Commercial workflow</p>
-          <h3>Process samples. Measure results. Convert performance into commercial demand.</h3>
-          <p>The A20-300 workflow is built around practical execution. A partner selects target samples, EMYRGEN MAP™ defines the process window, the machine runs controlled polishing programs, and the resulting surfaces are measured against incumbent finishing methods.</p>
-          <div class="spec-row"><b>Target surfaces</b><span>Semiconductor wafers, optical glass, sapphire, SiC, ceramic, precision metal, packaging surfaces, and other defect-sensitive substrates.</span></div>
-          <div class="spec-row"><b>Commercial pathway</b><span>Programs support equipment discussions, process recipes, licensing, integration, consumables, training, and co-development.</span></div>
-          <div class="spec-row"><b>Execution path</b><span>The platform supports customer testing, qualification work, and integration programs through a working machine system.</span></div>
-        </article>
-
-        <div class="visual-card">
-          <img src="assets/a20-300-vertical.webp" alt="A20-300 vertical-axis inductor tool configuration" />
-          <div class="caption"><strong>Vertical-axis configuration.</strong> A20-300 configuration with a vertical-axis inductor tool for broader polishing coverage and setup flexibility.</div>
-        </div>
-
-        <article class="machine-story-card">
-          <p class="kicker">Configuration 02</p>
-          <h3>Vertical-axis inductor setup for broader commercial application coverage.</h3>
-          <p>The vertical-axis configuration expands the platform with a second tooling orientation for controlled magnetic-abrasive polishing. It supports a broader range of sample geometries, process windows, and customer programs.</p>
-          <div class="bullet-stack">
-            <div class="bullet-item"><b>Configuration flexibility</b>Two replaceable inductor orientations support different application requirements and sample-handling strategies.</div>
-            <div class="bullet-item"><b>Market relevance</b>Supports programs with companies addressing wafer, optics, substrate, precision-component, and specialty-material finishing challenges.</div>
-            <div class="bullet-item"><b>Commercial signal</b>A physical machine platform strengthens equipment, licensing, and customer-driven application-development conversations.</div>
-          </div>
-        </article>
-
-        <article class="panel">
-          <p class="kicker">A20-300 system specifications</p>
-          <div class="machine-spec"><b>Tooling system</b><span>Two replaceable inductors with horizontal and vertical axes of rotation.</span></div>
-          <div class="machine-spec"><b>Maximum workpiece</b><span>300 × 300 × 80 mm.</span></div>
-          <div class="machine-spec"><b>Installation size</b><span>720 × 700 × 430 mm.</span></div>
-          <div class="machine-spec"><b>Installation weight</b><span>45 kg.</span></div>
-          <div class="decision-strip">A20-300 positions EMYRGEN MAP™ for customer programs, commercial discussions, and production-focused application development.</div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="markets">
-      <div class="site-shell">
-        <div class="section-header">
-          <p class="eyebrow">Priority Markets</p>
-          <h2>Start with semiconductors and optics. <span>Expand across precision industry.</span></h2>
-          <p class="section-lede">MAP is a scalable platform: semiconductor and optical surfaces first, followed by nuclear, aerospace, medical, oil and gas, and other high-reliability industrial surfaces.</p>
-        </div>
-
-        <div class="visual-card">
-          <img src="assets/industrial-platform-premium.webp" alt="Industrial precision-platform visual showing cylindrical rods and advanced production equipment" />
-          <div class="caption"><strong>Application landscape.</strong> The same platform logic extends from semiconductor and optics surfaces into cylindrical components, energy systems, aerospace hardware, and other high-reliability industrial applications.</div>
-        </div>
-
-        <article class="panel featured">
-          <p class="kicker">Commercial market stack</p>
-          <div class="stat-card"><p class="big-number">01</p><h3>AI chips and custom silicon</h3><p>Advanced semiconductors, accelerators, wafers, substrates, and packaging surfaces where microscopic defects can affect yield and reliability.</p></div>
-          <div class="stat-card"><p class="big-number">02</p><h3>Optics and photonics</h3><p>Optical glass, laser crystals, low-scatter surfaces, photonics, sensing, inspection, and AI data-movement hardware.</p></div>
-          <div class="stat-card"><p class="big-number">03</p><h3>Equipment and materials partners</h3><p>Licensing, integration, and co-development with companies already serving fabs, packaging houses, optics labs, and precision-surface applications.</p></div>
-          <div class="stat-card"><p class="big-number">04</p><h3>Nuclear fuel cladding and energy infrastructure</h3><p>T19 gives MAP a high-reliability energy and industrial beachhead that broadens the platform beyond chips alone.</p></div>
-          <div class="stat-card"><p class="big-number">05</p><h3>Aerospace, medical, oil and gas, precision industry</h3><p>Additional markets where corrosion, wear, flow, fatigue, thermal reliability, and surface cleanliness affect component performance.</p></div>
-        </article>
-
-        <article class="panel">
-          <p class="kicker">Strategic partner universe</p>
-          <h3>Foundries, packaging, optics, materials, equipment, and high-reliability component companies.</h3>
-          <p>MAP moves through customer sample programs, strategic co-development, equipment integration, licensing, and application-specific process development with companies that already understand the cost of surface failure.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="commercial">
-      <div class="site-shell">
-        <div class="section-header">
-          <p class="eyebrow">Commercial Path</p>
-          <h2>Turn technical proof into <span>commercial traction.</span></h2>
-          <p class="section-lede">The commercial objective is practical: process samples, prove process fit, build partner confidence, and convert measured performance into active programs, strategic partnerships, licensing, and equipment revenue.</p>
-        </div>
-
-        <div class="visual-card">
-          <img src="assets/si-wafer-proof.webp" alt="Commercial sample-processing pathway for wafer-level surface finishing" />
-          <div class="caption"><strong>Commercial pathway.</strong> Advanced-surface sample testing bridges measured results with partner engagement, equipment revenue, licensing discussions, and co-development pathways.</div>
-        </div>
-
-        <article class="panel featured">
-          <p class="kicker">Revenue logic</p>
-          <h3>Equipment systems, process recipes, consumables, licensing, and co-development.</h3>
-          <p>The MAP platform supports multiple revenue pathways. Commercial programs identify the applications with the strongest technical performance, fastest partner adoption, and clearest economics.</p>
-        </article>
-
-        <article class="panel">
-          <p class="kicker">Commercial roadmap</p>
-          <div class="step"><span class="step-number">01</span><h3>Target high-value surface problems</h3><p>Prioritize wafer, optical glass, SiC, sapphire, packaging, thermal, and precision-metal surfaces where incumbent methods create cost, residue, defect, or reliability issues.</p></div>
-          <div class="step"><span class="step-number">02</span><h3>Run A20-300 sample programs</h3><p>Process partner-relevant samples and document roughness, residue, impurity, surface damage, and performance metrics.</p></div>
-          <div class="step"><span class="step-number">03</span><h3>Measure economic value</h3><p>Compare MAP against incumbent finishing methods on process cost, quality, waste reduction, reliability, throughput, and integration economics.</p></div>
-          <div class="step"><span class="step-number">04</span><h3>Convert performance into commercial agreements</h3><p>Programs convert into joint development, equipment sales, recipes, consumables, licensing, support, and training.</p></div>
-          <div class="step"><span class="step-number">05</span><h3>Scale through strategic partners</h3><p>Focus on partners that already sell into fabs, packaging lines, optics manufacturers, energy systems, and high-reliability industrial markets.</p></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="diligence">
-      <div class="site-shell">
-        <div class="section-header">
-          <p class="eyebrow">Why It Sells</p>
-          <h2>Strong performance, clear positioning, <span>direct commercial relevance.</span></h2>
-          <p class="section-lede">EMYRGEN MAP™ is positioned as a patent-backed, chemical-free, commercially relevant surface-finishing platform for high-value manufacturing.</p>
-        </div>
-
-        <article class="panel featured">
-          <p class="kicker">Why buyers and partners engage now</p>
-          <div class="spec-row"><b>Patent-backed MAP platform</b><span>The technology stands apart from generic polishing because it is tied to a specific magnetic-abrasive polishing method and a protected platform position.</span></div>
-          <div class="spec-row"><b>Chemical-free finishing pathway</b><span>The process connects directly to cleaner manufacturing pressure in semiconductors, optics, and precision industrial surfaces.</span></div>
-          <div class="spec-row"><b>CMP replacement or reduction pathway</b><span>Selected CMP-style steps are expensive, chemistry-heavy, and quality-sensitive, which gives MAP immediate commercial relevance.</span></div>
-          <div class="spec-row"><b>A20-300 commercial platform</b><span>A20-300 supports partner engagement, application programs, and commercial proof through a working machine platform.</span></div>
-        </article>
-
-        <article class="panel">
-          <p class="kicker">Commercial fit</p>
-          <div class="spec-row"><b>Where MAP fits best</b><span>Semiconductors, optics, photonics, energy systems, aerospace hardware, and other high-reliability surfaces that demand cleaner, smoother, more controlled finishing.</span></div>
-          <div class="spec-row"><b>Commercial position</b><span>Nanoscale surface results, impurity reduction, chemical-free processing, working equipment, and semiconductor/optics relevance create a focused commercial package.</span></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="brief-access">
-      <div class="site-shell">
-        <div class="section-header">
-          <p class="eyebrow">Commercial Brief</p>
-          <h2>Request the EMYRGEN MAP™ <span>commercial brief.</span></h2>
-          <p class="section-lede">Request the MAP commercial brief, performance summary, A20-300 platform overview, and next-step discussion with EMYRGEN GROUP INC.</p>
-        </div>
-
-        <div class="form-panel">
-          <p class="kicker">Start the conversation</p>
-          <h3>Contact EMYRGEN GROUP INC</h3>
-          <p>Use the form or email link below to request the commercial brief, discuss a strategic partnership, or open an equipment or licensing conversation.</p>
-
-          <form action="mailto:invest@emyrgengroup.com" method="post" enctype="text/plain">
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" placeholder="Your name" />
-
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="you@example.com" />
-
-            <label for="interest-type">Interest type</label>
-            <select id="interest-type" name="interest-type">
-              <option>Commercial brief</option>
-              <option>Strategic partnership</option>
-              <option>Equipment system</option>
-              <option>Licensing discussion</option>
-              <option>Semiconductor / optics partnership</option>
-              <option>Other</option>
-            </select>
-
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="I would like to request the EMYRGEN™ MAP commercial brief."></textarea>
-
-            <button class="btn primary" type="submit">Request Commercial Brief</button>
-          </form>
-          <p class="submit-note">This request opens an email addressed to EMYRGEN GROUP INC so the conversation starts directly.</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="site-shell">
-      <div class="footer-lockup">
-        <img class="brand-icon" src="assets/emyrgen-map-icon.webp" alt="EMYRGEN MAP icon" />
-        <div>
-          <p><strong>EMYRGEN GROUP INC</strong></p>
-          <p>EMYRGEN™ MAP | Magnetic Abrasive Polishing</p>
-        </div>
-      </div>
-      <p class="small-note">EMYRGEN GROUP INC • EMYRGEN™ MAP • Magnetic Abrasive Polishing for semiconductors, optics, and high-reliability industrial surfaces.</p>
-    </div>
-  </footer>
-
-  <script>
-    const menuButton = document.querySelector('.menu-toggle');
-    const primaryNav = document.querySelector('#primary-nav');
-
-    if (menuButton && primaryNav) {
-      menuButton.addEventListener('click', () => {
-        const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
-        menuButton.setAttribute('aria-expanded', String(!isOpen));
-        menuButton.setAttribute('aria-label', isOpen ? 'Open menu' : 'Close menu');
-        primaryNav.classList.toggle('is-open', !isOpen);
+<header class="topbar">
+<div class="site-shell">
+<div class="brand-card">
+<a aria-label="EMYRGEN MAP home" class="brand-lockup" href="#top">
+<img alt="EMYRGEN MAP logo" class="brand-icon" src="assets/emyrgen-map-logo-mark.svg"/>
+<div class="brand-copy">
+<p class="brand-title">EMYRGEN MAP</p>
+<p class="brand-subtitle">Magnetic Abrasive Polishing</p>
+</div>
+</a>
+<button aria-expanded="false" aria-label="Open navigation" class="menu-toggle" type="button"><span></span></button>
+<nav aria-label="Main navigation" class="nav-stack">
+<a href="#ai-stack">AI Stack</a><a href="#platform">Platform</a><a href="#how-it-works">How It Works</a><a href="#proof">Proof</a><a href="#machines">Machines</a><a href="#applications">Applications</a><a href="#brief">Request Brief</a>
+</nav>
+</div>
+</div>
+</header>
+<main id="top">
+<section class="hero">
+<div class="site-shell">
+<div class="hero-panel">
+<div class="hero-image-wrap"><img alt="Magnetic-abrasive polishing field shaping nanoscale abrasives over a precision surface" src="assets/method-elastic-brush.webp"/></div>
+<div class="hero-content">
+<p class="eyebrow">Surface-Control Platform for AI Hardware</p>
+<h1>Chemical-Free Surface Control for the <span>AI Chip Era</span></h1>
+<p class="hero-lede">EMYRGEN™ MAP addresses the hidden manufacturing problem behind AI chips and optics: surface roughness, residue, impurities, and defects left by chemical-intensive polishing.</p>
+<div class="cta-stack">
+<a class="btn primary" href="mailto:invest@emyrgengroup.com?subject=EMYRGEN%20MAP%20Commercial%20Brief%20Request">Request Commercial Brief</a>
+<a class="btn" href="#ai-stack">Understand the Platform</a>
+<a class="btn" href="#proof">See Measured Proof</a>
+</div>
+<div class="hero-proof-grid">
+<div class="hero-proof-card"><p class="hero-proof-number">0.2–0.8 nm</p><p class="hero-proof-label">superfine polishing range</p></div>
+<div class="hero-proof-card"><p class="hero-proof-number">4–10×</p><p class="hero-proof-label">higher process performance</p></div>
+<div class="hero-proof-card"><p class="hero-proof-number">3–5×</p><p class="hero-proof-label">lower process cost</p></div>
+<div class="hero-proof-card"><p class="hero-proof-number">170+ / 70+</p><p class="hero-proof-label">publications and patents</p></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="ai-stack">
+<div class="site-shell">
+<div class="section-header">
+<p class="eyebrow">AI Hardware Problem</p>
+<h2>The Hidden Problem in AI Hardware: <span>Surface Roughness, Residue, and Defects</span></h2>
+<p class="section-lede">EMYRGEN™ MAP uses nanoscale magnetic iron-diamond abrasives, guided by a magnetic inductor and automatic surface scanning, to deliver ultra-precision finishing for semiconductors and optics without chemical-intensive CMP.</p>
+</div>
+<div class="visual-card desktop-only"><img alt="AI infrastructure stack from models to magnetic-abrasive finishing" src="assets/ai-stack-desktop.webp"/><div class="caption"><strong>The website’s central story.</strong> EMYRGEN MAP sits under the AI hardware stack as a surface-finishing platform for the roughness, scratches, voids, residue, and defects that become more expensive as hardware becomes more advanced.</div></div>
+<div class="mobile-stack-grid mobile-only"><div class="visual-card"><img alt="AI models compute demand" src="assets/ai-stack-mobile-ai.webp"/></div><div class="visual-card"><img alt="Advanced chips node and HBM pressure" src="assets/ai-stack-mobile-chips.webp"/></div><div class="visual-card"><img alt="Advanced packaging and interposers" src="assets/ai-stack-mobile-packaging.webp"/></div><div class="visual-card"><img alt="Surface roughness scratches and voids" src="assets/ai-stack-mobile-surfaces.webp"/></div><div class="visual-card"><img alt="MAP magnetic abrasive finishing" src="assets/ai-stack-mobile-map.webp"/></div></div>
+<article class="panel featured">
+<p class="kicker">Plain-language explanation</p>
+<h3>MAP is not another AI software product. It is manufacturing infrastructure for the surfaces beneath AI hardware.</h3>
+<p>Visitors should understand the sales case immediately: if chips, optics, and packaging are becoming more sensitive, then cleaner and smoother surface finishing becomes a higher-value part of the manufacturing chain.</p>
+</article>
+</div>
+</section>
+<section class="section" id="platform">
+<div class="site-shell">
+<div class="section-header">
+<p class="eyebrow">The Platform</p>
+<h2>What EMYRGEN MAP does, in one sentence: <span>it improves precision surfaces.</span></h2>
+<p class="section-lede">The platform uses magnetic fields and abrasive media to finish surfaces without the same dependence on harsh slurry-heavy polishing. The commercial value is cleaner surfaces, lower residue burden, better roughness control, and a path into multiple high-value hardware markets.</p>
+</div>
+<div class="card-grid">
+<div class="stat-card"><p class="big-number">01</p><h3>Cleaner finishing</h3><p>MAP is positioned as a cleaner finishing path for surface preparation, polishing, cleansing before welding, and pre-coating surface conditioning.</p></div>
+<div class="stat-card"><p class="big-number">02</p><h3>Surface quality</h3><p>The platform targets roughness, scratches, voids, residue, impurities, surface-layer defects, and other issues that reduce hardware reliability.</p></div>
+<div class="stat-card"><p class="big-number">03</p><h3>Machine platform</h3><p>A20-300 and the broader machine lineage make the pitch tangible: this is not only a method, it is a hardware-led platform.</p></div>
+<div class="stat-card"><p class="big-number">04</p><h3>Commercial pathways</h3><p>Revenue paths include equipment systems, sample programs, process recipes, consumable media, licensing, integration, training, and support.</p></div>
+</div>
+<div class="quote-band">The sales page works only when visitors understand both sides: MAP is a surface-quality technology, and surface quality is a commercial bottleneck across advanced hardware.</div>
+</div>
+</section>
+<section class="section" id="how-it-works">
+<div class="site-shell">
+<div class="section-header">
+<p class="eyebrow">How MAP Works</p>
+<h2>A magnetic field turns abrasive media into an <span>elastic polishing brush.</span></h2>
+<p class="section-lede">This mechanism makes the platform understandable. Magnetic fields organize ferroabrasive media into a flexible finishing zone. The process conditions the surface while reducing reliance on rigid tool contact and slurry-heavy chemistry.</p>
+</div>
+<div class="two-col">
+<div class="visual-card"><img alt="Elastic brush magnetic abrasive polishing process" src="assets/method-elastic-brush.webp"/><div class="caption"><strong>Mechanism visual.</strong> The magnetic field forms a controlled abrasive brush over the work surface, giving the visitor a clear mental picture of how MAP works.</div></div>
+<article class="panel featured">
+<p class="kicker">Why the mechanism sells</p>
+<h3>Controlled field. Adaptive abrasive media. Cleaner precision finishing.</h3>
+<div class="spec-row"><b>Elastic brush action</b><span>The field-shaped abrasive zone conforms to precision surfaces instead of behaving like a conventional rigid polishing tool.</span></div>
+<div class="spec-row"><b>Surface-layer improvement</b><span>The pulsing magnetic field is presented as improving the structure of the surface layer during finishing.</span></div>
+<div class="spec-row"><b>More than polishing</b><span>MAP also supports surface formation, cleansing, preparation before coating, preparation before welding, and finishing for adhesion or diffusion-driven processes.</span></div>
+</article>
+</div>
+</div>
+</section>
+<section class="section" id="proof">
+<div class="site-shell">
+<div class="section-header">
+<p class="eyebrow">Measured Proof</p>
+<h2>Numbers make the sales page credible. <span>These are the proof points.</span></h2>
+<p class="section-lede">The platform story becomes stronger when the visitor sees exact surface results instead of abstract promises. The page now connects the technology to silicon wafers, optical glass, laser crystals, and A17 machine metrics.</p>
+</div>
+<div class="visual-card"><img alt="Measured surface proof dashboard" src="assets/proof-dashboard.webp"/><div class="caption"><strong>Proof dashboard.</strong> Silicon wafer, optical glass, and A17 results are presented as a single clear evidence layer for the platform.</div></div>
+<div class="card-grid">
+<div class="stat-card"><p class="big-number">Ra 0.72 nm</p><h3>Silicon wafer proof</h3><p>Si-wafer surface roughness and TTV data connect MAP directly to semiconductor-facing surface quality.</p></div>
+<div class="stat-card"><p class="big-number">PV 158 → 30 nm</p><h3>Optical-glass improvement</h3><p>Optical glass shows a clear before/after story, with Ra improving from 20 nm to 1.4 nm after MAP.</p></div>
+<div class="stat-card"><p class="big-number">Ra 1.537 nm</p><h3>Laser crystal proof</h3><p>Laser-crystal results connect MAP to optics, photonics, lasers, sensing, and inspection markets.</p></div>
+<div class="stat-card"><p class="big-number">Sa 0.27 → 0.14 nm</p><h3>A17 surface metrics</h3><p>A17 results strengthen the equipment story for plain, spherical, and aspherical surfaces.</p></div>
+</div>
+<article class="panel">
+<p class="kicker">Economic message</p>
+<div class="spec-row"><b>Superfine polishing range</b><span>Surface roughness improves from the 8–10 nm range before processing to the 0.2–0.8 nm range after superfine polishing.</span></div>
+<div class="spec-row"><b>Process performance</b><span>The technical package presents superfine polishing performance as 4–10× higher than conventional alternatives in targeted use cases.</span></div>
+<div class="spec-row"><b>Process cost</b><span>The same package presents process cost as 3–5× lower in targeted use cases, strengthening the commercial case.</span></div>
+</article>
+</div>
+</section>
+<section class="section" id="machines">
+<div class="site-shell">
+<div class="section-header">
+<p class="eyebrow">Machine Platforms</p>
+<h2>The platform is easier to believe when visitors see <span>real equipment logic.</span></h2>
+<p class="section-lede">MAP should not look like a loose research idea. It needs to look like a machine-led commercial platform with equipment, sample programs, process windows, integration paths, and revenue logic.</p>
+</div>
+<div class="image-grid">
+<div class="visual-card"><img alt="A20-300 commercial MAP platform" src="assets/a20-300-pilot-premium.webp"/><div class="caption"><strong>A20-300 commercial platform.</strong> The current machine story for sample programs, partner demonstrations, process development, and equipment discussions.</div></div>
+<div class="visual-card"><img alt="A17 compact ultra precision platform" src="assets/a17-cleanroom-platform.webp"/><div class="caption"><strong>A17 equipment lineage.</strong> A compact ultra-precision platform story with 10–200 mm piece diameter, 0.2–0.8 nm polished surface roughness range, 2–15 minute polishing time, and 1.5 kW power consumption.</div></div>
+</div>
+<article class="panel featured">
+<p class="kicker">What the machine story communicates</p>
+<div class="spec-row"><b>Hardware credibility</b><span>The visitor sees machine platforms, not only scientific language.</span></div>
+<div class="spec-row"><b>Commercial entry point</b><span>A20-300 supports target sample programs and process comparison against incumbent finishing methods.</span></div>
+<div class="spec-row"><b>Revenue logic</b><span>Machine-led deployment supports equipment systems, process recipes, licensing, consumables, integration, training, and support.</span></div>
+</article>
+</div>
+</section>
+<section class="section" id="applications">
+<div class="site-shell">
+<div class="section-header">
+<p class="eyebrow">Applications</p>
+<h2>MAP is not only about wafers. <span>It is a surface platform.</span></h2>
+<p class="section-lede">The site must make the platform broad but understandable: start with semiconductors and optics, then extend into waveguides, tooling, ceramics, fuel rods, pipes, energy systems, aerospace, medical components, and other precision industrial surfaces.</p>
+</div>
+<div class="image-grid">
+<div class="visual-card"><img alt="Waveguide surface finishing platform" src="assets/waveguide-surface-platform.webp"/><div class="caption"><strong>Waveguides and internal surfaces.</strong> MAP connects to RF, aerospace, communications, and high-frequency hardware through inner-surface finishing.</div></div>
+<div class="visual-card"><img alt="Long cylindrical component polishing production line" src="assets/fuel-rod-production-line.webp"/><div class="caption"><strong>Long cylindrical components.</strong> Fuel rods, pipes, and tube-like parts expand the story beyond flat wafers into high-reliability industrial systems.</div></div>
+</div>
+<div class="card-grid">
+<div class="mini-card"><h3>AI chips and wafers</h3><p>Advanced semiconductors, custom silicon, substrates, packaging surfaces, and defect-sensitive production steps.</p></div>
+<div class="mini-card"><h3>Optics and photonics</h3><p>Optical glass, laser crystals, low-scatter surfaces, sensing, photonics, inspection systems, and data-movement hardware.</p></div>
+<div class="mini-card"><h3>Tools and ceramics</h3><p>Cutters, mills, drills, punches, ceramic plates, burr removal, and edge rounding where wear and surface damage matter.</p></div>
+<div class="mini-card"><h3>Energy and high-reliability industry</h3><p>Fuel rods, tubes, pipes, welded structures, aerospace components, ship components, turbine blades, and medical precision surfaces.</p></div>
+</div>
+</div>
+</section>
+<section class="section" id="commercial">
+<div class="site-shell">
+<div class="section-header">
+<p class="eyebrow">Commercial Path</p>
+<h2>Turn target surfaces into <span>commercial programs.</span></h2>
+<p class="section-lede">The sales page needs a direct path from technology to action. The platform brief, sample programs, machine discussions, and partnership conversations are all part of one commercial flow.</p>
+</div>
+<article class="panel featured">
+<p class="kicker">The engagement model</p>
+<div class="step"><span class="step-number">01</span><h3>Identify the surface problem</h3><p>Target roughness, residue, scratches, voids, adhesion, corrosion, wear, welding preparation, or reliability-related surface problems.</p></div>
+<div class="step"><span class="step-number">02</span><h3>Run a machine-based sample program</h3><p>Use the MAP process to create a before/after case for the customer’s surface, geometry, material, and performance requirements.</p></div>
+<div class="step"><span class="step-number">03</span><h3>Measure surface and economic improvement</h3><p>Compare roughness, flatness, residue, throughput, process cost, waste reduction, and integration economics.</p></div>
+<div class="step"><span class="step-number">04</span><h3>Convert proof into revenue</h3><p>Advance into equipment systems, process recipes, media supply, licensing, integration, co-development, training, and support.</p></div>
+</article>
+</div>
+</section>
+<section class="section" id="foundation">
+<div class="site-shell">
+<div class="section-header">
+<p class="eyebrow">Foundation</p>
+<h2>Scientific depth makes the platform <span>more credible.</span></h2>
+<p class="section-lede">The commercial story is stronger because it is not supported by a single image or one claim. The foundation includes publications, patents, machine history, measured results, and application examples.</p>
+</div>
+<div class="two-col">
+<div class="visual-card"><img alt="Scientific publication and patent foundation" src="assets/science-foundation.webp"/><div class="caption"><strong>Foundation visual.</strong> Scientific publications, patents, and machine history support the credibility layer behind the sales page.</div></div>
+<article class="panel featured">
+<p class="kicker">Credibility stack</p>
+<div class="spec-row"><b>170+ scientific publications</b><span>A broad research base supports the technical depth behind magnetic-abrasive polishing.</span></div>
+<div class="spec-row"><b>70+ patents</b><span>The platform has a protected technical foundation rather than a generic polishing claim.</span></div>
+<div class="spec-row"><b>Machine history</b><span>Earlier machines and current platform visuals make the technology feel tangible to buyers, partners, and investors.</span></div>
+</article>
+</div>
+</div>
+</section>
+<section class="section" id="brief">
+<div class="site-shell">
+<div class="section-header">
+<p class="eyebrow">Platform Brief</p>
+<h2>Request the EMYRGEN MAP™ <span>commercial brief.</span></h2>
+<p class="section-lede">The brief sits in context with the whole platform. It explains what MAP is, why the surface layer matters, how the machine platform works, what proof points support it, and where commercial programs start.</p>
+</div>
+<article class="panel featured">
+<p class="kicker">What the brief should make clear</p>
+<div class="brief-list">
+<div class="spec-row"><b>What MAP is</b><span>A magnetic-abrasive finishing platform for precision surfaces.</span></div>
+<div class="spec-row"><b>Why it matters</b><span>AI hardware and advanced industry depend on cleaner, smoother, lower-defect surfaces.</span></div>
+<div class="spec-row"><b>What proves it</b><span>Measured wafer, optical glass, laser-crystal, A17, and machine-platform proof points.</span></div>
+<div class="spec-row"><b>How to engage</b><span>Commercial brief, sample program, equipment discussion, licensing, or strategic partnership.</span></div>
+</div>
+</article>
+<div class="form-panel">
+<p class="kicker">Start the conversation</p>
+<h3>Contact EMYRGEN GROUP INC</h3>
+<p>Use this request to open a direct conversation about the MAP platform, proof package, sample programs, equipment systems, licensing, or strategic partnership.</p>
+<form action="mailto:invest@emyrgengroup.com" enctype="text/plain" method="post">
+<label for="name">Name</label><input id="name" name="name" placeholder="Your name" type="text"/>
+<label for="email">Email</label><input id="email" name="email" placeholder="you@example.com" type="email"/>
+<label for="interest">Interest type</label><select id="interest" name="interest"><option>Commercial brief</option><option>Sample program</option><option>Equipment system</option><option>Licensing discussion</option><option>Strategic partnership</option><option>Investment discussion</option></select>
+<label for="message">Message</label><textarea id="message" name="message" placeholder="I would like to request the EMYRGEN MAP commercial brief."></textarea>
+<button class="btn primary" type="submit">Request Commercial Brief</button>
+</form>
+<p class="submit-note">This static website opens a direct email addressed to EMYRGEN GROUP INC.</p>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer"><div class="site-shell"><p>EMYRGEN GROUP INC • EMYRGEN MAP™ • Magnetic-abrasive finishing for semiconductors, optics, photonics, waveguides, and high-reliability precision surfaces.</p><p class="small-note">Commercial and strategic materials. This website does not constitute an offer to sell securities.</p></div></footer>
+<script>
+    const button = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav-stack');
+    if (button && nav) {
+      button.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('is-open');
+        button.setAttribute('aria-expanded', String(isOpen));
       });
-
-      primaryNav.querySelectorAll('a').forEach((link) => {
-        link.addEventListener('click', () => {
-          menuButton.setAttribute('aria-expanded', 'false');
-          menuButton.setAttribute('aria-label', 'Open menu');
-          primaryNav.classList.remove('is-open');
-        });
-      });
+      nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+        nav.classList.remove('is-open');
+        button.setAttribute('aria-expanded', 'false');
+      }));
     }
   </script>
+
+<script>
+(function () {
+  function initMobileMenu() {
+    var button = document.querySelector('.menu-toggle');
+    var nav = document.querySelector('.nav-stack');
+    var brandCard = document.querySelector('.brand-card');
+
+    if (!button || !nav) return;
+
+    button.setAttribute('type', 'button');
+    button.setAttribute('aria-controls', 'site-menu');
+    button.setAttribute('aria-expanded', 'false');
+    nav.setAttribute('id', 'site-menu');
+
+    function closeMenu() {
+      nav.classList.remove('open');
+      if (brandCard) brandCard.classList.remove('nav-open');
+      document.body.classList.remove('nav-open');
+      button.setAttribute('aria-expanded', 'false');
+    }
+
+    function toggleMenu(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      var isOpen = nav.classList.toggle('open');
+      if (brandCard) brandCard.classList.toggle('nav-open', isOpen);
+      document.body.classList.toggle('nav-open', isOpen);
+      button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
+
+    button.addEventListener('click', toggleMenu);
+    button.addEventListener('touchend', toggleMenu, { passive: false });
+
+    nav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('click', function (event) {
+      if (!nav.classList.contains('open')) return;
+      if (nav.contains(event.target) || button.contains(event.target)) return;
+      closeMenu();
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') closeMenu();
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMobileMenu);
+  } else {
+    initMobileMenu();
+  }
+})();
+</script>
+
+
+<script>
+(function () {
+  function initAnchorOffsetFix() {
+    var nav = document.querySelector('.nav-stack');
+    var button = document.querySelector('.menu-toggle');
+    var brandCard = document.querySelector('.brand-card');
+    var topbar = document.querySelector('.topbar');
+
+    function closeMenu() {
+      if (nav) nav.classList.remove('open');
+      if (brandCard) brandCard.classList.remove('nav-open');
+      document.body.classList.remove('nav-open');
+      if (button) button.setAttribute('aria-expanded', 'false');
+    }
+
+    function scrollToTarget(target) {
+      if (!target) return;
+      var headerHeight = topbar ? topbar.getBoundingClientRect().height : 0;
+      var extraSpace = window.matchMedia('(max-width: 760px)').matches ? 24 : 28;
+      var targetY = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - extraSpace;
+
+      window.scrollTo({
+        top: Math.max(0, targetY),
+        behavior: 'smooth'
+      });
+    }
+
+    if (!nav) return;
+
+    nav.querySelectorAll('a[href^="#"]').forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        var hash = link.getAttribute('href');
+        if (!hash || hash === '#') return;
+
+        var target = document.querySelector(hash);
+        if (!target) return;
+
+        event.preventDefault();
+        closeMenu();
+
+        window.setTimeout(function () {
+          scrollToTarget(target);
+          if (history.pushState) {
+            history.pushState(null, '', hash);
+          } else {
+            window.location.hash = hash;
+          }
+        }, 80);
+      }, true);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAnchorOffsetFix);
+  } else {
+    initAnchorOffsetFix();
+  }
+})();
+</script>
+
 </body>
 </html>

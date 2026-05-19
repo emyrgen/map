@@ -3,11 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EMYRGEN™ MAP | Chemical-Free Ultra-Precision Polishing for AI Hardware</title>
-  <meta name="description" content="EMYRGEN™ MAP: chemical-free ultra-precision polishing platform for semiconductors, optics, AI hardware, and high-reliability industrial surfaces." />
+  <title>EMYRGEN™ MAP | Investor Access to Chemical-Free Surface Control for AI Hardware</title>
+  <meta name="description" content="EMYRGEN™ MAP investor page: patent-backed, chemical-free magnetic abrasive polishing for AI chips, optics, semiconductors, and high-reliability precision surfaces." />
   <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
   <link rel="manifest" href="assets/site.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
 
     :root {
@@ -30,22 +33,24 @@
       --blue: #2b86ff;
       --max: 1120px;
       --radius: 32px;
-      --shadow: 0 32px 100px rgba(0, 0, 0, 0.48);
+      --shadow: 0 32px 100px rgba(0, 0, 0, 0.50);
+      --font-display: "Space Grotesk", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-tech: "IBM Plex Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: var(--font-display);
       color: var(--text);
       line-height: 1.65;
       background:
-        radial-gradient(circle at 12% 0%, rgba(41, 124, 255, 0.22), transparent 30rem),
-        radial-gradient(circle at 88% 10%, rgba(88, 223, 255, 0.16), transparent 28rem),
-        radial-gradient(circle at 84% 34%, rgba(255, 191, 77, 0.10), transparent 20rem),
-        radial-gradient(circle at 70% 48%, rgba(57, 130, 255, 0.10), transparent 34rem),
-        linear-gradient(180deg, #01040b 0%, #030814 26%, #02050d 100%);
+        radial-gradient(circle at 12% 0%, rgba(41, 124, 255, 0.24), transparent 30rem),
+        radial-gradient(circle at 88% 10%, rgba(88, 223, 255, 0.18), transparent 28rem),
+        radial-gradient(circle at 84% 34%, rgba(124, 87, 255, 0.11), transparent 22rem),
+        radial-gradient(circle at 70% 48%, rgba(57, 130, 255, 0.12), transparent 34rem),
+        linear-gradient(180deg, #01040b 0%, #030713 26%, #02050d 100%);
       overflow-x: hidden;
     }
 
@@ -55,10 +60,12 @@
       inset: 0;
       pointer-events: none;
       background:
-        linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0)),
+        linear-gradient(90deg, rgba(95,220,255,0.035) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(95,220,255,0.028) 1px, transparent 1px),
         radial-gradient(circle at 50% 120%, rgba(36, 117, 255, 0.12), transparent 32rem);
+      background-size: 58px 58px, 58px 58px, auto;
       mix-blend-mode: screen;
-      opacity: .55;
+      opacity: .32;
     }
 
     a { color: inherit; text-decoration: none; }
@@ -121,10 +128,11 @@
       line-height: 1.12;
       letter-spacing: .18em;
       text-transform: uppercase;
-      font-weight: 520;
+      font-weight: 700;
     }
 
     .brand-subtitle {
+      font-family: var(--font-tech);
       margin: 7px 0 0;
       color: var(--gold-soft);
       font-size: .82rem;
@@ -179,6 +187,7 @@
     }
 
     .nav-stack a {
+      font-family: var(--font-tech);
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -209,9 +218,9 @@
       position: relative;
       border-radius: 42px;
       overflow: hidden;
-      border: 1px solid rgba(255, 191, 77, 0.20);
-      background: linear-gradient(180deg, rgba(6, 15, 29, .98), rgba(3, 9, 18, .98));
-      box-shadow: var(--shadow);
+      border: 1px solid rgba(95, 220, 255, 0.22);
+      background: linear-gradient(180deg, rgba(4, 13, 27, .98), rgba(2, 7, 16, .98));
+      box-shadow: 0 36px 110px rgba(0, 0, 0, 0.52), 0 0 0 1px rgba(95,220,255,0.04) inset;
     }
 
     .hero-image-wrap {
@@ -225,9 +234,8 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at 20% 18%, rgba(255, 191, 77, 0.20), transparent 20rem),
-        radial-gradient(circle at 62% 30%, rgba(86, 220, 255, 0.26), transparent 24rem),
-        linear-gradient(180deg, rgba(3,8,18,0.00) 0%, rgba(3,8,18,0.18) 30%, rgba(3,8,18,0.82) 100%);
+        linear-gradient(90deg, rgba(2,7,16,0.28) 0%, rgba(2,7,16,0.02) 22%, rgba(2,7,16,0.02) 74%, rgba(2,7,16,0.22) 100%),
+        linear-gradient(180deg, rgba(2,7,16,0.10) 0%, rgba(2,7,16,0.00) 54%, rgba(2,7,16,0.30) 100%);
       z-index: 1;
       pointer-events: none;
     }
@@ -236,9 +244,10 @@
       content: "";
       position: absolute;
       inset: auto 0 0 0;
-      height: 35%;
-      background: linear-gradient(180deg, rgba(3,8,18,0) 0%, rgba(3,8,18,0.88) 85%);
+      height: 16%;
+      background: linear-gradient(180deg, rgba(2,7,16,0) 0%, rgba(2,7,16,0.42) 100%);
       z-index: 2;
+      pointer-events: none;
     }
 
     .hero-image-wrap img {
@@ -246,26 +255,27 @@
       min-height: 620px;
       object-fit: cover;
       object-position: center 30%;
-      opacity: 0.98;
-      filter: saturate(1.12) contrast(1.14) brightness(1.02);
+      opacity: 1;
+      filter: saturate(1.08) contrast(1.16) brightness(1.04);
     }
 
     .hero-content {
       position: relative;
       z-index: 5;
-      margin: -170px 28px 28px;
+      margin: -150px 28px 28px;
       padding: clamp(28px, 4vw, 54px);
       border-radius: 34px;
-      border: 1px solid rgba(255, 191, 77, 0.18);
+      border: 1px solid rgba(95, 220, 255, 0.22);
       background:
-        radial-gradient(circle at top right, rgba(255, 191, 77, 0.14), transparent 18rem),
-        radial-gradient(circle at left center, rgba(63, 185, 255, 0.12), transparent 20rem),
-        linear-gradient(180deg, rgba(8, 20, 39, 0.72), rgba(4, 12, 24, 0.88));
-      box-shadow: 0 28px 80px rgba(0,0,0,.40);
-      backdrop-filter: blur(18px);
+        radial-gradient(circle at top right, rgba(88, 223, 255, 0.12), transparent 18rem),
+        radial-gradient(circle at left center, rgba(43, 134, 255, 0.14), transparent 20rem),
+        linear-gradient(180deg, rgba(5, 15, 31, 0.70), rgba(3, 9, 20, 0.88));
+      box-shadow: 0 28px 80px rgba(0,0,0,.42), 0 0 0 1px rgba(255,255,255,0.035) inset;
+      backdrop-filter: blur(10px);
     }
 
     .eyebrow, .kicker {
+      font-family: var(--font-tech);
       display: inline-block;
       margin: 0 0 18px;
       padding: 9px 13px;
@@ -292,10 +302,11 @@
 
     h1 {
       margin: 0;
+      font-family: var(--font-display);
       font-size: clamp(3.05rem, 8vw, 6.3rem);
-      line-height: 1.02;
-      letter-spacing: -0.048em;
-      font-weight: 520;
+      line-height: .98;
+      letter-spacing: -0.060em;
+      font-weight: 700;
       max-width: 12ch;
       text-wrap: balance;
     }
@@ -314,6 +325,7 @@
     .cta-stack { margin-top: 36px; }
 
      .btn {
+      font-family: var(--font-tech);
       display: block;
       width: 100%;
       margin-top: 12px;
@@ -321,10 +333,10 @@
       border-radius: 999px;
       border: 1px solid rgba(120, 220, 255, 0.28);
       text-align: center;
-      font-weight: 550;
-      letter-spacing: .01em;
-      background: linear-gradient(135deg, rgba(255, 191, 77, 0.10), rgba(255,255,255,0.04));
-      color: #fff8ea;
+      font-weight: 600;
+      letter-spacing: .035em;
+      background: linear-gradient(135deg, rgba(95, 220, 255, 0.10), rgba(255,255,255,0.04));
+      color: #effcff;
       transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
     }
 
@@ -343,14 +355,14 @@
     }
 
     .btn:not(.primary) {
-      border-color: rgba(255, 191, 77, 0.28);
+      border-color: rgba(95, 220, 255, 0.30);
       box-shadow: 0 14px 30px rgba(255, 166, 43, 0.08);
     }
 
     .btn:not(.primary):hover,
     .btn:not(.primary):focus-visible {
-      background: linear-gradient(135deg, rgba(255, 191, 77, 0.16), rgba(255,255,255,0.06));
-      border-color: rgba(255, 191, 77, 0.42);
+      background: linear-gradient(135deg, rgba(95, 220, 255, 0.16), rgba(255,255,255,0.06));
+      border-color: rgba(95, 220, 255, 0.46);
     }
 
     .section {
@@ -386,10 +398,11 @@
 
     h2 {
       margin: 0;
+      font-family: var(--font-display);
       font-size: clamp(2.55rem, 5.8vw, 4.9rem);
-      line-height: 1.08;
-      letter-spacing: -0.042em;
-      font-weight: 520;
+      line-height: 1.02;
+      letter-spacing: -0.056em;
+      font-weight: 700;
       text-wrap: balance;
     }
 
@@ -453,10 +466,11 @@
     .panel h3, .stat-card h3, .step h3 {
       margin: 0;
       color: #ffffff;
+      font-family: var(--font-display);
       font-size: clamp(1.42rem, 3.25vw, 2.08rem);
-      line-height: 1.26;
-      letter-spacing: -0.024em;
-      font-weight: 510;
+      line-height: 1.18;
+      letter-spacing: -0.038em;
+      font-weight: 650;
       text-wrap: balance;
     }
 
@@ -477,26 +491,29 @@
 
     .big-number {
       margin: 0 0 10px;
-      color: var(--amber);
+      color: var(--cyan-2);
+      font-family: var(--font-tech);
       font-size: clamp(2.15rem, 6.5vw, 4.5rem);
-      line-height: 1.04;
-      letter-spacing: -0.040em;
-      font-weight: 540;
+      line-height: 1.02;
+      letter-spacing: -0.060em;
+      font-weight: 600;
+      text-shadow: 0 0 26px rgba(95,220,255,0.16);
     }
 
     .quote-band {
       margin-top: 34px;
       padding: clamp(28px, 4vw, 52px);
       border-radius: 36px;
-      border: 1px solid rgba(83,216,255,0.22);
+      border: 1px solid rgba(83,216,255,0.24);
       background:
         radial-gradient(circle at 70% 0%, rgba(85,216,255,.14), transparent 22rem),
         linear-gradient(180deg, rgba(5, 17, 34, 0.88), rgba(4, 13, 27, 0.92));
       color: #f2fdff;
+      font-family: var(--font-display);
       font-size: clamp(1.55rem, 3.4vw, 2.7rem);
-      line-height: 1.30;
-      letter-spacing: -0.028em;
-      font-weight: 510;
+      line-height: 1.22;
+      letter-spacing: -0.044em;
+      font-weight: 650;
       text-wrap: balance;
     }
 
@@ -514,6 +531,7 @@
     .logic-label,
     .machine-spec b,
     .step-number {
+      font-family: var(--font-tech);
       display: inline-block;
       color: var(--gold-soft);
       font-size: .76rem;
@@ -570,6 +588,7 @@
     }
 
     label {
+      font-family: var(--font-tech);
       display: block;
       margin-top: 20px;
       color: #ddf8ff;
@@ -746,9 +765,10 @@
         </a>
         <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false"><span></span></button>
         <nav class="nav-stack" id="primary-nav" aria-label="Primary navigation">
+          <a href="#investment-case">Investment Case</a>
           <a href="#ai-thesis">AI Thesis</a>
           <a href="#cmp">CMP Alternative</a>
-          <a href="#results">Key Results</a>
+          <a href="#results">Proof Points</a>
           <a href="#pilot">A20-300 Pilot System</a>
           <a href="#markets">Markets</a>
           <a href="#commercial">Commercial Path</a>
@@ -766,16 +786,36 @@
             <img src="assets/hero-map-field.webp" alt="Magnetic field over a polished precision surface" />
           </div>
           <div class="hero-content">
-            <p class="eyebrow">AI Hardware Starts at the Surface</p>
-            <h1>Chemical-Free <span>Ultra-Precision Polishing</span> for AI Chips and Optics</h1>
-            <p class="hero-lede">EMYRGEN™ MAP is positioned as a patent-backed magnetic abrasive polishing platform using nanoscale magnetic iron-diamond abrasives, magnetic inductor guidance, and automatic surface scanning to deliver ultra-smooth, low-defect surfaces for semiconductors, optics, and high-reliability manufacturing.</p>
+            <p class="eyebrow">Private Investor Access • AI Hardware Surface Control</p>
+            <h1>Back Chemical-Free <span>Ultra-Precision Polishing</span> for AI Chips and Optics</h1>
+            <p class="hero-lede">EMYRGEN™ MAP gives investors exposure to a patent-backed magnetic abrasive polishing platform aimed at one of the least visible bottlenecks in the AI hardware supply chain: cleaner, smoother, lower-defect precision surfaces for semiconductors, optics, photonics, and high-reliability components.</p>
             <div class="cta-stack">
-              <a class="btn primary" href="mailto:invest@emyrgengroup.com?subject=Pilot%20Evaluation%20-%20EMYRGEN%20MAP">Request Pilot Evaluation</a>
-              <a class="btn" href="#results">View Reported Results</a>
-              <a class="btn" href="#pilot">See A20-300 Pilot System</a>
+              <a class="btn primary" href="mailto:invest@emyrgengroup.com?subject=EMYRGEN%20MAP%20Investor%20Brief%20Request">Request Investor Brief</a>
+              <a class="btn" href="#investment-case">Review Investment Case</a>
+              <a class="btn" href="#pilot">See Pilot Platform</a>
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="section" id="investment-case">
+      <div class="site-shell">
+        <div class="section-header">
+          <p class="eyebrow">Investment Case</p>
+          <h2>A surface-control platform for the <span>AI manufacturing era.</span></h2>
+          <p class="section-lede">The opportunity is simple: AI hardware is becoming more powerful, more expensive, and more sensitive to microscopic defects. EMYRGEN™ MAP is designed to turn surface finishing into a cleaner, patent-backed, pilot-ready platform with semiconductor, optics, and industrial expansion potential.</p>
+        </div>
+
+        <article class="panel featured">
+          <p class="kicker">Why investors should look closely</p>
+          <div class="stat-card"><p class="big-number">01</p><h3>AI hardware needs cleaner surfaces</h3><p>Advanced chips, packaging, optics, photonics, and thermal components depend on surface quality. Roughness, residue, scratches, and contamination can affect yield, reliability, power efficiency, and component life.</p></div>
+          <div class="stat-card"><p class="big-number">02</p><h3>Chemical-free polishing thesis</h3><p>MAP targets a cleaner finishing pathway that may reduce dependence on chemical-heavy slurry processes in selected applications where customer testing confirms technical and economic value.</p></div>
+          <div class="stat-card"><p class="big-number">03</p><h3>Reported nanoscale results</h3><p>Reported Si wafer and optical-glass results give investors concrete diligence points instead of a purely conceptual materials story.</p></div>
+          <div class="stat-card"><p class="big-number">04</p><h3>Pilot system supports commercialization</h3><p>The A20-300 platform creates a practical bridge from reported results to customer sample testing, strategic partner evaluation, licensing discussions, and equipment-based revenue pathways.</p></div>
+        </article>
+
+        <div class="quote-band">Investor thesis: MAP is not another AI software bet. It is a physical enabling technology aimed at the manufacturing layer beneath AI chips, optics, and advanced hardware.</div>
       </div>
     </section>
 
@@ -784,28 +824,26 @@
         <div class="section-header">
           <p class="eyebrow">AI Infrastructure Thesis</p>
           <h2>AI is no longer only a software race. <span>It is a surface-control race.</span></h2>
-          <p class="section-lede">AI accelerators, custom silicon, advanced packaging, optics, photonics, power electronics, and cooling systems are all becoming more sensitive to microscopic defects. When compute density rises, the physical surface becomes a performance and reliability constraint.</p>
+          <p class="section-lede">Every increase in compute density pushes more pressure onto the physical layer: wafers, substrates, advanced packaging, optics, photonics, power electronics, and cooling surfaces. Investors who only look at software may miss the manufacturing bottlenecks that make AI infrastructure possible.</p>
         </div>
 
         <div class="visual-card">
           <img src="assets/ai-hardware-stack.webp" alt="AI hardware infrastructure stack" />
-          <div class="caption">EMYRGEN™ MAP leads with the semiconductor and optics opportunity: a surface-integrity platform for the physical AI supply chain, not a generic industrial polishing method.</div>
+          <div class="caption">EMYRGEN™ MAP is aimed at the physical AI supply chain: the high-value surfaces that must be cleaner, smoother, and more reliable as chips and optical systems become more demanding.</div>
         </div>
 
-        <div class="quote-band">More AI compute means more wafers, more advanced packaging, more optics, more heat, and more reliability stress. Surface integrity becomes a hidden bottleneck.</div>
-
         <article class="panel featured">
-          <p class="kicker">Investor logic</p>
+          <p class="kicker">Investor angle</p>
           <h3>MAP belongs in the “picks-and-shovels” layer of AI hardware.</h3>
-          <p>EMYRGEN™ MAP is built for investors who understand that the AI boom depends on physical manufacturing capacity. It is not an AI software company; it is a candidate enabling technology for cleaner wafer finishing, lower defect levels, higher component reliability, and greener manufacturing processes.</p>
+          <p>The platform is designed for the manufacturing side of AI growth: cleaner wafer finishing, lower defect risk, improved component reliability, and greener precision-surface processing. This gives EMYRGEN MAP™ a clear position for investors seeking exposure to AI infrastructure beyond data centers and software models.</p>
         </article>
 
         <article class="panel">
-          <p class="kicker">Commercial emphasis</p>
-          <div class="logic-item"><span class="logic-label">01 / Semiconductor surfaces</span>Ultra-smooth wafer, substrate, and post-CMP surfaces for advanced-node and AI-chip manufacturing pathways.</div>
-          <div class="logic-item"><span class="logic-label">02 / Optics and photonics</span>Low-roughness optical glass and precision surfaces relevant to lasers, sensors, and optical data movement.</div>
-          <div class="logic-item"><span class="logic-label">03 / Chemical-free process thesis</span>Lower reliance on chemical-intensive CMP and rare-earth slurries, subject to pilot validation and customer process integration.</div>
-          <div class="logic-item"><span class="logic-label">04 / Pilot-ready equipment</span>A20-300 provides a concrete pilot platform for customer evaluation, process development, and sample validation.</div>
+          <p class="kicker">Four reasons the market can care</p>
+          <div class="logic-item"><span class="logic-label">01 / Semiconductor surfaces</span>Ultra-smooth wafer, substrate, packaging, and post-polishing surfaces are increasingly important as chip structures become smaller and more complex.</div>
+          <div class="logic-item"><span class="logic-label">02 / Optics and photonics</span>Low-roughness optical glass and precision surfaces matter for lasers, sensors, inspection systems, photonics, and optical data movement.</div>
+          <div class="logic-item"><span class="logic-label">03 / Cleaner process pressure</span>Manufacturers face pressure to reduce chemical burden, waste, residue, and process complexity where cleaner alternatives can meet performance requirements.</div>
+          <div class="logic-item"><span class="logic-label">04 / Pilot-ready equipment</span>A20-300 gives the story a physical validation path: run samples, measure surfaces, compare against incumbent methods, and build partner-specific business cases.</div>
         </article>
       </div>
     </section>
@@ -815,26 +853,26 @@
         <div class="section-header">
           <p class="eyebrow">CMP Alternative Thesis</p>
           <h2>Replace harsh slurry chemistry with <span>controlled magnetic finishing.</span></h2>
-          <p class="section-lede">EMYRGEN™ MAP is presented as a chemical-free, ultra-precision finishing pathway designed to reduce or replace selected CMP-style polishing steps where customer testing confirms performance, yield, and integration value.</p>
+          <p class="section-lede">Chemical mechanical polishing is essential in advanced manufacturing, but it can involve slurry chemistry, residue, waste, cost, and process complexity. EMYRGEN™ MAP targets selected finishing applications where magnetic abrasive polishing can deliver a cleaner path after validation.</p>
         </div>
 
         <div class="visual-card">
           <img src="assets/map-method.webp" alt="Magnetic abrasive polishing process visualization" />
-          <div class="caption">MAP uses a magnetic field, an inductor tool, nanoscale magnetic iron-diamond abrasive media, and controlled scanning to condition the surface without a conventional rigid tool or chemical-heavy slurry process.</div>
+          <div class="caption">MAP uses a magnetic field, an inductor tool, nanoscale magnetic iron-diamond abrasive media, and controlled scanning to condition surfaces without a conventional rigid polishing tool or chemical-heavy slurry process.</div>
         </div>
 
         <article class="panel featured">
-          <p class="kicker">Core technology message</p>
+          <p class="kicker">Technology platform</p>
           <h3>Magnetic field + nanoscale abrasive media + automatic surface scanning.</h3>
           <p>EMYRGEN™ MAP uses nanoscale magnetic iron-diamond abrasives guided by a magnetic inductor and automatic surface scanning to deliver ultra-precision finishing for semiconductors, optical glass, and other defect-sensitive surfaces.</p>
         </article>
 
         <article class="panel">
-          <p class="kicker">Why this matters</p>
-          <div class="spec-row"><b>Less chemical burden</b><span>Position MAP as a cleaner pathway that may reduce chemical slurry dependence, disposal burden, residue, and environmental load.</span></div>
-          <div class="spec-row"><b>Lower defect and residue risk</b><span>Connect impurity reduction and surface smoothing directly to wafer yield, long-term chip reliability, and AI accelerator lifespan.</span></div>
-          <div class="spec-row"><b>Precision without overclaiming</b><span>Use “designed to replace or reduce selected CMP steps” rather than claiming full fab-scale replacement before customer validation.</span></div>
-          <div class="spec-row"><b>Partner-ready framing</b><span>Invite pilot testing, licensing, integration, and co-development with chip, optics, equipment, and materials partners.</span></div>
+          <p class="kicker">Investor value drivers</p>
+          <div class="spec-row"><b>Lower chemical burden</b><span>A cleaner process pathway can become valuable where customers need reduced slurry dependence, lower residue, less disposal burden, and improved environmental profile.</span></div>
+          <div class="spec-row"><b>Lower defect and residue risk</b><span>Reported impurity reduction and surface smoothing support the thesis that MAP can address residue-sensitive, reliability-sensitive applications.</span></div>
+          <div class="spec-row"><b>High-margin platform potential</b><span>Commercial upside can come from pilot programs, equipment systems, process recipes, consumable media, licensing, training, maintenance, and co-development.</span></div>
+          <div class="spec-row"><b>Partner validation path</b><span>The right next step is measured sample testing with semiconductor, optics, equipment, materials, and precision-manufacturing partners.</span></div>
         </article>
       </div>
     </section>
@@ -843,27 +881,27 @@
       <div class="site-shell">
         <div class="section-header">
           <p class="eyebrow">Reported Technical Results</p>
-          <h2>Measured results support the <span>semiconductor and optical opportunity.</span></h2>
-          <p class="section-lede">The strongest proof points are reported technical results in semiconductors and optical glass, presented with clear validation discipline for commercial partner evaluation.</p>
+          <h2>Measured results give investors <span>real diligence points.</span></h2>
+          <p class="section-lede">The strongest proof points are reported surface-quality results in silicon wafers and optical glass. They make the opportunity more tangible and support the next commercial step: partner sample validation.</p>
         </div>
 
         <div class="visual-card">
           <img src="assets/si-wafer-proof.webp" alt="Silicon wafer polishing result visual" />
-          <div class="caption"><strong>Measured performance.</strong> Reported wafer and optical-glass results highlight the precision, cleanliness, and surface-quality potential that matter for advanced semiconductors, optics, and other defect-sensitive applications.</div>
+          <div class="caption"><strong>Measured performance.</strong> Reported wafer and optical-glass results show the surface-quality potential that matters for advanced semiconductors, optics, photonics, and other defect-sensitive applications.</div>
         </div>
 
         <article class="panel featured">
-          <p class="kicker">Key surface results</p>
-          <div class="stat-card"><p class="big-number">Ra 0.245 nm</p><h3>Silicon wafer surface roughness</h3><p>Reported surface roughness on Si wafers. Present as a high-value technical result and direct entry point for semiconductor sample evaluation.</p></div>
-          <div class="stat-card"><p class="big-number">Ra 0.14 nm</p><h3>Optical glass surface roughness</h3><p>Reported result on optical glass associated with Karl Zeiss Jena. Use this to connect MAP to optics, photonics, lasers, and AI data-movement hardware.</p></div>
+          <p class="kicker">Headline proof points</p>
+          <div class="stat-card"><p class="big-number">Ra 0.245 nm</p><h3>Silicon wafer surface roughness</h3><p>Reported Si wafer roughness at the nanoscale level. This is a direct investor diligence point for semiconductor sample evaluation and advanced-surface applications.</p></div>
+          <div class="stat-card"><p class="big-number">Ra 0.14 nm</p><h3>Optical glass surface roughness</h3><p>Reported optical-glass result associated with Karl Zeiss Jena, connecting MAP to optics, photonics, lasers, sensing, and AI data-movement hardware.</p></div>
         </article>
 
         <article class="panel">
-          <p class="kicker">Impurity reduction and lattice integrity</p>
-          <div class="spec-row"><b>Carbon reduction</b><span>Reported reduction from 19.75% to 5.05 atomic % on Si wafers, supporting lower residue levels and cleaner surfaces.</span></div>
-          <div class="spec-row"><b>Oxygen reduction</b><span>Reported reduction from 7.32% to 0.45 atomic % on Si wafers, supporting the cleaner wafer surface thesis.</span></div>
-          <div class="spec-row"><b>Silicon lattice constant</b><span>Reference the silicon lattice constant of 0.543 nm to show that MAP results are physically meaningful and measured in a nanoscale context.</span></div>
-          <p class="result-note">Production fab qualification is not claimed. The correct positioning is reported, candidate, pilot-ready, and to be validated with partner samples.</p>
+          <p class="kicker">Clean surface thesis</p>
+          <div class="spec-row"><b>Carbon reduction</b><span>Reported reduction from 19.75% to 5.05 atomic % on Si wafers, supporting the cleaner-surface opportunity.</span></div>
+          <div class="spec-row"><b>Oxygen reduction</b><span>Reported reduction from 7.32% to 0.45 atomic % on Si wafers, supporting the impurity-reduction thesis.</span></div>
+          <div class="spec-row"><b>Nanoscale context</b><span>The silicon lattice constant of 0.543 nm provides a useful reference point for understanding why nanoscale roughness matters in precision surfaces.</span></div>
+          <p class="result-note">These are reported technical results, not a claim of completed fab qualification. The investor case is based on pilot readiness, technical promise, and partner validation potential.</p>
         </article>
       </div>
     </section>
@@ -872,11 +910,11 @@
       <div class="site-shell">
         <div class="section-header">
           <p class="eyebrow">Pilot Evaluation Platform</p>
-          <h2>A20-300 brings MAP into a <span>testable pilot platform</span> for precision surfaces.</h2>
-          <p class="section-lede">The A20-300 magnetic-abrasive polishing installation gives EMYRGEN MAP™ a practical pilot platform for partner evaluation, sample testing, process development, and application-specific validation across semiconductor, optics, and precision-surface use cases.</p>
+          <h2>A20-300 turns the MAP story into a <span>testable commercial platform.</span></h2>
+          <p class="section-lede">Investors need more than a concept. The A20-300 magnetic-abrasive polishing installation gives EMYRGEN MAP™ a physical pilot system for sample testing, process development, partner diligence, and application-specific validation.</p>
         </div>
 
-        <div class="story-ribbon"><strong>Hardware platform:</strong> A20-300 provides a practical pilot system for sample evaluation, process development, and partner testing. It supports surface roughness studies, residue reduction analysis, impurity measurements, optical-performance checks, and broader integration discussions.</div>
+        <div class="story-ribbon"><strong>Investor signal:</strong> A20-300 creates a practical path from reported surface results to partner testing, measured outcomes, strategic engagement, and potential equipment or licensing revenue.</div>
 
         <div class="visual-card">
           <img src="assets/a20-300-horizontal.webp" alt="A20-300 horizontal-axis inductor tool configuration" />
@@ -888,19 +926,19 @@
           <h3>Horizontal-axis inductor setup for controlled sample evaluation.</h3>
           <p>This configuration positions A20-300 as a controlled pilot platform for processing precision samples under a defined magnetic-inductor arrangement. It supports early partner programs where MAP performance can be measured against current finishing approaches.</p>
           <div class="bullet-stack">
-            <div class="bullet-item"><b>Purpose</b>Provide a hardware pathway for testing MAP on customer-relevant surfaces instead of relying only on reported laboratory results.</div>
-            <div class="bullet-item"><b>Commercial use</b>Support pilot evaluation, process tuning, application discovery, and early integration discussions with semiconductor, optics, equipment, and advanced-manufacturing partners.</div>
-            <div class="bullet-item"><b>Validation focus</b>Measure roughness, residue, impurity reduction, surface damage, optical scatter, thermal behavior, and other partner-defined performance metrics.</div>
+            <div class="bullet-item"><b>Investor relevance</b>Physical equipment makes the opportunity more diligence-ready than a laboratory-only concept.</div>
+            <div class="bullet-item"><b>Commercial use</b>Supports pilot evaluation, process tuning, application discovery, and early integration discussions with semiconductor, optics, equipment, and advanced-manufacturing partners.</div>
+            <div class="bullet-item"><b>Validation focus</b>Measures roughness, residue, impurity reduction, surface damage, optical scatter, thermal behavior, and other partner-defined performance metrics.</div>
           </div>
         </article>
 
         <article class="panel featured">
           <p class="kicker">Pilot workflow</p>
-          <h3>Configure the tool. Process the sample. Measure the surface. Build the commercial case.</h3>
-          <p>The A20-300 pilot path is designed around practical validation. A partner selects target samples, EMYRGEN MAP™ defines the process window, the machine runs controlled polishing trials, and the resulting surfaces are measured against incumbent finishing methods.</p>
+          <h3>Process samples. Measure results. Convert proof into commercial demand.</h3>
+          <p>The A20-300 pilot path is built around practical validation. A partner selects target samples, EMYRGEN MAP™ defines the process window, the machine runs controlled polishing trials, and the resulting surfaces are measured against incumbent finishing methods.</p>
           <div class="spec-row"><b>Partner sample testing</b><span>Semiconductor wafers, optical glass, sapphire, SiC, ceramic, precision metal, packaging surfaces, or other defect-sensitive substrates.</span></div>
-          <div class="spec-row"><b>Commercial pathway</b><span>Successful tests can support pilot programs, process recipes, equipment discussions, licensing, integration, consumables, training, and co-development.</span></div>
-          <div class="spec-row"><b>Claim discipline</b><span>The platform is presented as pilot-ready and partner-ready, with production-scale adoption subject to customer testing, qualification, and integration validation.</span></div>
+          <div class="spec-row"><b>Commercial pathway</b><span>Successful tests can support paid pilots, equipment discussions, process recipes, licensing, integration, consumables, training, and co-development.</span></div>
+          <div class="spec-row"><b>Investor diligence</b><span>The platform remains subject to customer testing, qualification, and integration validation, but the pilot system makes those tests actionable.</span></div>
         </article>
 
         <div class="visual-card">
@@ -910,12 +948,12 @@
 
         <article class="machine-story-card">
           <p class="kicker">Configuration 02</p>
-          <h3>Vertical-axis inductor setup for flexible process development.</h3>
-          <p>The vertical-axis configuration expands the platform capability by showing a second tooling orientation for controlled magnetic-abrasive polishing trials. This supports a broader range of sample geometries, process windows, and partner testing scenarios.</p>
+          <h3>Vertical-axis inductor setup for broader application development.</h3>
+          <p>The vertical-axis configuration expands the platform story by showing a second tooling orientation for controlled magnetic-abrasive polishing trials. This supports a broader range of sample geometries, process windows, and partner testing scenarios.</p>
           <div class="bullet-stack">
             <div class="bullet-item"><b>Configuration flexibility</b>Two replaceable inductor orientations allow the pilot system to support different evaluation requirements and sample-handling strategies.</div>
-            <div class="bullet-item"><b>Partner relevance</b>Useful for discussions with companies evaluating wafer, optics, substrate, precision-component, or specialty-material finishing challenges.</div>
-            <div class="bullet-item"><b>Commercial signal</b>A physical pilot platform supports commercial discussions around validation, licensing, and customer-driven application development.</div>
+            <div class="bullet-item"><b>Market relevance</b>Supports discussions with companies evaluating wafer, optics, substrate, precision-component, or specialty-material finishing challenges.</div>
+            <div class="bullet-item"><b>Commercial signal</b>A physical pilot platform strengthens conversations around validation, licensing, and customer-driven application development.</div>
           </div>
         </article>
 
@@ -925,7 +963,7 @@
           <div class="machine-spec"><b>Maximum workpiece</b><span>300 × 300 × 80 mm.</span></div>
           <div class="machine-spec"><b>Installation size</b><span>720 × 700 × 430 mm.</span></div>
           <div class="machine-spec"><b>Installation weight</b><span>45 kg.</span></div>
-          <div class="decision-strip">A20-300 positions EMYRGEN MAP™ as a pilot-evaluation platform for moving from reported surface results to partner-specific validation, technical diligence, and commercial discussions.</div>
+          <div class="decision-strip">A20-300 positions EMYRGEN MAP™ to move from reported surface results to partner-specific validation, investor diligence, and commercial discussions.</div>
         </article>
       </div>
     </section>
@@ -934,28 +972,28 @@
       <div class="site-shell">
         <div class="section-header">
           <p class="eyebrow">Priority Markets</p>
-          <h2>Lead with semiconductors and optics. <span>Keep nuclear and industrial as expansion proof.</span></h2>
-          <p class="section-lede">EMYRGEN MAP™ is positioned first for semiconductors and optics, with nuclear, aerospace, medical, and other precision-surface markets expanding the platform opportunity.</p>
+          <h2>Start with semiconductors and optics. <span>Expand across precision industry.</span></h2>
+          <p class="section-lede">The investor opportunity is strongest when MAP is framed as a scalable platform: semiconductor and optical surfaces first, with nuclear, aerospace, medical, oil and gas, and other high-reliability industrial surfaces as expansion routes.</p>
         </div>
 
         <div class="visual-card">
           <img src="assets/market-applications.webp" alt="Conceptual visualization of EMYRGEN MAP market applications across semiconductors, optics, and precision industrial surfaces" />
-          <div class="caption"><strong>Application landscape.</strong> One surface-integrity platform can serve semiconductors, optics, and additional high-value precision surfaces where roughness, residue, and surface damage drive performance and reliability.</div>
+          <div class="caption"><strong>Application landscape.</strong> One surface-integrity platform can serve multiple high-value markets where roughness, residue, corrosion, wear, fatigue, and surface damage affect performance.</div>
         </div>
 
         <article class="panel featured">
-          <p class="kicker">Priority commercial markets</p>
-          <div class="stat-card"><p class="big-number">01</p><h3>AI chips and custom silicon</h3><p>Advanced semiconductors, accelerators, wafers, substrates, and packaging surfaces where roughness, residues, scratches, and defect tails can harm yield and long-term reliability.</p></div>
-          <div class="stat-card"><p class="big-number">02</p><h3>Optics and photonics</h3><p>Optical glass, laser crystals, low-scatter surfaces, photonics, sensing, and AI data-movement hardware.</p></div>
-          <div class="stat-card"><p class="big-number">03</p><h3>Semiconductor equipment and materials partners</h3><p>Potential licensing, integration, or co-development with companies that already serve fabs, packaging houses, optics labs, and precision-surface applications.</p></div>
-          <div class="stat-card"><p class="big-number">04</p><h3>Nuclear fuel cladding and energy infrastructure</h3><p>T19 remains valuable as a high-reliability energy and industrial beachhead that broadens the overall MAP platform opportunity.</p></div>
-          <div class="stat-card"><p class="big-number">05</p><h3>Aerospace, medical, oil & gas, and precision industry</h3><p>Additional markets where corrosion, wear, flow, fatigue, thermal reliability, and surface cleanliness affect component performance.</p></div>
+          <p class="kicker">Commercial market stack</p>
+          <div class="stat-card"><p class="big-number">01</p><h3>AI chips and custom silicon</h3><p>Advanced semiconductors, accelerators, wafers, substrates, and packaging surfaces where microscopic defects can affect yield and reliability.</p></div>
+          <div class="stat-card"><p class="big-number">02</p><h3>Optics and photonics</h3><p>Optical glass, laser crystals, low-scatter surfaces, photonics, sensing, inspection, and AI data-movement hardware.</p></div>
+          <div class="stat-card"><p class="big-number">03</p><h3>Equipment and materials partners</h3><p>Potential licensing, integration, or co-development with companies already serving fabs, packaging houses, optics labs, and precision-surface applications.</p></div>
+          <div class="stat-card"><p class="big-number">04</p><h3>Nuclear fuel cladding and energy infrastructure</h3><p>T19 gives MAP a high-reliability energy and industrial beachhead that broadens the platform beyond chips alone.</p></div>
+          <div class="stat-card"><p class="big-number">05</p><h3>Aerospace, medical, oil and gas, precision industry</h3><p>Additional markets where corrosion, wear, flow, fatigue, thermal reliability, and surface cleanliness affect component performance.</p></div>
         </article>
 
         <article class="panel">
-          <p class="kicker">Commercial partnerships</p>
-          <h3>Built for strategic engagement across advanced manufacturing supply chains.</h3>
-          <p>EMYRGEN MAP™ is designed for discussions with foundries, advanced-packaging teams, optics manufacturers, equipment suppliers, materials partners, and high-reliability component producers seeking cleaner finishing pathways and stronger surface performance.</p>
+          <p class="kicker">Strategic partner universe</p>
+          <h3>Foundries, packaging, optics, materials, equipment, and high-reliability component companies.</h3>
+          <p>MAP can be advanced through customer sample programs, strategic co-development, equipment integration, licensing, and application-specific process development with companies that already understand the cost of surface failure.</p>
         </article>
       </div>
     </section>
@@ -964,52 +1002,52 @@
       <div class="site-shell">
         <div class="section-header">
           <p class="eyebrow">Commercial Path</p>
-          <h2>Move from reported results to <span>partner validation.</span></h2>
-          <p class="section-lede">The commercialization path is practical: validate samples, establish process fit, and convert performance into pilot programs, strategic partnerships, licensing opportunities, and broader commercial adoption.</p>
+          <h2>Turn technical proof into <span>commercial traction.</span></h2>
+          <p class="section-lede">The near-term business objective is practical and investor-friendly: validate samples, prove process fit, build partner confidence, and convert measured performance into pilot programs, strategic partnerships, licensing opportunities, and equipment pathways.</p>
         </div>
 
         <div class="visual-card">
           <img src="assets/si-wafer-proof.webp" alt="Conceptual visualization of EMYRGEN MAP pilot validation and wafer-level sample testing" />
-          <div class="caption"><strong>Validation pathway.</strong> This section image is used as a visual bridge between technical proof and commercialization: advanced-surface sample testing first, then partner evaluation, equipment opportunities, licensing discussions, and co-development pathways.</div>
+          <div class="caption"><strong>Validation pathway.</strong> Advanced-surface sample testing creates the bridge from reported technical results to partner evaluation, equipment opportunities, licensing discussions, and co-development pathways.</div>
         </div>
 
         <article class="panel featured">
-          <p class="kicker">What to offer partners</p>
-          <h3>Testing, licensing, integration, and co-development.</h3>
-          <p>Companies and investors are invited to evaluate MAP through real sample programs: Si wafers, optical glass, sapphire, SiC, ceramic, metal, packaging surfaces, thermal-management components, and other defect-sensitive substrates.</p>
+          <p class="kicker">Revenue logic</p>
+          <h3>Testing, paid pilots, equipment systems, process recipes, consumables, licensing, and co-development.</h3>
+          <p>The MAP platform can be commercialized through multiple pathways as validation progresses. The pilot stage is designed to identify which applications have the strongest technical performance, fastest partner adoption, and clearest economics.</p>
         </article>
 
         <article class="panel">
           <p class="kicker">Validation roadmap</p>
-          <div class="step"><span class="step-number">01</span><h3>Confirm target surface problem</h3><p>Select wafer, optical glass, SiC, sapphire, packaging, thermal, or precision-metal surfaces where MAP can be compared against incumbent finishing methods.</p></div>
-          <div class="step"><span class="step-number">02</span><h3>Run A20-300 pilot samples</h3><p>Use the A20-300 machine architecture or related pilot setup to process customer samples and document surface roughness, residue, impurity, and defect outcomes.</p></div>
-          <div class="step"><span class="step-number">03</span><h3>Measure reliability impact</h3><p>Test thermal resistance, fatigue, bonding, optical scatter, residue, contamination, and surface-damage metrics using agreed protocols.</p></div>
-          <div class="step"><span class="step-number">04</span><h3>Package the commercial model</h3><p>Convert validated results into equipment sales, process recipes, consumables, licensing, maintenance, training, and joint-development agreements.</p></div>
-          <div class="step"><span class="step-number">05</span><h3>Keep quantum optimization as future R&D</h3><p>Do not lead with quantum claims. Mention only as a future optimization pathway for process tuning if it becomes technically supportable.</p></div>
+          <div class="step"><span class="step-number">01</span><h3>Target high-value surface problems</h3><p>Prioritize wafer, optical glass, SiC, sapphire, packaging, thermal, or precision-metal surfaces where incumbent methods create cost, residue, defect, or reliability issues.</p></div>
+          <div class="step"><span class="step-number">02</span><h3>Run A20-300 pilot samples</h3><p>Process partner-relevant samples and document roughness, residue, impurity, surface-damage, and performance metrics.</p></div>
+          <div class="step"><span class="step-number">03</span><h3>Measure economic value</h3><p>Compare MAP against incumbent finishing methods on process cost, quality, waste reduction, reliability, throughput, and integration potential.</p></div>
+          <div class="step"><span class="step-number">04</span><h3>Convert validation into commercial agreements</h3><p>Successful results can lead into paid pilots, joint development, equipment sales, recipes, consumables, licensing, support, and training.</p></div>
+          <div class="step"><span class="step-number">05</span><h3>Scale through strategic partners</h3><p>Focus on partners that already sell into fabs, packaging lines, optics manufacturers, energy systems, and high-reliability industrial markets.</p></div>
         </article>
       </div>
     </section>
 
-    <section class="section" id="ip">
+    <section class="section" id="diligence">
       <div class="site-shell">
         <div class="section-header">
-          <p class="eyebrow">IP and Claim Discipline</p>
-          <h2>Patent-backed, chemical-free, and pilot-ready — <span>without overclaiming.</span></h2>
-          <p class="section-lede">EMYRGEN MAP™ is positioned as a patent-backed, chemical-free, pilot-ready technology platform, with commercial deployment subject to customer qualification and process integration validation.</p>
+          <p class="eyebrow">Investor Confidence</p>
+          <h2>Bold upside, disciplined claims, <span>clear next milestones.</span></h2>
+          <p class="section-lede">A credible investor page should sell the opportunity without weakening trust. EMYRGEN MAP™ is framed as patent-backed, chemical-free, pilot-ready, and commercially promising, with production adoption subject to customer qualification and process integration.</p>
         </div>
 
         <article class="panel featured">
-          <p class="kicker">Use these phrases</p>
-          <div class="spec-row"><b>Patent-backed MAP platform</b><span>Stronger than generic “polishing technology,” but safer than making unverified legal exclusivity claims.</span></div>
-          <div class="spec-row"><b>Chemical-free finishing pathway</b><span>Directly ties the technology to sustainability and cleaner semiconductor manufacturing.</span></div>
-          <div class="spec-row"><b>Candidate CMP replacement or reduction pathway</b><span>Investor-facing and bold, but still leaves room for validation.</span></div>
-          <div class="spec-row"><b>Pilot-ready for partner sample evaluation</b><span>The best call-to-action for investors, semiconductor partners, optics partners, and licensing discussions.</span></div>
+          <p class="kicker">What investors can diligence now</p>
+          <div class="spec-row"><b>Patent-backed MAP platform</b><span>The technology has a stronger story than generic polishing because it is tied to a specific magnetic abrasive polishing method and protected platform thesis.</span></div>
+          <div class="spec-row"><b>Chemical-free finishing pathway</b><span>The process connects directly to cleaner manufacturing pressure in semiconductors, optics, and precision industrial surfaces.</span></div>
+          <div class="spec-row"><b>Candidate CMP replacement or reduction pathway</b><span>The upside is meaningful because selected CMP-style steps are expensive, chemistry-heavy, and quality-sensitive.</span></div>
+          <div class="spec-row"><b>Pilot-ready for partner sample evaluation</b><span>A20-300 creates a practical next milestone for technical validation, partner engagement, and commercial proof.</span></div>
         </article>
 
         <article class="panel">
-          <p class="kicker">Avoid these overclaims</p>
-          <div class="spec-row"><b>Do not claim</b><span>Fab qualification, NVIDIA/Microsoft/foundry partnerships, completed CMP replacement, mass-production readiness, or final exclusive rights unless verified in legal and customer documentation.</span></div>
-          <div class="spec-row"><b>Do claim carefully</b><span>Reported nanoscale surface results, impurity reduction, chemical-free positioning, pilot equipment availability, partner-evaluation readiness, and potential semiconductor/optics integration pathway.</span></div>
+          <p class="kicker">Balanced risk framing</p>
+          <div class="spec-row"><b>Still to validate</b><span>Fab qualification, production throughput, customer process integration, repeatability, partner economics, and final commercial contracts remain future milestones.</span></div>
+          <div class="spec-row"><b>Current opportunity</b><span>Reported nanoscale surface results, impurity reduction, chemical-free positioning, pilot equipment, and semiconductor/optics relevance create a focused investor diligence package.</span></div>
         </article>
       </div>
     </section>
@@ -1017,15 +1055,15 @@
     <section class="section" id="investor-access">
       <div class="site-shell">
         <div class="section-header">
-          <p class="eyebrow">Investor and Partner Access</p>
-          <h2>Back the surface-control platform for the <span>AI manufacturing era.</span></h2>
-          <p class="section-lede">The conversion section speaks to both investors and strategic partners: pilot evaluation, sample testing, licensing, integration, and co-development.</p>
+          <p class="eyebrow">Investor Access</p>
+          <h2>Request the EMYRGEN MAP™ <span>investor brief.</span></h2>
+          <p class="section-lede">Investors and strategic partners can request the private MAP brief, reported results summary, pilot-platform overview, and next-step discussion with EMYRGEN GROUP INC.</p>
         </div>
 
         <div class="form-panel">
-          <p class="kicker">Request pilot or investor brief</p>
+          <p class="kicker">Private materials request</p>
           <h3>Contact EMYRGEN GROUP INC</h3>
-          <p>Use this section as the investor and partner conversion module. For the static version, the primary action opens an email to the investment contact.</p>
+          <p>The form and email link below request investor materials, MAP validation milestones, or strategic partnership conversations.</p>
 
           <form action="mailto:invest@emyrgengroup.com" method="post" enctype="text/plain">
             <label for="name">Name</label>
@@ -1036,21 +1074,21 @@
 
             <label for="interest-type">Interest type</label>
             <select id="interest-type" name="interest-type">
-              <option>Pilot evaluation</option>
               <option>Investor brief</option>
+              <option>Strategic partnership</option>
+              <option>Pilot evaluation</option>
               <option>Licensing discussion</option>
               <option>Semiconductor / optics partnership</option>
-              <option>Strategic industrial partnership</option>
               <option>Other</option>
             </select>
 
             <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="I would like to request the EMYRGEN™ MAP pilot/investor brief."></textarea>
+            <textarea id="message" name="message" placeholder="I would like to request the EMYRGEN™ MAP investor brief."></textarea>
 
-            <button class="btn primary" type="submit">Email MAP Request</button>
-            <a class="btn" href="mailto:invest@emyrgengroup.com?subject=EMYRGEN%20MAP%20Pilot%20or%20Investor%20Brief%20Request">Open Email Instead</a>
+            <button class="btn primary" type="submit">Request Investor Brief</button>
+            <a class="btn" href="mailto:invest@emyrgengroup.com?subject=EMYRGEN%20MAP%20Investor%20Brief%20Request">Open Email Instead</a>
           </form>
-          <p class="submit-note">For production use, connect this module to the company’s backend form handler or investor portal workflow.</p>
+          <p class="submit-note">This static page opens an email request to EMYRGEN GROUP INC. Private materials may be provided after appropriate review.</p>
         </div>
       </div>
     </section>
@@ -1065,7 +1103,7 @@
           <p>EMYRGEN™ MAP | Magnetic Abrasive Polishing</p>
         </div>
       </div>
-      <p class="small-note">Private investor and partner materials. Technology claims are subject to validation, customer testing, legal review, final commercialization agreements, and applicable regulatory requirements. This website does not constitute an offer to sell securities.</p>
+      <p class="small-note">Private investor and strategic partner materials. Technical claims are subject to validation, customer testing, legal review, final commercialization agreements, and applicable regulatory requirements. This website does not constitute an offer to sell securities.</p>
     </div>
   </footer>
 

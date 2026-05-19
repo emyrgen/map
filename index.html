@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>EMYRGEN MAP v1.32</title>
+<title>EMYRGEN MAP v1.33</title>
 <meta content="EMYRGEN MAP is a magnetic-abrasive finishing platform for cleaner, smoother, lower-defect precision surfaces across AI chips, optics, photonics, waveguides, packaging, and high-reliability industrial components." name="description"/>
 <link href="assets/favicon.png" rel="icon"/>
 <link href="assets/apple-touch-icon.png" rel="apple-touch-icon"/>
@@ -521,7 +521,193 @@ html {
   }
 }
 
-  </style>
+  
+
+/* v1.33 mobile infographic restructure: desktop composites stay; mobile gets readable proof modules */
+.mobile-proof-stack,
+.mobile-foundation-stack {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .desktop-composite,
+  .desktop-proof-summary,
+  .desktop-foundation-layout {
+    display: none !important;
+  }
+
+  .mobile-proof-stack,
+  .mobile-foundation-stack {
+    display: grid !important;
+    gap: 22px !important;
+    margin-top: 22px !important;
+  }
+
+  .mobile-proof-card,
+  .mobile-foundation-card {
+    overflow: hidden;
+    border-radius: 26px;
+    border: 1px solid rgba(101, 232, 255, 0.18);
+    background:
+      radial-gradient(circle at top right, rgba(101, 232, 255, 0.10), transparent 16rem),
+      linear-gradient(180deg, rgba(7, 16, 30, 0.94), rgba(3, 9, 19, 0.98));
+    box-shadow: 0 22px 54px rgba(0,0,0,.34);
+  }
+
+  .mobile-proof-card > img,
+  .mobile-foundation-card > img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid rgba(101, 232, 255, 0.14);
+  }
+
+  .mobile-proof-label {
+    margin: 0;
+    padding: 18px 18px 14px;
+    color: #ffd96a !important;
+    font-family: var(--font-tech, monospace);
+    font-size: .92rem;
+    line-height: 1.35;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    font-weight: 780;
+  }
+
+  .mobile-proof-data {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 18px;
+  }
+
+  .mobile-proof-data div,
+  .before-after-box,
+  .foundation-pillars div {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    align-items: center;
+    padding: 13px 14px;
+    border-radius: 16px;
+    border: 1px solid rgba(101, 232, 255, 0.13);
+    background: rgba(255,255,255,0.035);
+  }
+
+  .mobile-proof-data b,
+  .before-after-box b,
+  .foundation-pillars b {
+    color: #ffffff !important;
+    font-size: .95rem;
+    line-height: 1.3;
+    font-weight: 760;
+  }
+
+  .mobile-proof-data span,
+  .before-after-box span,
+  .foundation-pillars span {
+    color: #a4fbff !important;
+    text-align: right;
+    font-size: .98rem;
+    line-height: 1.3;
+    font-weight: 760;
+  }
+
+  .improvement-data {
+    padding-top: 0;
+  }
+
+  .before-after-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 18px;
+  }
+
+  .before-after-box {
+    display: grid;
+    justify-content: stretch;
+    text-align: left;
+  }
+
+  .before-after-box b,
+  .before-after-box span {
+    text-align: left;
+  }
+
+  .mobile-proof-takeaway {
+    margin: 0;
+    padding: 0 18px 20px;
+    color: #ffffff !important;
+    font-size: 1.04rem;
+    line-height: 1.62;
+  }
+
+  .foundation-stat-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .foundation-stat-pair > div {
+    padding: 22px 16px;
+    border-right: 1px solid rgba(101, 232, 255, 0.14);
+    text-align: center;
+  }
+
+  .foundation-stat-pair > div:last-child {
+    border-right: 0;
+  }
+
+  .foundation-big-number {
+    margin: 0;
+    color: #ffd96a !important;
+    font-family: var(--font-tech, monospace);
+    font-size: clamp(2.6rem, 14vw, 4rem);
+    line-height: 1;
+    font-weight: 800;
+  }
+
+  .foundation-stat-label {
+    margin: 10px 0 0;
+    color: #ffffff !important;
+    font-family: var(--font-tech, monospace);
+    font-size: .86rem;
+    line-height: 1.35;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    font-weight: 740;
+  }
+
+  .foundation-pillars {
+    padding: 18px;
+    display: grid;
+    gap: 10px;
+  }
+
+  .foundation-pillars div {
+    display: grid;
+    justify-content: stretch;
+  }
+
+  .foundation-pillars b,
+  .foundation-pillars span {
+    text-align: left;
+  }
+
+  .foundation-ribbon {
+    padding: 22px 18px;
+    color: #ffd96a !important;
+    font-family: var(--font-tech, monospace);
+    font-size: .95rem;
+    line-height: 1.45;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 760;
+  }
+}
+</style>
 </head>
 <body>
 <header class="topbar">
@@ -623,8 +809,58 @@ html {
 <h2>Numbers make the sales page credible. <span>These are the proof points.</span></h2>
 <p class="section-lede">The platform story becomes stronger when the visitor sees exact surface results instead of abstract promises. The page now connects the technology to silicon wafers, optical glass, laser crystals, and A17 machine metrics.</p>
 </div>
-<div class="visual-card"><img alt="Measured surface proof dashboard" src="assets/proof-dashboard.webp"/><div class="caption"><strong>Proof dashboard.</strong> Silicon wafer, optical glass, and A17 results are presented as a single clear evidence layer for the platform.</div></div>
-<div class="card-grid">
+<div class="visual-card desktop-composite"><img alt="Measured surface proof dashboard" src="assets/proof-dashboard.webp"/><div class="caption"><strong>Proof dashboard.</strong> Silicon wafer, optical glass, and A17 results are presented as a single clear evidence layer for the platform.</div></div><div class="mobile-proof-stack">
+<article class="mobile-proof-card">
+<p class="mobile-proof-label">01 / Silicon-Wafer Surface Proof</p>
+<img alt="Silicon wafer surface topography proof" src="assets/proof-mobile-silicon-wafer.webp"/>
+<div class="mobile-proof-data">
+<div><b>Ra</b><span>0.72 nm</span></div>
+<div><b>Rq</b><span>0.89 nm</span></div>
+<div><b>Rz</b><span>6.77 nm</span></div>
+<div><b>Rt</b><span>10.39 nm</span></div>
+<div><b>TTV</b><span>2.9 µm</span></div>
+<div><b>Sampling</b><span>168.48 nm</span></div>
+</div>
+<p class="mobile-proof-takeaway">Ultra-low roughness and TTV for advanced semiconductor surface performance.</p>
+</article>
+<article class="mobile-proof-card">
+<p class="mobile-proof-label">02 / Optical Glass Surface Proof</p>
+<img alt="Optical glass before and after surface proof" src="assets/proof-mobile-optical-glass.webp"/>
+<div class="before-after-grid">
+<div class="before-after-box">
+<b>Before MAP</b>
+<span>PV 158 nm</span>
+<span>Ra 20 nm</span>
+</div>
+<div class="before-after-box">
+<b>After MAP</b>
+<span>PV 30 nm</span>
+<span>Ra 1.4 nm</span>
+</div>
+</div>
+<p class="mobile-proof-takeaway">Dramatic improvement in flatness and surface uniformity.</p>
+</article>
+<article class="mobile-proof-card">
+<p class="mobile-proof-label">03 / Ultra-Precision Surface Metrics</p>
+<img alt="Model A17 ultra-precision platform metrics" src="assets/proof-mobile-a17-platform.webp"/>
+<div class="mobile-proof-data">
+<div><b>Piece diameter</b><span>10–200 mm</span></div>
+<div><b>Polished surface</b><span>0.2–0.8 nm</span></div>
+<div><b>Polishing time</b><span>2–15 min</span></div>
+<div><b>Power</b><span>1.5 kW</span></div>
+<div><b>Size</b><span>900 × 500 × 500 mm</span></div>
+<div><b>Weight</b><span>80 kg</span></div>
+</div>
+<div class="mobile-proof-data improvement-data">
+<div><b>Sa</b><span>0.27 nm → 0.14 nm</span></div>
+<div><b>Sq</b><span>0.369 nm → 0.189 nm</span></div>
+<div><b>Sp</b><span>4.58 nm → 1.13 nm</span></div>
+<div><b>Sv</b><span>3.66 nm → 0.735 nm</span></div>
+</div>
+<p class="mobile-proof-takeaway">Engineered for ultra-precision. Measured performance that supports commercial conversations.</p>
+</article>
+</div>
+<div class="card-grid desktop-proof-summary">
 <div class="stat-card"><p class="big-number">Ra 0.72 nm</p><h3>Silicon wafer proof</h3><p>Si-wafer surface roughness and TTV data connect MAP directly to semiconductor-facing surface quality.</p></div>
 <div class="stat-card"><p class="big-number">PV 158 → 30 nm</p><h3>Optical-glass improvement</h3><p>Optical glass shows a clear before/after story, with Ra improving from 20 nm to 1.4 nm after MAP.</p></div>
 <div class="stat-card"><p class="big-number">Ra 1.537 nm</p><h3>Laser crystal proof</h3><p>Laser-crystal results connect MAP to optics, photonics, lasers, sensing, and inspection markets.</p></div>
@@ -699,7 +935,7 @@ html {
 <h2>Scientific depth makes the platform <span>more credible.</span></h2>
 <p class="section-lede">The commercial story is stronger because it is not supported by a single image or one claim. The foundation includes publications, patents, machine history, measured results, and application examples.</p>
 </div>
-<div class="two-col">
+<div class="two-col desktop-foundation-layout">
 <div class="visual-card"><img alt="Scientific publication and patent foundation" src="assets/science-foundation.webp"/><div class="caption"><strong>Foundation visual.</strong> Scientific publications, patents, and machine history support the credibility layer behind the sales page.</div></div>
 <article class="panel featured">
 <p class="kicker">Credibility stack</p>
@@ -707,6 +943,31 @@ html {
 <div class="spec-row"><b>70+ patents</b><span>The platform has a protected technical foundation rather than a generic polishing claim.</span></div>
 <div class="spec-row"><b>Machine history</b><span>Earlier machines and current platform visuals make the technology feel tangible to buyers, partners, and investors.</span></div>
 </article>
+</div><div class="mobile-foundation-stack">
+<article class="mobile-foundation-card foundation-stat-pair">
+<div>
+<p class="foundation-big-number">170+</p>
+<p class="foundation-stat-label">Scientific Publications</p>
+</div>
+<div>
+<p class="foundation-big-number">70+</p>
+<p class="foundation-stat-label">Patents Filed</p>
+</div>
+</article>
+<article class="mobile-foundation-card">
+<p class="mobile-proof-label">Global Technical Network</p>
+<img alt="Global technical network and publication foundation" src="assets/foundation-mobile-global-network.webp"/>
+<p class="mobile-proof-takeaway">A scientific foundation supported by publications, patents, machine history, measured results, and international technical activity.</p>
+</article>
+<article class="mobile-foundation-card foundation-pillars">
+<div><b>Scientific Excellence</b><span>Research-backed technical depth.</span></div>
+<div><b>Innovative Solutions</b><span>Machine-led polishing technology.</span></div>
+<div><b>Global Partnerships</b><span>International technical relevance.</span></div>
+<div><b>Trusted Expertise</b><span>Publication and patent foundation.</span></div>
+</article>
+<article class="mobile-foundation-card foundation-ribbon">
+        Advancing materials. Empowering tomorrow.
+      </article>
 </div>
 </div>
 </section>
@@ -756,7 +1017,6 @@ html {
       }));
     }
   </script>
-
 <script>
 (function () {
   function initMobileMenu() {
@@ -812,8 +1072,6 @@ html {
   }
 })();
 </script>
-
-
 <script>
 (function () {
   function initAnchorOffsetFix() {
@@ -873,6 +1131,5 @@ html {
   }
 })();
 </script>
-
 </body>
 </html>
